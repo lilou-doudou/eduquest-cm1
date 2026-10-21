@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Lance la pile E2E isolée : PostgreSQL jetable (5433), backend sur 8081, Vite sur 5174, puis Playwright.
+# Lance la pile E2E isolée (ou, avec PERF=1, la mesure de charge scripts/perf.mjs) : PostgreSQL jetable (5433), backend sur 8081, Vite sur 5174, puis Playwright.
 # Mailpit (compose, port 8025) reçoit les e-mails de vérification lus par les tests.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -40,5 +40,9 @@ for _ in $(seq 1 60); do
 done
 curl -sf http://127.0.0.1:8081/actuator/health >/dev/null || { echo "Le backend E2E n'a pas démarré (voir $LOG_DIR/backend.log)"; exit 1; }
 
+if [ "${PERF:-0}" = "1" ]; then
+  API_URL=http://127.0.0.1:8081 node scripts/perf.mjs
+  exit $?
+fi
 [ -d e2e/node_modules ] || (cd e2e && npm ci)
 cd e2e && npx playwright test "$@"

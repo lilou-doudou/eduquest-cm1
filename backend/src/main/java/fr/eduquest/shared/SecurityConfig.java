@@ -92,7 +92,7 @@ public class SecurityConfig {
             .addFilterAfter(new AbsoluteSessionTimeoutFilter(clock, absolute), BasicAuthenticationFilter.class)
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
-                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .requestMatchers("/v3/api-docs", "/v3/api-docs/**", "/v3/api-docs.yaml", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/v1/auth/csrf", "/api/v1/privacy/notice").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/v1/auth/register", "/api/v1/auth/verify-email",
                         "/api/v1/auth/login", "/api/v1/auth/forgot-password", "/api/v1/auth/reset-password").permitAll()

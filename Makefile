@@ -4,7 +4,7 @@ SHELL := /bin/bash
 ENV := ./scripts/env.sh
 
 .PHONY: help dev backend-dev content-import content-validate frontend-dev test test-backend test-frontend \
-        test-e2e lint build stop reset-dev-db perf screenshots
+        test-e2e lint build stop reset-dev-db perf screenshots openapi
 
 help: ## Liste les commandes
 	@grep -E '^[a-z0-9-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-18s %s\n", $$1, $$2}'
@@ -44,8 +44,11 @@ build: ## Jar backend et bundle frontend de production
 	cd backend && ./mvnw -B -q -DskipTests package
 	cd frontend && npm run build
 
-perf: ## Mesure de charge locale (20 enfants simultanés) contre http://localhost:8080
-	node scripts/perf.mjs
+openapi: ## Régénère docs/api/openapi.yaml depuis le backend dev en marche (make backend-dev)
+	curl -sf http://localhost:8080/v3/api-docs.yaml -o docs/api/openapi.yaml && echo "docs/api/openapi.yaml mis à jour"
+
+perf: ## Mesure de charge : 20 enfants simultanés sur la pile isolée E2E
+	PERF=1 $(ENV) ./scripts/e2e.sh
 
 screenshots: ## Captures des écrans principaux dans docs/screenshots (pile E2E)
 	CAPTURE=1 $(ENV) ./scripts/e2e.sh --project=desktop --project=no-webgl --project=mobile captures

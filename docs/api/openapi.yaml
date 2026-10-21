@@ -1,0 +1,1184 @@
+openapi: 3.1.0
+info:
+  title: EduQuest CM1 API
+  description: "API REST du MVP EduQuest CM1. Authentification par cookie de session\
+    \ opaque (EQSESSION, HttpOnly, SameSite=Lax). Toute requête modifiante exige l'en-tê\
+    te X-CSRF-TOKEN obtenu via GET /api/v1/auth/csrf. Erreurs au format application/problem+json\
+    \ avec `code` et `traceId`. Rôles : PARENT (espace adulte) et CHILD (session enfant\
+    \ limitée)."
+  version: v1
+servers:
+- url: /
+  description: Même origine que le frontend
+paths:
+  /api/v1/me/equipment/{slot}:
+    put:
+      tags:
+      - reward-controller
+      operationId: equip
+      parameters:
+      - name: slot
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EquipRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardsResponse"
+  /api/v1/attempts/{attemptId}/answers/{exerciseId}:
+    put:
+      tags:
+      - learning-controller
+      operationId: answer
+      parameters:
+      - name: attemptId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: exerciseId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Correction"
+  /api/v1/missions/{missionId}/attempts:
+    post:
+      tags:
+      - learning-controller
+      operationId: start
+      parameters:
+      - name: missionId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: {}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttemptView"
+  /api/v1/children:
+    get:
+      tags:
+      - child-controller
+      operationId: list
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ChildResponse"
+    post:
+      tags:
+      - child-controller
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateChildRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChildResponse"
+  /api/v1/auth/verify-email:
+    post:
+      tags:
+      - auth-controller
+      operationId: verify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TokenRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/reset-password:
+    post:
+      tags:
+      - auth-controller
+      operationId: reset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ResetPasswordRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/register:
+    post:
+      tags:
+      - auth-controller
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/reauthenticate:
+    post:
+      tags:
+      - auth-controller
+      operationId: reauthenticate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReauthenticateRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/parent-session:
+    post:
+      tags:
+      - auth-controller
+      operationId: parentSession
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoleResponse"
+  /api/v1/auth/logout:
+    post:
+      tags:
+      - auth-controller
+      operationId: logout
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/login:
+    post:
+      tags:
+      - auth-controller
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoleResponse"
+  /api/v1/auth/forgot-password:
+    post:
+      tags:
+      - auth-controller
+      operationId: forgot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ForgotPasswordRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+  /api/v1/auth/child-session:
+    post:
+      tags:
+      - auth-controller
+      operationId: childSession
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChildSessionRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MeResponse"
+  /api/v1/attempts/{attemptId}/complete:
+    post:
+      tags:
+      - learning-controller
+      operationId: complete
+      parameters:
+      - name: attemptId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: {}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Summary"
+  /api/v1/attempts/{attemptId}/answers/{exerciseId}/hint:
+    post:
+      tags:
+      - learning-controller
+      operationId: hint
+      parameters:
+      - name: attemptId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: exerciseId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: {}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HintResponse"
+  /api/v1/attempts/{attemptId}/abandon:
+    post:
+      tags:
+      - learning-controller
+      operationId: abandon
+      parameters:
+      - name: attemptId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: {}
+      responses:
+        "204":
+          description: No Content
+  /api/v1/children/{id}:
+    delete:
+      tags:
+      - child-controller
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeleteChildRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+    patch:
+      tags:
+      - child-controller
+      operationId: update
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateChildRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChildResponse"
+  /api/v1/worlds:
+    get:
+      tags:
+      - learning-controller
+      operationId: worlds
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WorldSummary"
+  /api/v1/worlds/{slug}:
+    get:
+      tags:
+      - learning-controller
+      operationId: world
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorldDetail"
+  /api/v1/privacy/notice:
+    get:
+      tags:
+      - privacy-controller
+      operationId: notice
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+  /api/v1/privacy/export:
+    get:
+      tags:
+      - privacy-controller
+      operationId: export
+      responses:
+        "200":
+          description: OK
+          content: {}
+  /api/v1/privacy/acknowledgements:
+    get:
+      tags:
+      - privacy-controller
+      operationId: acknowledgements
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: {}
+  /api/v1/me/rewards:
+    get:
+      tags:
+      - reward-controller
+      operationId: rewards
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardsResponse"
+  /api/v1/me/progress:
+    get:
+      tags:
+      - learning-controller
+      operationId: myProgress
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChildProgressResponse"
+  /api/v1/children/{id}/progress:
+    get:
+      tags:
+      - child-controller
+      operationId: progress
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 20
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ParentProgressResponse"
+  /api/v1/auth/me:
+    get:
+      tags:
+      - auth-controller
+      operationId: me
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MeResponse"
+  /api/v1/auth/csrf:
+    get:
+      tags:
+      - auth-controller
+      operationId: csrf
+      parameters:
+      - name: token
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/CsrfToken"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CsrfResponse"
+  /api/v1/attempts/{attemptId}:
+    get:
+      tags:
+      - learning-controller
+      operationId: get
+      parameters:
+      - name: attemptId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttemptView"
+  /api/v1/account:
+    delete:
+      tags:
+      - privacy-controller
+      operationId: deleteAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeleteAccountRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    EquipRequest:
+      type: object
+      properties:
+        rewardCode:
+          type: string
+          maxLength: 40
+          minLength: 0
+    RewardView:
+      type: object
+      properties:
+        code:
+          type: string
+        type:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        assetKey:
+          type: string
+        slot:
+          type: string
+        owned:
+          type: boolean
+        grantedAt:
+          type: string
+          format: date-time
+    RewardsResponse:
+      type: object
+      properties:
+        rewards:
+          type: array
+          items:
+            $ref: "#/components/schemas/RewardView"
+        equipment:
+          type: object
+          additionalProperties:
+            type: string
+    Correction:
+      type: object
+      properties:
+        exerciseId:
+          type: string
+          format: uuid
+        correct:
+          type: boolean
+        hintUsed:
+          type: boolean
+        expectedAnswer: {}
+        explanation:
+          type: string
+        answeredCount:
+          type: integer
+          format: int32
+        readyToComplete:
+          type: boolean
+    AttemptView:
+      type: object
+      properties:
+        attemptId:
+          type: string
+          format: uuid
+        missionId:
+          type: string
+          format: uuid
+        missionTitle:
+          type: string
+        worldSlug:
+          type: string
+        status:
+          type: string
+        answeredCount:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+        readyToComplete:
+          type: boolean
+        currentQuestion:
+          $ref: "#/components/schemas/QuestionView"
+        summary:
+          $ref: "#/components/schemas/Summary"
+    Option:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+    QuestionView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        position:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+        type:
+          type: string
+        instruction:
+          type: string
+        prompt:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: "#/components/schemas/Option"
+        unit:
+          type: string
+        hintUsed:
+          type: boolean
+        hint:
+          type: string
+    SkillResult:
+      type: object
+      properties:
+        code:
+          type: string
+        label:
+          type: string
+        correct:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    Summary:
+      type: object
+      properties:
+        attemptId:
+          type: string
+          format: uuid
+        missionId:
+          type: string
+          format: uuid
+        correctCount:
+          type: integer
+          format: int32
+        questionCount:
+          type: integer
+          format: int32
+        stars:
+          type: integer
+          format: int32
+        hintsUsed:
+          type: integer
+          format: int32
+        xpDelta:
+          type: integer
+          format: int32
+        xpTotal:
+          type: integer
+          format: int32
+        adventurerLevel:
+          type: integer
+          format: int32
+        newRewards:
+          type: array
+          items:
+            type: string
+        unlockedMissionIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillResult"
+        nextMissionId:
+          type: string
+          format: uuid
+    CreateChildRequest:
+      type: object
+      properties:
+        nickname:
+          type: string
+          maxLength: 30
+          minLength: 2
+        avatarCode:
+          type: string
+          maxLength: 40
+          minLength: 0
+        grade:
+          type: string
+          minLength: 1
+          pattern: CM1
+      required:
+      - avatarCode
+      - grade
+      - nickname
+    ChildResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        nickname:
+          type: string
+        avatarCode:
+          type: string
+        grade:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    TokenRequest:
+      type: object
+      properties:
+        token:
+          type: string
+          maxLength: 100
+          minLength: 0
+      required:
+      - token
+    ResetPasswordRequest:
+      type: object
+      properties:
+        token:
+          type: string
+          maxLength: 100
+          minLength: 0
+        newPassword:
+          type: string
+          maxLength: 128
+          minLength: 12
+      required:
+      - newPassword
+      - token
+    RegisterRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 254
+          minLength: 0
+        password:
+          type: string
+          maxLength: 128
+          minLength: 12
+        noticeVersion:
+          type: string
+          maxLength: 32
+          minLength: 0
+      required:
+      - email
+      - noticeVersion
+      - password
+    ReauthenticateRequest:
+      type: object
+      properties:
+        password:
+          type: string
+          maxLength: 128
+          minLength: 0
+      required:
+      - password
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          maxLength: 254
+          minLength: 0
+        password:
+          type: string
+          maxLength: 128
+          minLength: 0
+      required:
+      - email
+      - password
+    RoleResponse:
+      type: object
+      properties:
+        role:
+          type: string
+    ForgotPasswordRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          maxLength: 254
+          minLength: 0
+      required:
+      - email
+    ChildSessionRequest:
+      type: object
+      properties:
+        childId:
+          type: string
+          format: uuid
+      required:
+      - childId
+    ChildInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        nickname:
+          type: string
+        avatarCode:
+          type: string
+    MeResponse:
+      type: object
+      properties:
+        role:
+          type: string
+        parent:
+          $ref: "#/components/schemas/ParentInfo"
+        child:
+          $ref: "#/components/schemas/ChildInfo"
+    ParentInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+        emailVerified:
+          type: boolean
+    HintResponse:
+      type: object
+      properties:
+        exerciseId:
+          type: string
+          format: uuid
+        hint:
+          type: string
+    UpdateChildRequest:
+      type: object
+      properties:
+        nickname:
+          type: string
+          maxLength: 30
+          minLength: 2
+        avatarCode:
+          type: string
+          maxLength: 40
+          minLength: 0
+    WorldSummary:
+      type: object
+      properties:
+        slug:
+          type: string
+        title:
+          type: string
+        subjectCode:
+          type: string
+        displayOrder:
+          type: integer
+          format: int32
+        availability:
+          type: string
+        assetKey:
+          type: string
+        description:
+          type: string
+        missionCount:
+          type: integer
+          format: int32
+        completedMissions:
+          type: integer
+          format: int32
+        stars:
+          type: integer
+          format: int32
+        maxStars:
+          type: integer
+          format: int32
+        completed:
+          type: boolean
+    LevelSummary:
+      type: object
+      properties:
+        ordinal:
+          type: integer
+          format: int32
+        title:
+          type: string
+        unlocked:
+          type: boolean
+        missions:
+          type: array
+          items:
+            $ref: "#/components/schemas/MissionSummary"
+    MissionSummary:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        code:
+          type: string
+        ordinal:
+          type: integer
+          format: int32
+        title:
+          type: string
+        state:
+          type: string
+        bestStars:
+          type: integer
+          format: int32
+        bestCorrectCount:
+          type: integer
+          format: int32
+        completedAttempts:
+          type: integer
+          format: int32
+        inProgressAttemptId:
+          type: string
+          format: uuid
+    WorldDetail:
+      type: object
+      properties:
+        world:
+          $ref: "#/components/schemas/WorldSummary"
+        levels:
+          type: array
+          items:
+            $ref: "#/components/schemas/LevelSummary"
+    BadgeView:
+      type: object
+      properties:
+        code:
+          type: string
+        title:
+          type: string
+        assetKey:
+          type: string
+    ChildProgressResponse:
+      type: object
+      properties:
+        childId:
+          type: string
+          format: uuid
+        nickname:
+          type: string
+        avatarCode:
+          type: string
+        xpTotal:
+          type: integer
+          format: int32
+        adventurerLevel:
+          type: integer
+          format: int32
+        xpIntoLevel:
+          type: integer
+          format: int32
+        xpForNextLevel:
+          type: integer
+          format: int32
+        totalStars:
+          type: integer
+          format: int32
+        badges:
+          type: array
+          items:
+            $ref: "#/components/schemas/BadgeView"
+        worlds:
+          type: array
+          items:
+            $ref: "#/components/schemas/WorldSummary"
+    AttemptHistoryItem:
+      type: object
+      properties:
+        attemptId:
+          type: string
+          format: uuid
+        missionTitle:
+          type: string
+        worldTitle:
+          type: string
+        status:
+          type: string
+        startedAt:
+          type: string
+          format: date-time
+        completedAt:
+          type: string
+          format: date-time
+        correctCount:
+          type: integer
+          format: int32
+        stars:
+          type: integer
+          format: int32
+        hintsUsed:
+          type: integer
+          format: int32
+    HistoryPage:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/AttemptHistoryItem"
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+    ParentProgressResponse:
+      type: object
+      properties:
+        childId:
+          type: string
+          format: uuid
+        nickname:
+          type: string
+        avatarCode:
+          type: string
+        xpTotal:
+          type: integer
+          format: int32
+        adventurerLevel:
+          type: integer
+          format: int32
+        totalStars:
+          type: integer
+          format: int32
+        worlds:
+          type: array
+          items:
+            $ref: "#/components/schemas/WorldSummary"
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillIndicator"
+        history:
+          $ref: "#/components/schemas/HistoryPage"
+        suggestions:
+          type: array
+          items:
+            $ref: "#/components/schemas/RevisionSuggestion"
+    RevisionSuggestion:
+      type: object
+      properties:
+        kind:
+          type: string
+        label:
+          type: string
+        detail:
+          type: string
+    SkillIndicator:
+      type: object
+      properties:
+        code:
+          type: string
+        label:
+          type: string
+        subjectCode:
+          type: string
+        status:
+          type: string
+        successRate:
+          type: integer
+          format: int32
+        evaluatedCount:
+          type: integer
+          format: int32
+        attemptCount:
+          type: integer
+          format: int32
+        hintsUsed:
+          type: integer
+          format: int32
+        correctWithHint:
+          type: integer
+          format: int32
+    CsrfToken:
+      type: object
+      properties:
+        headerName:
+          type: string
+        parameterName:
+          type: string
+        token:
+          type: string
+    CsrfResponse:
+      type: object
+      properties:
+        headerName:
+          type: string
+        token:
+          type: string
+    DeleteChildRequest:
+      type: object
+      properties:
+        confirmation:
+          type: string
+          minLength: 1
+      required:
+      - confirmation
+    DeleteAccountRequest:
+      type: object
+      properties:
+        confirmation:
+          type: string
+          minLength: 1
+      required:
+      - confirmation

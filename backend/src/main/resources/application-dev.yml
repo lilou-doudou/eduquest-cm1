@@ -8,6 +8,7 @@ server:
       cookie:
         secure: false
 springdoc:
+  default-produces-media-type: application/json
   api-docs:
     enabled: true
     path: /v3/api-docs
