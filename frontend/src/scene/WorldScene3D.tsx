@@ -69,17 +69,23 @@ function Island({ world, index, count, reducedMotion, onSelect }: { world: World
   );
 }
 
-/** Mesure les images/s pendant 3 s ; sous 30 i/s, on bascule vers la carte 2D. */
+const WARMUP_MS = 1000;
+
+/**
+ * Mesure les images/s pendant 3 s, après 1 s de chauffe (compilation des shaders, chargement) ;
+ * sous 30 i/s, on bascule vers la carte 2D.
+ */
 function FpsWatch({ onSlow }: { onSlow: () => void }) {
   const frames = useRef(0);
-  const start = useRef<number | null>(null);
+  const first = useRef<number | null>(null);
   const done = useRef(false);
   useFrame(() => {
     if (done.current) return;
     const now = performance.now();
-    if (start.current === null) start.current = now;
+    if (first.current === null) first.current = now;
+    const elapsed = now - first.current - WARMUP_MS;
+    if (elapsed < 0) return;
     frames.current++;
-    const elapsed = now - start.current;
     if (elapsed > 3000) {
       done.current = true;
       if ((frames.current * 1000) / elapsed < 30) onSlow();

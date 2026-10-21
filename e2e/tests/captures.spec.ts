@@ -28,7 +28,8 @@ test('captures', async ({ page }, info) => {
   await page.goto('/profils');
   await shot('02-qui-joue');
   await chooseChild(page, 'Nova');
-  await page.waitForTimeout(1500);
+  if (info.project.name !== 'no-webgl') await expect(page.locator('.map-wrap canvas')).toBeVisible();
+  await page.waitForTimeout(700);
   await shot('03-carte');
   await page.locator('.world-list').getByRole('link', { name: 'Les Îles des Nombres' }).click();
   await shot('04-monde');
