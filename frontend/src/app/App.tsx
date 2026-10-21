@@ -42,7 +42,7 @@ function SessionWatcher() {
         // Sans session connue (visiteur, ou premier /auth/me), rien à purger : vider le cache ici
         // abandonnerait les requêtes publiques en cours (ex. notice de l'inscription).
         if (!qc.getQueryData(ME_KEY)) return;
-        qc.removeQueries({ predicate: (q) => q.queryKey[0] !== 'me' });
+        qc.removeQueries({ predicate: (q) => !(q.queryKey.length === 1 && q.queryKey[0] === 'me') });
         markSessionExpired();
         navigate('/connexion?expiree=1', { replace: true });
         qc.setQueryData(ME_KEY, null);

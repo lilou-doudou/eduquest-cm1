@@ -1,6 +1,8 @@
 package fr.eduquest.auth;
 
+import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
@@ -9,7 +11,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface AccountTokenRepository extends JpaRepository<AccountToken, UUID> {
-    Optional<AccountToken> findByTokenHash(String tokenHash);
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("SELECT t FROM AccountToken t WHERE t.tokenHash = :tokenHash")
+    Optional<AccountToken> findByTokenHashForUpdate(String tokenHash);
 
     @Modifying
     @Query("UPDATE AccountToken t SET t.usedAt = :now WHERE t.parentId = :parentId AND t.type = :type AND t.usedAt IS NULL")
