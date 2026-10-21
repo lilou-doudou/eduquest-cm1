@@ -47,5 +47,43 @@ services:
       timeout: 3s
       retries: 20
 
+  # Application complète en conteneurs (aucun Java/Node à installer) :
+  #   docker compose --profile app up --build
+  # puis http://localhost:3000. Profil dev : compte de démonstration, cookie non Secure (HTTP local).
+  content-import:
+    profiles: ["app"]
+    build: { context: ., dockerfile: infra/backend.Dockerfile }
+    image: eduquest-backend
+    environment: &backend-env
+      SPRING_PROFILES_ACTIVE: dev
+      DATABASE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-eduquest}
+      POSTGRES_USER: ${POSTGRES_USER:-eduquest}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      APP_BASE_URL: http://localhost:3000
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      MAIL_FROM: ${MAIL_FROM:-EduQuest CM1 <no-reply@eduquest.local>}
+    command: ["--spring.main.web-application-type=none", "--eduquest.content.import=true", "--eduquest.dev-seed=false"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: "no"
+
+  backend:
+    profiles: ["app"]
+    image: eduquest-backend
+    environment: *backend-env
+    depends_on:
+      content-import: { condition: service_completed_successfully }
+      mailpit: { condition: service_healthy }
+
+  web:
+    profiles: ["app"]
+    build: { context: ., dockerfile: infra/frontend.Dockerfile }
+    image: eduquest-frontend
+    ports:
+      - "127.0.0.1:3000:8081"
+    depends_on:
+      backend: { condition: service_healthy }
+
 volumes:
   pgdata:

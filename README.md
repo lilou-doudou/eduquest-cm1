@@ -20,7 +20,18 @@ Le cahier des charges est dans [`EDUQUEST_CM1_SPECIFICATIONS.md`](EDUQUEST_CM1_S
 
 Aucun service cloud payant n'est nécessaire.
 
-## Démarrage rapide
+## Le plus simple : tout en conteneurs (Docker seulement)
+
+Sans Java ni Node, sur Mac (Intel ou Apple Silicon), Linux ou Windows :
+
+```sh
+cp .env.example .env
+docker compose --profile app up --build
+```
+
+Puis http://localhost:3000 (e-mails sur http://localhost:8025). Guide détaillé pour débutant : [docs/guide-demarrage-mac.md](docs/guide-demarrage-mac.md).
+
+## Démarrage rapide pour développer
 
 ```sh
 cp .env.example .env

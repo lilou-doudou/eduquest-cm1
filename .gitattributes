@@ -1,0 +1,5 @@
+# Scripts exécutés sous Linux/macOS et dans les conteneurs : toujours en LF.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.png binary
+*.jar binary
