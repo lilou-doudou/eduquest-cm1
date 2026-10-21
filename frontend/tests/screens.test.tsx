@@ -20,9 +20,10 @@ describe('carte des mondes', () => {
     renderAt(<AppRoutes />, '/aventure');
     expect(await screen.findByRole('heading', { name: 'Bonjour Nova !' })).toBeInTheDocument();
     const map = await screen.findByRole('group', { name: 'Carte des mondes (2D)' });
-    expect(within(map).getByRole('link', { name: 'La Vallée des Formes (bientôt disponible)' })).toHaveAttribute('href', '/mondes/vallee-des-formes');
-    expect(screen.getByText('Bientôt disponible')).toBeInTheDocument();
-    expect(screen.getAllByRole('link', { name: 'Les Îles des Nombres' })).toHaveLength(2);
+    expect(within(map).getByRole('link', { name: /Vallée des Formes\s*Bientôt disponible/i })).toHaveAttribute('href', '/mondes/vallee-des-formes');
+    expect(screen.getAllByText('Bientôt disponible')).toHaveLength(2); // île de la carte 2D et carte HTML
+    expect(within(map).getByRole('link', { name: /Îles des Nombres\s*2\/18/i })).toHaveAttribute('href', '/mondes/iles-des-nombres');
+    expect(screen.getByRole('link', { name: 'Les Îles des Nombres' })).toHaveAttribute('href', '/mondes/iles-des-nombres');
   });
 });
 

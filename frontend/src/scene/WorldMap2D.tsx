@@ -11,17 +11,19 @@ export function WorldMap2D({ worlds }: { worlds: WorldSummary[] }) {
         const [x, y] = islandPosition(i, worlds.length);
         const playable = w.availability === 'PLAYABLE';
         const c = WORLD_COLORS[w.assetKey] ?? WORLD_COLORS['world-numbers'];
+        const name = w.title.replace(/^(Les |Le |La |L')/, '');
+        // Pas d'aria-label : le nom accessible est le texte visible de l'île (WCAG 2.5.3).
         return (
-          <Link key={w.slug} to={`/mondes/${w.slug}`} aria-label={`${w.title}${playable ? '' : ' (bientôt disponible)'}`}>
+          <Link key={w.slug} to={`/mondes/${w.slug}`}>
             <g className="map2d-island" transform={`translate(${x} ${y})`}>
               <ellipse rx="1.6" ry="0.9" cy="0.25" fill={playable ? c.ground : '#8d8d96'} />
               <ellipse rx="1.6" ry="0.9" fill={playable ? c.top : '#c9c9d2'} />
               <text y="1.75" textAnchor="middle" fontSize="0.42" fill="#1d2433" fontWeight="700">
-                {w.title.replace(/^(Les |Le |La |L')/, '')}
+                {name}
               </text>
               {!playable && (
-                <text y="0.15" textAnchor="middle" fontSize="0.38" fill="#3b3b48">
-                  Bientôt
+                <text y="0.12" textAnchor="middle" fontSize="0.3" fill="#3b3b48">
+                  Bientôt disponible
                 </text>
               )}
               {playable && (
