@@ -1,0 +1,8 @@
+**/node_modules
+**/target
+**/dist
+e2e
+docs
+.git
+.env
+*.log
