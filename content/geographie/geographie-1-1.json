@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOGRAPHIE-1-1",
+  "world": "archipel-des-explorateurs",
+  "level": 1,
+  "ordinal": 1,
+  "title": "La boussole et la légende",
+  "exercises": [
+    {
+      "skill": "GEO_MAPS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sur une carte, où se trouve le plus souvent le nord ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "en bas"
+        },
+        {
+          "id": "b",
+          "label": "en haut"
+        },
+        {
+          "id": "c",
+          "label": "à gauche"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Regarde la rose des vents : la flèche « N » pointe vers le…",
+      "explanation": "Sur la plupart des cartes, le nord est en haut, le sud en bas, l'est à droite et l'ouest à gauche."
+    },
+    {
+      "skill": "GEO_MAPS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "À quoi sert la légende d'une carte ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "à expliquer ses couleurs et ses symboles"
+        },
+        {
+          "id": "b",
+          "label": "à raconter une histoire"
+        },
+        {
+          "id": "c",
+          "label": "à donner l'heure"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Elle est souvent dans un petit cadre, dans un coin de la carte.",
+      "explanation": "La légende explique ce que veulent dire les couleurs et les symboles de la carte : une route, une forêt, une ville…"
+    },
+    {
+      "skill": "GEO_MAPS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Tu regardes vers le nord. De quel côté se trouve l'est ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "derrière toi"
+        },
+        {
+          "id": "b",
+          "label": "à ta gauche"
+        },
+        {
+          "id": "c",
+          "label": "à ta droite"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Sur une carte avec le nord en haut, où est l'est ?",
+      "explanation": "Quand on regarde le nord, l'est est à droite et l'ouest à gauche. Le soleil se lève à l'est."
+    },
+    {
+      "skill": "GEO_MAPS",
+      "type": "TEXT",
+      "difficulty": 1,
+      "instruction": "Écris le point cardinal qui manque, en un seul mot.",
+      "prompt": "Les quatre points cardinaux sont le nord, l'est, l'ouest et le…",
+      "answer": {
+        "accepted": [
+          "sud",
+          "le sud"
+        ]
+      },
+      "hint": "C'est le contraire du nord.",
+      "explanation": "Les quatre points cardinaux sont le nord, le sud, l'est et l'ouest. Le sud est à l'opposé du nord."
+    },
+    {
+      "skill": "GEO_MAPS",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Sur une carte, 1 cm représente 1 km dans la réalité. Deux villages sont à 3 cm l'un de l'autre sur la carte. Quelle distance les sépare vraiment ?",
+      "unit": "km",
+      "answer": {
+        "number": "3"
+      },
+      "hint": "Chaque centimètre sur la carte vaut 1 kilomètre.",
+      "explanation": "L'échelle dit que 1 cm sur la carte = 1 km en vrai. 3 cm représentent donc 3 km."
+    }
+  ]
+}

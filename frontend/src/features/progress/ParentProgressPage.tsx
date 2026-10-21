@@ -13,7 +13,7 @@ const STATUS: Record<SkillStatus, string> = {
   CONSISTENT: 'Réussites régulières',
 };
 
-const SUBJECTS: Record<string, string> = { MATHS: 'maths', ENGLISH: 'anglais', SCIENCES: 'sciences', PHYSICS: 'technologie' };
+const SUBJECTS: Record<string, string> = { MATHS: 'maths', ENGLISH: 'anglais', GEOMETRY: 'géométrie', GEOGRAPHY: 'géographie', SCIENCES: 'sciences', PHYSICS: 'technologie' };
 
 const STATUS_LABELS: Record<string, string> = { COMPLETED: 'Terminée', IN_PROGRESS: 'En cours', ABANDONED: 'Abandonnée' };
 

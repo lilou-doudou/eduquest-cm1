@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOGRAPHIE-2-2",
+  "world": "archipel-des-explorateurs",
+  "level": 2,
+  "ordinal": 2,
+  "title": "La carte de France",
+  "exercises": [
+    {
+      "skill": "GEO_FRANCE",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quelle est la capitale de la France ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Lyon"
+        },
+        {
+          "id": "b",
+          "label": "Marseille"
+        },
+        {
+          "id": "c",
+          "label": "Paris"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "C'est la ville de la tour Eiffel.",
+      "explanation": "Paris est la capitale de la France : le président de la République et le gouvernement y travaillent."
+    },
+    {
+      "skill": "GEO_FRANCE",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel fleuve traverse Paris ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "la Seine"
+        },
+        {
+          "id": "b",
+          "label": "la Loire"
+        },
+        {
+          "id": "c",
+          "label": "le Rhône"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Les bateaux-mouches naviguent sur ce fleuve, au pied de la tour Eiffel.",
+      "explanation": "La Seine traverse Paris avant de se jeter dans la Manche, au Havre."
+    },
+    {
+      "skill": "GEO_FRANCE",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel est le plus long fleuve de France ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "la Garonne"
+        },
+        {
+          "id": "b",
+          "label": "la Loire"
+        },
+        {
+          "id": "c",
+          "label": "la Seine"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Il est célèbre pour ses nombreux châteaux.",
+      "explanation": "La Loire est le plus long fleuve de France : environ 1 000 km. Elle se jette dans l'océan Atlantique."
+    },
+    {
+      "skill": "GEO_FRANCE",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le mont Blanc, le plus haut sommet de France, se trouve dans…",
+      "options": [
+        {
+          "id": "a",
+          "label": "les Pyrénées"
+        },
+        {
+          "id": "b",
+          "label": "le Massif central"
+        },
+        {
+          "id": "c",
+          "label": "les Alpes"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Ces montagnes sont à l'est de la France, près de la Suisse et de l'Italie.",
+      "explanation": "Le mont Blanc se trouve dans les Alpes. Il mesure plus de 4 800 mètres."
+    },
+    {
+      "skill": "GEO_FRANCE",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quelle mer borde le sud de la France, près de Marseille ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "la mer Méditerranée"
+        },
+        {
+          "id": "b",
+          "label": "la Manche"
+        },
+        {
+          "id": "c",
+          "label": "la mer du Nord"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "C'est une mer chaude où l'on se baigne souvent en été.",
+      "explanation": "La mer Méditerranée borde le sud de la France, de Perpignan à Nice, en passant par Marseille."
+    }
+  ]
+}

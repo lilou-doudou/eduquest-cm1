@@ -97,9 +97,9 @@ jobs:
           test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/api/v1/worlds)" = 401
           set -a; . ./.env; set +a
           docker compose exec -T postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -tAc \
-            "select count(*) from mission_version where status = 'PUBLISHED'" | grep -qx 12
+            "select count(*) from mission_version where status = 'PUBLISHED'" | grep -qx 36
           docker compose exec -T postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -tAc \
-            "select count(*) from exercise e join mission_version v on v.id = e.mission_version_id where v.status = 'PUBLISHED'" | grep -qx 60
+            "select count(*) from exercise e join mission_version v on v.id = e.mission_version_id where v.status = 'PUBLISHED'" | grep -qx 180
       - if: failure()
         run: cat backend.log || true
 

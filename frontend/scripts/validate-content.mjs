@@ -33,7 +33,7 @@ dup(rewards.rewards.map((r) => r.code), 'récompense');
 
 const validateMission = schema('mission');
 const missions = [];
-for (const dir of ['maths', 'english', 'sciences', 'physique']) {
+for (const dir of ['maths', 'english', 'geometrie', 'geographie', 'sciences', 'physique']) {
   for (const name of readdirSync(join(root, dir)).filter((f) => f.endsWith('.json')).sort()) {
     const file = `${dir}/${name}`;
     const m = read(file);

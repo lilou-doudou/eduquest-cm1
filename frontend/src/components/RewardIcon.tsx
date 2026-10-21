@@ -8,6 +8,8 @@ const COLORS: Record<string, string> = {
   WORDS_FRIEND: '#c2569b',
   FOREST_GUARDIAN: '#1f6b3a',
   INVENTOR_GENIUS: '#c96b2a',
+  SHAPES_MASTER: '#5a7fa8',
+  GREAT_EXPLORER: '#c9a23a',
 };
 
 const SLOT_SHAPES: Record<string, ReactElement> = {

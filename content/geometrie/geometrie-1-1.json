@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOMETRIE-1-1",
+  "world": "vallee-des-formes",
+  "level": 1,
+  "ordinal": 1,
+  "title": "Le jardin des figures",
+  "exercises": [
+    {
+      "skill": "GEOM_FIGURES",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quelle figure a 4 côtés de la même longueur et 4 angles droits ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "un triangle"
+        },
+        {
+          "id": "b",
+          "label": "un carré"
+        },
+        {
+          "id": "c",
+          "label": "un cercle"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Pense à la forme d'une case de cahier à petits carreaux.",
+      "explanation": "Le carré a 4 côtés de même longueur et 4 angles droits. Le triangle n'a que 3 côtés et le cercle n'en a aucun."
+    },
+    {
+      "skill": "GEOM_FIGURES",
+      "type": "NUMBER",
+      "difficulty": 1,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien de côtés a un triangle ?",
+      "answer": {
+        "number": "3"
+      },
+      "hint": "« Tri » veut dire trois, comme dans tricycle.",
+      "explanation": "Un triangle a 3 côtés et 3 sommets."
+    },
+    {
+      "skill": "GEOM_FIGURES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Un quadrilatère a 4 angles droits, mais ses côtés ne sont pas tous de la même longueur. C'est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "un losange"
+        },
+        {
+          "id": "b",
+          "label": "un cercle"
+        },
+        {
+          "id": "c",
+          "label": "un rectangle"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Pense à la forme d'une porte ou d'une feuille de papier.",
+      "explanation": "Le rectangle a 4 angles droits. Ses côtés opposés ont la même longueur, mais la longueur et la largeur sont différentes."
+    },
+    {
+      "skill": "GEOM_FIGURES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Dans un cercle, comment s'appelle le segment qui relie le centre à un point du cercle ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "le rayon"
+        },
+        {
+          "id": "b",
+          "label": "le diamètre"
+        },
+        {
+          "id": "c",
+          "label": "le côté"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Comme les rayons d'une roue de vélo, il part du centre.",
+      "explanation": "Le rayon relie le centre à un point du cercle. Le diamètre, lui, traverse tout le cercle en passant par le centre."
+    },
+    {
+      "skill": "GEOM_FIGURES",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Le rayon d'un cercle mesure 4 cm. Combien mesure son diamètre ?",
+      "unit": "cm",
+      "answer": {
+        "number": "8"
+      },
+      "hint": "Le diamètre traverse le cercle : il est fait de deux rayons.",
+      "explanation": "Le diamètre mesure deux fois le rayon : 4 + 4 = 8 cm."
+    }
+  ]
+}

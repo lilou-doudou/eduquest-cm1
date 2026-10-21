@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOMETRIE-3-1",
+  "world": "vallee-des-formes",
+  "level": 3,
+  "ordinal": 1,
+  "title": "Le tour du belvédère",
+  "exercises": [
+    {
+      "skill": "GEOM_PERIMETER",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le périmètre d'une figure, c'est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "la surface coloriée à l'intérieur"
+        },
+        {
+          "id": "b",
+          "label": "le nombre de ses côtés"
+        },
+        {
+          "id": "c",
+          "label": "la longueur de son contour"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Imagine que tu marches tout autour de la figure.",
+      "explanation": "Le périmètre est la longueur du tour de la figure : on additionne les longueurs de tous ses côtés."
+    },
+    {
+      "skill": "GEOM_PERIMETER",
+      "type": "NUMBER",
+      "difficulty": 1,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un carré a des côtés de 5 cm. Quel est son périmètre ?",
+      "unit": "cm",
+      "answer": {
+        "number": "20"
+      },
+      "hint": "Un carré a 4 côtés de même longueur.",
+      "explanation": "Le périmètre du carré est 5 + 5 + 5 + 5 = 4 × 5 = 20 cm."
+    },
+    {
+      "skill": "GEOM_PERIMETER",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un rectangle mesure 6 cm de long et 3 cm de large. Quel est son périmètre ?",
+      "unit": "cm",
+      "answer": {
+        "number": "18"
+      },
+      "hint": "Il y a 2 longueurs et 2 largeurs.",
+      "explanation": "Le périmètre est 6 + 3 + 6 + 3 = 18 cm."
+    },
+    {
+      "skill": "GEOM_PERIMETER",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un triangle a des côtés de 4 cm, 5 cm et 6 cm. Quel est son périmètre ?",
+      "unit": "cm",
+      "answer": {
+        "number": "15"
+      },
+      "hint": "Additionne les longueurs des 3 côtés.",
+      "explanation": "Le périmètre est 4 + 5 + 6 = 15 cm."
+    },
+    {
+      "skill": "GEOM_PERIMETER",
+      "type": "NUMBER",
+      "difficulty": 3,
+      "instruction": "Écris un nombre.",
+      "prompt": "Le périmètre d'un carré est de 24 cm. Combien mesure un de ses côtés ?",
+      "unit": "cm",
+      "answer": {
+        "number": "6"
+      },
+      "hint": "Les 4 côtés sont égaux : quel nombre multiplié par 4 donne 24 ?",
+      "explanation": "Le carré a 4 côtés égaux : 24 ÷ 4 = 6 cm, car 4 × 6 = 24."
+    }
+  ]
+}

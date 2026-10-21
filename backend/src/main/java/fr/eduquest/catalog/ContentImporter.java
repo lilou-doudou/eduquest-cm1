@@ -37,7 +37,7 @@ public class ContentImporter {
     private static final Set<String> RULE_TYPES = Set.of("FIRST_STAR", "FIRST_THREE_STARS", "WORLD_COMPLETED", "LEVEL_COMPLETED", "RANK_REACHED");
     private static final Set<String> SLOTS = Set.of("HEAD", "BACK", "COMPANION");
     /** Un dossier de missions par monde jouable. */
-    public static final List<String> MISSION_DIRS = List.of("maths", "english", "sciences", "physique");
+    public static final List<String> MISSION_DIRS = List.of("maths", "english", "geometrie", "geographie", "sciences", "physique");
     /** Monde jouable : 3 niveaux × 2 missions × 5 exercices. */
     static final int MISSIONS_PER_WORLD = 6;
     static final int EXERCISES_PER_MISSION = 5;

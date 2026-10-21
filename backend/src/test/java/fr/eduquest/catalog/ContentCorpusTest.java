@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/** Valide le corpus réel sans base de données : 4 mondes jouables × 6 missions × 5 exercices. */
+/** Valide le corpus réel sans base de données : 6 mondes jouables × 6 missions × 5 exercices. */
 class ContentCorpusTest {
     private final ContentImporter importer = new ContentImporter(null, JsonMapper.builder().build(), Clock.systemUTC());
 
@@ -26,7 +26,8 @@ class ContentCorpusTest {
         }
         assertThat(missionsPerWorld).containsOnly(
                 Map.entry("iles-des-nombres", 6), Map.entry("royaume-des-mots", 6),
+                Map.entry("vallee-des-formes", 6), Map.entry("archipel-des-explorateurs", 6),
                 Map.entry("foret-du-vivant", 6), Map.entry("cite-des-inventeurs", 6));
-        assertThat(exercises).isEqualTo(120);
+        assertThat(exercises).isEqualTo(180);
     }
 }

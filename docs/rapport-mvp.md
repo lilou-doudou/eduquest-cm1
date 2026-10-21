@@ -38,7 +38,7 @@ Précisions honnêtes :
 | 5. Concurrence | `Concurrency.simultaneousCompletionsGiveOneGainAndOneRewardEach` (+ démarrages et réponses simultanés) |
 | 6. Reprise | `MissionFlow.interruptedMissionResumesAtThirdQuestionAfterReconnection`, E2E (pause, rechargement, « Reprendre ») |
 | 7. Contournement | `MissionFlow.bypassAttemptsAreRefused` |
-| 8. Mondes futurs | `MissionFlow.comingSoonWorldsAreVisibleButNotPlayable`, E2E sans WebGL |
+| 8. Mondes futurs | Les six mondes sont désormais jouables : `MissionFlow.allSixWorldsArePlayable` ; le refus `WORLD_NOT_AVAILABLE` reste dans `AttemptService` pour un futur monde |
 | 9. Fallback | E2E `no-webgl.spec.ts` (carte 2D au clavier), `accessibilite.spec.ts` (mission au clavier, animations réduites), mission complète en mobile |
 | 10. Données | `Privacy.exportContainsFamilyDataButNoSecret`, `accountDeletionRemovesEverythingOfThatFamilyOnly`, E2E export puis suppression |
 | 11. Contenus | `ContentVersioning.newVersionDoesNotAlterAttemptInProgressNorXpCeiling` |

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOMETRIE-2-2",
+  "world": "vallee-des-formes",
+  "level": 2,
+  "ordinal": 2,
+  "title": "La tour des solides",
+  "exercises": [
+    {
+      "skill": "GEOM_SOLIDS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Un dé à jouer a la forme…",
+      "options": [
+        {
+          "id": "a",
+          "label": "d'une boule"
+        },
+        {
+          "id": "b",
+          "label": "d'un cube"
+        },
+        {
+          "id": "c",
+          "label": "d'un cylindre"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Toutes ses faces sont des carrés.",
+      "explanation": "Un dé est un cube : un solide dont les 6 faces sont des carrés de même taille."
+    },
+    {
+      "skill": "GEOM_SOLIDS",
+      "type": "NUMBER",
+      "difficulty": 1,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien de faces a un cube ?",
+      "answer": {
+        "number": "6"
+      },
+      "hint": "Sur un dé, compte les faces numérotées de 1 à …",
+      "explanation": "Un cube a 6 faces carrées, comme un dé qui va de 1 à 6."
+    },
+    {
+      "skill": "GEOM_SOLIDS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Une boîte de conserve a la forme d'un…",
+      "options": [
+        {
+          "id": "a",
+          "label": "cylindre"
+        },
+        {
+          "id": "b",
+          "label": "cube"
+        },
+        {
+          "id": "c",
+          "label": "cône"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Elle a deux disques, un dessus et un dessous, et elle peut rouler.",
+      "explanation": "La boîte de conserve est un cylindre : deux faces en forme de disque reliées par une surface qui peut rouler."
+    },
+    {
+      "skill": "GEOM_SOLIDS",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien de sommets a un cube ?",
+      "answer": {
+        "number": "8"
+      },
+      "hint": "Un sommet, c'est un coin. Compte ceux du dessus, puis ceux du dessous.",
+      "explanation": "Un cube a 4 sommets en haut et 4 en bas : 4 + 4 = 8 sommets."
+    },
+    {
+      "skill": "GEOM_SOLIDS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Une brique a 6 faces rectangulaires. C'est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "un pavé droit"
+        },
+        {
+          "id": "b",
+          "label": "une pyramide"
+        },
+        {
+          "id": "c",
+          "label": "une boule"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Ce solide ressemble à une boîte à chaussures.",
+      "explanation": "Un solide à 6 faces rectangulaires est un pavé droit, comme une brique ou une boîte à chaussures."
+    }
+  ]
+}

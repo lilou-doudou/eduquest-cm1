@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOGRAPHIE-3-1",
+  "world": "archipel-des-explorateurs",
+  "level": 3,
+  "ordinal": 1,
+  "title": "Habiter et travailler",
+  "exercises": [
+    {
+      "skill": "GEO_LIVING",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "La mairie est le bâtiment où…",
+      "options": [
+        {
+          "id": "a",
+          "label": "on achète du pain"
+        },
+        {
+          "id": "b",
+          "label": "travaillent le maire et les services de la commune"
+        },
+        {
+          "id": "c",
+          "label": "on soigne les animaux"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "On y va pour un mariage, une carte d'identité ou inscrire un enfant à l'école.",
+      "explanation": "La mairie est le bâtiment de la commune : le maire, le conseil municipal et des agents y travaillent pour les habitants."
+    },
+    {
+      "skill": "GEO_LIVING",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Où peut-on emprunter des livres gratuitement ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "à la médiathèque"
+        },
+        {
+          "id": "b",
+          "label": "à la boulangerie"
+        },
+        {
+          "id": "c",
+          "label": "à la gare"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "C'est aussi appelé une bibliothèque.",
+      "explanation": "À la médiathèque, ou bibliothèque, on peut lire et emprunter des livres, des films et de la musique."
+    },
+    {
+      "skill": "GEO_LIVING",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Où les habitants vont-ils se faire soigner en cas d'urgence ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "au stade"
+        },
+        {
+          "id": "b",
+          "label": "au musée"
+        },
+        {
+          "id": "c",
+          "label": "à l'hôpital"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Les ambulances y conduisent les malades et les blessés.",
+      "explanation": "L'hôpital accueille les malades et les blessés, de jour comme de nuit. C'est un service important pour les habitants."
+    },
+    {
+      "skill": "GEO_LIVING",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Marc habite à la campagne et travaille en ville. Quel moyen de transport pollue le moins pour faire ce trajet chaque jour ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "l'avion"
+        },
+        {
+          "id": "b",
+          "label": "le train"
+        },
+        {
+          "id": "c",
+          "label": "la voiture, seul"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Un seul véhicule transporte beaucoup de personnes à la fois.",
+      "explanation": "Le train transporte beaucoup de voyageurs en même temps : il pollue beaucoup moins par personne que la voiture où l'on est seul."
+    },
+    {
+      "skill": "GEO_LIVING",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "La personne élue par les habitants pour diriger une commune s'appelle le…",
+      "answer": {
+        "accepted": [
+          "maire",
+          "le maire",
+          "la maire"
+        ]
+      },
+      "hint": "Ce mot se prononce comme « mer » et « mère ».",
+      "explanation": "Le maire est élu par le conseil municipal, lui-même élu par les habitants. Il dirige la commune avec le conseil municipal."
+    }
+  ]
+}
