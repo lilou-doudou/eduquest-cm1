@@ -48,7 +48,8 @@ services:
   backend:
     image: eduquest-backend:prod
     environment: *backend-env
-    mem_limit: 1536m
+    # Tient sur un serveur de 2 Go (Droplet DigitalOcean Basic) avec PostgreSQL, nginx et Caddy.
+    mem_limit: 1g
     depends_on: { content-import: { condition: service_completed_successfully } }
     restart: unless-stopped
     logging: *logging

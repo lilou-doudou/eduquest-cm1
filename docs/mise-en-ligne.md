@@ -6,14 +6,14 @@ Sur ton Mac, l'application tourne « en local » : seule ta machine peut l'ouvri
 
 | Élément | Rôle | Proposition | Coût indicatif |
 |---|---|---|---|
-| Serveur (VPS) | Ordinateur en ligne 24 h/24 qui fait tourner l'application | **Hetzner Cloud**, modèle partagé x86 le moins cher avec **4 Go de RAM** (gamme CX), en Allemagne ou Finlande | environ 4 à 5 € / mois |
+| Serveur (VPS) | Ordinateur en ligne 24 h/24 qui fait tourner l'application | **Droplet DigitalOcean** « Basic », **2 Go de RAM**, région Francfort ou Amsterdam | environ 12 $ / mois |
 | Nom de domaine | L'adresse du site, par ex. `eduquest-famille.fr` | OVHcloud, Gandi, Infomaniak… | environ 7 à 15 € / an |
 | Envoi d'e-mails | Validation des comptes parents, mot de passe oublié | **Brevo** (entreprise française), offre gratuite | 0 € (300 e-mails / jour) |
-| Sauvegardes du serveur (conseillé) | Copie complète du serveur chaque jour | option « Backups » de Hetzner | + 20 % du prix du serveur |
+| Sauvegardes du serveur (conseillé) | Copie complète du serveur chaque jour | option « Backups » du Droplet | + 20 % du prix du Droplet (environ 2,40 $) |
 
-**Total : environ 6 € par mois.** Vérifie les prix sur les sites au moment de commander, ils changent de temps en temps.
+**Total : environ 13 à 15 € par mois** (Droplet, sauvegardes, domaine). Vérifie les prix affichés au moment de commander, ils changent de temps en temps.
 
-Alternative équivalente : un VPS **OVHcloud** (serveurs en France, environ 5 à 7 € / mois). Toute la suite du guide fonctionne pareil, seule l'étape 2 change d'écran.
+Tu as déjà un compte DigitalOcean, c'est donc le plus simple. Si un jour tu veux payer moins, un VPS Hetzner (environ 4 à 5 € / mois pour 4 Go) ou OVHcloud fonctionne exactement pareil : seule l'étape 2 change d'écran.
 
 Pourquoi ce choix : un seul petit serveur en Europe fait tourner l'application exactement comme sur ton Mac (mêmes conteneurs Docker), le HTTPS est automatique et gratuit, et les données des enfants restent dans l'Union européenne.
 
@@ -46,17 +46,17 @@ Appuie sur Entrée à chaque question (tu peux choisir une phrase de passe, c'es
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-## Étape 2 : louer le serveur (10 min)
+## Étape 2 : créer le Droplet DigitalOcean (10 min)
 
-1. Crée un compte sur [hetzner.com/cloud](https://www.hetzner.com/cloud) (une vérification d'identité peut être demandée).
-2. Dans la console, crée un projet « EduQuest », puis **Add Server** :
-   - **Location** : Nuremberg, Falkenstein ou Helsinki (Union européenne) ;
-   - **Image** : Ubuntu 24.04 ;
-   - **Type** : Shared vCPU, x86, le moins cher avec **4 Go de RAM** ;
-   - **SSH keys** : « Add SSH key », colle (Cmd+V) ce que tu as copié à l'étape 1 ;
-   - **Backups** : coche-le si tu veux la copie quotidienne du serveur ;
-   - nom : `eduquest`, puis **Create & Buy now**.
-3. Note l'**adresse IPv4** affichée (par ex. `203.0.113.10`).
+1. Connecte-toi à [cloud.digitalocean.com](https://cloud.digitalocean.com), puis **Create** (en haut à droite) → **Droplets**.
+2. Remplis la page :
+   - **Region** : Frankfurt ou Amsterdam (Union européenne) ;
+   - **Image** : Ubuntu **24.04 (LTS) x64** (onglet OS, pas « Marketplace ») ;
+   - **Size** : Basic → Regular → **2 GB / 1 CPU** (environ 12 $ / mois). Si l'application te semble lente plus tard, tu pourras passer à 4 GB en deux clics (« Resize ») ;
+   - **Authentication** : **SSH Key** → « New SSH Key », colle (Cmd+V) ce que tu as copié à l'étape 1 ;
+   - **Backups** : active-le si tu veux une copie automatique du serveur ;
+   - **Hostname** : `eduquest`, puis **Create Droplet**.
+3. Note l'**adresse IPv4** affichée à côté du Droplet (par ex. `203.0.113.10`).
 
 ## Étape 3 : acheter le nom de domaine et le relier au serveur (10 min, puis attente)
 
@@ -104,7 +104,7 @@ Puis lance l'application :
 ./deploy/demarrer.sh
 ```
 
-La première fois, la construction prend 5 à 10 minutes. À la fin, le script affiche :
+La première fois, la construction prend 10 à 15 minutes. À la fin, le script affiche :
 
 ```
 EduQuest est en ligne : https://eduquest-famille.fr
@@ -126,7 +126,7 @@ Pour te déconnecter du serveur : `exit`.
 | Restaurer une sauvegarde (efface les données actuelles) | `./deploy/restaurer.sh /var/backups/eduquest/<fichier>` |
 | Changer un réglage (e-mail…) | `nano deploy/prod.env` puis `./deploy/demarrer.sh --local` |
 
-Les sauvegardes de `/var/backups/eduquest` sont sur le même serveur : l'option « Backups » de Hetzner (ou une copie régulière sur ton Mac avec `scp root@IP:/var/backups/eduquest/* .`) protège aussi contre la perte du serveur.
+Les sauvegardes de `/var/backups/eduquest` sont sur le même serveur : l'option « Backups » du Droplet (ou une copie régulière sur ton Mac avec `scp root@IP:/var/backups/eduquest/* .`) protège aussi contre la perte du serveur.
 
 ## En cas de problème
 
