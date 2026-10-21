@@ -31,8 +31,11 @@ test('carte 2D de repli et verrouillage des mondes', async ({ page }) => {
   await expect(page.getByText('Verrouillée : obtiens au moins une étoile à la mission précédente.').first()).toBeVisible();
   await expect(page.getByRole('link', { name: 'Jouer' })).toHaveCount(1);
 
-  // Un monde non jouable reste consultable mais n'offre aucune mission.
+  // Les six mondes sont jouables : aucun n'est verrouillé et chacun s'ouvre sur sa première mission.
   await page.getByRole('link', { name: '← Retour à la carte' }).click();
-  await page.locator('.world-list .is-locked').first().getByRole('link').click();
-  await expect(page.getByText('Ce monde est en préparation.', { exact: false })).toBeVisible();
+  await expect(page.locator('.world-list > li')).toHaveCount(6);
+  await expect(page.locator('.world-list .is-locked')).toHaveCount(0);
+  await page.locator('.world-list').getByRole('link', { name: 'La Forêt du Vivant' }).click();
+  await expect(page.getByRole('heading', { name: 'La Forêt du Vivant', level: 1 })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Jouer' })).toHaveCount(1);
 });
