@@ -39,6 +39,21 @@ class ConcurrencyIntegrationTest extends IntegrationTest {
     }
 
     @Test
+    void simultaneousPasswordResetsConsumeTheTokenOnlyOnce() throws Exception {
+        String email = uniqueEmail("reset-concurrent");
+        createVerifiedParent(email);
+        ApiClient requester = client();
+        assertThat(requester.post("/auth/forgot-password", Map.of("email", email)).status()).isEqualTo(202);
+        String token = mail.lastToken(email, "reinitialiser-mot-de-passe").orElseThrow();
+        List<ApiClient.Response> results = concurrently(4, () -> client().post("/auth/reset-password",
+                Map.of("token", token, "newPassword", "nouveau mot de passe concurrent")));
+        assertThat(results).filteredOn(r -> r.status() == 204).hasSize(1);
+        assertThat(results).filteredOn(r -> "INVALID_TOKEN".equals(r.code())).hasSize(3);
+        assertThat(client().post("/auth/login", Map.of("email", email,
+                "password", "nouveau mot de passe concurrent")).status()).isEqualTo(200);
+    }
+
+    @Test
     void simultaneousCompletionsGiveOneGainAndOneRewardEach() throws Exception {
         Family f = newFamily("concurrence");
         ApiClient c = f.client();

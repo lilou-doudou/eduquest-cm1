@@ -95,6 +95,7 @@ function Attempt({ attemptId, onFinished }: { attemptId: string; onFinished: (id
 
   const next = async () => {
     const result = await attempt.refetch();
+    if (result.isError) return;
     setCorrection(null);
     setHint(null);
     answer.reset();
@@ -198,6 +199,7 @@ function Attempt({ attemptId, onFinished }: { attemptId: string; onFinished: (id
               {correction.readyToComplete ? 'Voir mon bilan' : 'Question suivante'}
             </button>
           )}
+          {attempt.error && <ErrorMessage error={attempt.error} onRetry={next} />}
           {complete.error && <ErrorMessage error={complete.error} onRetry={() => complete.mutate()} />}
         </article>
       )}

@@ -26,7 +26,7 @@ export function useSessionChanged() {
   const qc = useQueryClient();
   return async () => {
     resetCsrf();
-    qc.removeQueries({ predicate: (q) => q.queryKey[0] !== 'me' });
+    qc.removeQueries({ predicate: (q) => !(q.queryKey.length === 1 && q.queryKey[0] === 'me') });
     await qc.invalidateQueries({ queryKey: ME_KEY });
     await qc.refetchQueries({ queryKey: ME_KEY });
   };

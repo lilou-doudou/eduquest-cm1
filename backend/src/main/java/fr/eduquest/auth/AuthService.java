@@ -103,7 +103,7 @@ public class AuthService {
     @Transactional
     public void verifyEmail(String rawToken) {
         Instant now = clock.instant();
-        AccountToken token = tokens.findByTokenHash(Hashing.sha256Hex(rawToken))
+        AccountToken token = tokens.findByTokenHashForUpdate(Hashing.sha256Hex(rawToken))
                 .filter(t -> t.getType() == AccountToken.Type.VERIFY_EMAIL && t.isUsable(now))
                 .orElseThrow(() -> ApiException.badRequest("INVALID_TOKEN", "Ce lien n'est plus valide. Demande un nouveau lien."));
         token.markUsed(now);
@@ -171,7 +171,7 @@ public class AuthService {
     public void resetPassword(String rawToken, String newPassword, String ip) {
         rateLimiter.consumePerIp("reset", ip, 20, Duration.ofHours(1));
         Instant now = clock.instant();
-        AccountToken token = tokens.findByTokenHash(Hashing.sha256Hex(rawToken))
+        AccountToken token = tokens.findByTokenHashForUpdate(Hashing.sha256Hex(rawToken))
                 .filter(t -> t.getType() == AccountToken.Type.RESET_PASSWORD && t.isUsable(now))
                 .orElseThrow(() -> ApiException.badRequest("INVALID_TOKEN", "Ce lien n'est plus valide. Demande un nouveau lien."));
         token.markUsed(now);
