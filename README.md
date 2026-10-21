@@ -118,6 +118,7 @@ scripts/    démarrage, import, E2E, mesure de charge
 - [Sécurité et données personnelles](docs/security-privacy.md)
 - [Écrire et versionner les contenus](docs/content-authoring.md)
 - [Licences des ressources](docs/assets-licenses.md)
+- [Mettre l'application en ligne (pas à pas)](docs/mise-en-ligne.md)
 - [Déploiement et exploitation](docs/deployment.md)
 - [Checklist de revue](docs/review-checklist.md)
 - [Rapport de livraison du MVP](docs/rapport-mvp.md) et [captures d'écran](docs/screenshots/)

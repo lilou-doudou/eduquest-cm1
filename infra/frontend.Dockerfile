@@ -10,6 +10,7 @@ RUN npm run build
 FROM nginxinc/nginx-unprivileged:1.29-alpine
 COPY infra/security-headers.conf /etc/nginx/security-headers.conf
 COPY infra/nginx.conf /etc/nginx/conf.d/default.conf
+COPY infra/nginx-security-headers.conf /etc/nginx/snippets/security-headers.conf
 COPY --from=build /src/dist /usr/share/nginx/html
 EXPOSE 8081
 HEALTHCHECK --interval=15s --timeout=3s CMD wget -qO- http://127.0.0.1:8081/ >/dev/null || exit 1
