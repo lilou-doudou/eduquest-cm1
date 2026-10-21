@@ -1,0 +1,12 @@
+# Production : derrière un reverse proxy HTTPS, même origine pour le frontend et l'API.
+server:
+  forward-headers-strategy: native
+  servlet:
+    session:
+      cookie:
+        secure: true
+eduquest:
+  security:
+    hsts: true
+  auth:
+    require-verified-email: true

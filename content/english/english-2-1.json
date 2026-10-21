@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "code": "ENGLISH-2-1", "world": "royaume-des-mots", "level": 2, "ordinal": 1,
+  "title": "Compter les moutons",
+  "exercises": [
+    {
+      "skill": "EN_NUMBERS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne écriture.",
+      "prompt": "Comment écrit-on 3 en anglais ?",
+      "options": [ { "id": "a", "label": "three" }, { "id": "b", "label": "tree" }, { "id": "c", "label": "thirty" } ],
+      "answer": { "optionId": "a" },
+      "hint": "Attention : « tree » est un arbre et « thirty » est un grand nombre.",
+      "explanation": "3 se dit « three ». « Tree » veut dire « arbre » et « thirty » veut dire 30."
+    },
+    {
+      "skill": "EN_NUMBERS", "type": "TEXT", "difficulty": 1,
+      "instruction": "Écris le nombre en lettres, en anglais.",
+      "prompt": "Écris le nombre 7 en anglais.",
+      "answer": { "accepted": [ "seven" ] },
+      "hint": "Il commence par « s » et finit par « n ».",
+      "explanation": "7 se dit « seven »."
+    },
+    {
+      "skill": "EN_NUMBERS", "type": "MCQ", "difficulty": 2,
+      "instruction": "Choisis le bon nombre.",
+      "prompt": "Que veut dire « twelve » ?",
+      "options": [ { "id": "a", "label": "2" }, { "id": "b", "label": "12" }, { "id": "c", "label": "20" } ],
+      "answer": { "optionId": "b" },
+      "hint": "Ce nombre vient juste après « eleven » (11).",
+      "explanation": "« Twelve » signifie 12. 2 se dit « two » et 20 se dit « twenty »."
+    },
+    {
+      "skill": "EN_NUMBERS", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Écris le nombre en chiffres.",
+      "prompt": "fifteen",
+      "answer": { "number": "15" },
+      "hint": "« Five » veut dire 5. Les nombres en « -teen » sont entre 13 et 19.",
+      "explanation": "« Fifteen » signifie 15."
+    },
+    {
+      "skill": "EN_NUMBERS", "type": "TEXT", "difficulty": 1,
+      "instruction": "Écris le nombre en lettres, en anglais.",
+      "prompt": "Écris le nombre 10 en anglais.",
+      "answer": { "accepted": [ "ten" ] },
+      "hint": "C'est un mot de trois lettres.",
+      "explanation": "10 se dit « ten »."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "code": "MATHS-3-1", "world": "iles-des-nombres", "level": 3, "ordinal": 1,
+  "title": "Le chemin des énigmes",
+  "exercises": [
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Lis le problème puis réponds.",
+      "prompt": "Léa a 125 cartes. Elle en gagne 38. Combien de cartes a-t-elle maintenant ?",
+      "unit": "cartes",
+      "answer": { "number": "163" },
+      "hint": "Elle en gagne : le nombre de cartes augmente.",
+      "explanation": "On ajoute : 125 + 38 = 163. Léa a maintenant 163 cartes."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Lis le problème puis réponds.",
+      "prompt": "Un car transporte 52 enfants. 17 enfants descendent au premier arrêt. Combien d'enfants restent dans le car ?",
+      "unit": "enfants",
+      "answer": { "number": "35" },
+      "hint": "Des enfants descendent : le nombre d'enfants dans le car diminue.",
+      "explanation": "On enlève : 52 − 17 = 35. Il reste 35 enfants dans le car."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Lis le problème puis réponds.",
+      "prompt": "Un paquet contient 8 biscuits. Combien de biscuits y a-t-il dans 7 paquets ?",
+      "unit": "biscuits",
+      "answer": { "number": "56" },
+      "hint": "7 paquets de 8, c'est 7 fois 8.",
+      "explanation": "7 × 8 = 56. Il y a 56 biscuits."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis l'opération qui permet de résoudre le problème.",
+      "prompt": "Tom a 30 €. Il achète un livre à 12 €. Quelle opération permet de trouver ce qu'il lui reste ?",
+      "options": [ { "id": "a", "label": "30 + 12" }, { "id": "b", "label": "30 − 12" }, { "id": "c", "label": "30 × 12" } ],
+      "answer": { "optionId": "b" },
+      "hint": "Quand Tom paie, son argent diminue.",
+      "explanation": "Tom dépense 12 € : on soustrait. 30 − 12 = 18, il lui reste 18 €."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Lis le problème puis réponds.",
+      "prompt": "Dans une classe, il y a 4 rangées de 6 tables. Combien y a-t-il de tables en tout ?",
+      "unit": "tables",
+      "answer": { "number": "24" },
+      "hint": "4 rangées identiques de 6 tables : pense à la multiplication.",
+      "explanation": "4 × 6 = 24. Il y a 24 tables."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "code": "ENGLISH-3-2", "world": "royaume-des-mots", "level": 3, "ordinal": 2,
+  "title": "Les phrases du château",
+  "exercises": [
+    {
+      "skill": "EN_SENTENCES", "type": "MCQ", "difficulty": 2,
+      "instruction": "Choisis le mot qui complète la phrase.",
+      "prompt": "I ___ ten years old.",
+      "options": [ { "id": "a", "label": "am" }, { "id": "b", "label": "is" }, { "id": "c", "label": "are" } ],
+      "answer": { "optionId": "a" },
+      "hint": "Avec « I » (je), on utilise toujours la même forme du verbe « be ».",
+      "explanation": "On dit « I am ten years old » : « J'ai dix ans ». Avec « I », le verbe « be » devient « am »."
+    },
+    {
+      "skill": "EN_SENTENCES", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Que veut dire « I like apples » ?",
+      "options": [ { "id": "a", "label": "J'aime les pommes." }, { "id": "b", "label": "J'ai des pommes." }, { "id": "c", "label": "Je mange une pomme." } ],
+      "answer": { "optionId": "a" },
+      "hint": "« Like » veut dire « aimer ».",
+      "explanation": "« I like apples » signifie « J'aime les pommes »."
+    },
+    {
+      "skill": "EN_SENTENCES", "type": "TEXT", "difficulty": 2,
+      "instruction": "Complète la phrase avec une couleur en anglais (jaune).",
+      "prompt": "The banana is ___.",
+      "answer": { "accepted": [ "yellow" ] },
+      "hint": "Tu as appris cette couleur dans le village des couleurs.",
+      "explanation": "« The banana is yellow » : « La banane est jaune »."
+    },
+    {
+      "skill": "EN_SENTENCES", "type": "MCQ", "difficulty": 2,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Comment dit-on « J'ai un chien » ?",
+      "options": [ { "id": "a", "label": "I am a dog." }, { "id": "b", "label": "I have a dog." }, { "id": "c", "label": "I like a dog." } ],
+      "answer": { "optionId": "b" },
+      "hint": "« Avoir » se dit « have ».",
+      "explanation": "« I have a dog » signifie « J'ai un chien ». « I am a dog » voudrait dire « Je suis un chien » !"
+    },
+    {
+      "skill": "EN_SENTENCES", "type": "TEXT", "difficulty": 3,
+      "instruction": "Complète la consigne « Assieds-toi, s'il te plaît » avec un mot anglais.",
+      "prompt": "Sit ___, please.",
+      "answer": { "accepted": [ "down" ] },
+      "hint": "Le mot veut dire « en bas ».",
+      "explanation": "« Sit down, please » signifie « Assieds-toi, s'il te plaît »."
+    }
+  ]
+}

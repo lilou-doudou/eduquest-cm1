@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "worlds": [
+    {
+      "slug": "iles-des-nombres", "title": "Les Îles des Nombres", "subjectCode": "MATHS", "displayOrder": 1,
+      "availability": "PLAYABLE", "assetKey": "world-numbers",
+      "description": "Navigue d'île en île en calculant : nombres entiers, opérations et petits problèmes.",
+      "levels": [
+        { "ordinal": 1, "title": "Le port des nombres" },
+        { "ordinal": 2, "title": "La forêt des tables" },
+        { "ordinal": 3, "title": "Le sommet des problèmes" }
+      ]
+    },
+    {
+      "slug": "royaume-des-mots", "title": "Le Royaume des Mots", "subjectCode": "ENGLISH", "displayOrder": 2,
+      "availability": "PLAYABLE", "assetKey": "world-words",
+      "description": "Découvre tes premiers mots d'anglais : salutations, couleurs, nombres, animaux et classe.",
+      "levels": [
+        { "ordinal": 1, "title": "Le village des couleurs" },
+        { "ordinal": 2, "title": "La ferme des nombres" },
+        { "ordinal": 3, "title": "Le château de l'école" }
+      ]
+    },
+    {
+      "slug": "vallee-des-formes", "title": "La Vallée des Formes", "subjectCode": "GEOMETRY", "displayOrder": 3,
+      "availability": "COMING_SOON", "assetKey": "world-shapes",
+      "description": "Figures, angles droits, symétrie et repérage. Bientôt disponible.", "levels": []
+    },
+    {
+      "slug": "archipel-des-explorateurs", "title": "L'Archipel des Explorateurs", "subjectCode": "GEOGRAPHY", "displayOrder": 4,
+      "availability": "COMING_SOON", "assetKey": "world-geography",
+      "description": "Cartes, paysages et territoires. Bientôt disponible.", "levels": []
+    },
+    {
+      "slug": "foret-du-vivant", "title": "La Forêt du Vivant", "subjectCode": "SCIENCES", "displayOrder": 5,
+      "availability": "COMING_SOON", "assetKey": "world-life",
+      "description": "Le vivant, l'environnement et les besoins des êtres vivants. Bientôt disponible.", "levels": []
+    },
+    {
+      "slug": "cite-des-inventeurs", "title": "La Cité des Inventeurs", "subjectCode": "PHYSICS", "displayOrder": 6,
+      "availability": "COMING_SOON", "assetKey": "world-inventors",
+      "description": "Matière, mouvement, énergie et objets techniques. Bientôt disponible.", "levels": []
+    }
+  ],
+  "skills": [
+    { "code": "MATH_NUMERATION", "subjectCode": "MATHS", "label": "Numération", "description": "Lire, écrire, décomposer et comparer les nombres entiers." },
+    { "code": "MATH_ADD_SUB", "subjectCode": "MATHS", "label": "Addition et soustraction", "description": "Calculer des sommes et des différences de nombres entiers." },
+    { "code": "MATH_MULT", "subjectCode": "MATHS", "label": "Multiplication", "description": "Tables de multiplication et produits simples." },
+    { "code": "MATH_DIV", "subjectCode": "MATHS", "label": "Partage exact", "description": "Partager en parts égales, division exacte." },
+    { "code": "MATH_PROBLEMS", "subjectCode": "MATHS", "label": "Problèmes", "description": "Résoudre des problèmes à une ou deux étapes." },
+    { "code": "EN_GREETINGS", "subjectCode": "ENGLISH", "label": "Salutations", "description": "Saluer, remercier, se présenter." },
+    { "code": "EN_COLORS", "subjectCode": "ENGLISH", "label": "Couleurs", "description": "Nommer les couleurs courantes." },
+    { "code": "EN_NUMBERS", "subjectCode": "ENGLISH", "label": "Nombres", "description": "Les nombres de 1 à 20 en anglais." },
+    { "code": "EN_ANIMALS", "subjectCode": "ENGLISH", "label": "Animaux", "description": "Nommer des animaux familiers." },
+    { "code": "EN_CLASSROOM", "subjectCode": "ENGLISH", "label": "La classe", "description": "Objets et consignes de la classe." },
+    { "code": "EN_SENTENCES", "subjectCode": "ENGLISH", "label": "Phrases simples", "description": "Comprendre et compléter des phrases très simples." }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "code": "ENGLISH-1-1", "world": "royaume-des-mots", "level": 1, "ordinal": 1,
+  "title": "Hello, le village !",
+  "exercises": [
+    {
+      "skill": "EN_GREETINGS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Comment dit-on « bonjour » en anglais ?",
+      "options": [ { "id": "a", "label": "hello" }, { "id": "b", "label": "goodbye" }, { "id": "c", "label": "thank you" } ],
+      "answer": { "optionId": "a" },
+      "hint": "C'est le mot que l'on dit en arrivant.",
+      "explanation": "« Hello » signifie « bonjour ». « Goodbye » veut dire « au revoir » et « thank you » veut dire « merci »."
+    },
+    {
+      "skill": "EN_GREETINGS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Que veut dire « goodbye » ?",
+      "options": [ { "id": "a", "label": "merci" }, { "id": "b", "label": "au revoir" }, { "id": "c", "label": "bonjour" } ],
+      "answer": { "optionId": "b" },
+      "hint": "On dit ce mot quand on s'en va.",
+      "explanation": "« Goodbye » signifie « au revoir »."
+    },
+    {
+      "skill": "EN_GREETINGS", "type": "TEXT", "difficulty": 1,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « merci » en anglais.",
+      "answer": { "accepted": [ "thank you", "thanks" ] },
+      "hint": "Il commence par « th… ».",
+      "explanation": "« Merci » se dit « thank you » (ou plus simplement « thanks »)."
+    },
+    {
+      "skill": "EN_GREETINGS", "type": "MCQ", "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quelqu'un te demande « How are you? ». Que peux-tu répondre ?",
+      "options": [ { "id": "a", "label": "I'm fine, thank you." }, { "id": "b", "label": "My name is blue." }, { "id": "c", "label": "Goodbye, hello." } ],
+      "answer": { "optionId": "a" },
+      "hint": "« How are you? » veut dire « Comment vas-tu ? ».",
+      "explanation": "« I'm fine, thank you » signifie « Je vais bien, merci ». C'est la réponse à « How are you? »."
+    },
+    {
+      "skill": "EN_GREETINGS", "type": "MCQ", "difficulty": 2,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Comment dit-on « Je m'appelle Léo » ?",
+      "options": [ { "id": "a", "label": "How are you, Léo?" }, { "id": "b", "label": "Goodbye, Léo." }, { "id": "c", "label": "My name is Léo." } ],
+      "answer": { "optionId": "c" },
+      "hint": "« Name » veut dire « nom ».",
+      "explanation": "« My name is Léo » signifie « Mon nom est Léo », c'est-à-dire « Je m'appelle Léo »."
+    }
+  ]
+}

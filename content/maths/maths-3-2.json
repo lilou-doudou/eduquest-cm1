@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "code": "MATHS-3-2", "world": "iles-des-nombres", "level": 3, "ordinal": 2,
+  "title": "Le trésor du sommet",
+  "exercises": [
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Problème en deux étapes. Réponds en euros.",
+      "prompt": "Sami achète 3 cahiers à 2 € chacun. Il paie avec un billet de 10 €. Combien d'euros lui rend-on ?",
+      "unit": "€",
+      "answer": { "number": "4" },
+      "hint": "Calcule d'abord le prix des 3 cahiers.",
+      "explanation": "3 × 2 = 6 € pour les cahiers. 10 − 6 = 4 : on lui rend 4 €."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Problème en deux étapes.",
+      "prompt": "Il y a 3 étagères de 15 livres. On ajoute ensuite 10 livres. Combien y a-t-il de livres en tout ?",
+      "unit": "livres",
+      "answer": { "number": "55" },
+      "hint": "Commence par compter les livres sur les 3 étagères.",
+      "explanation": "3 × 15 = 45 livres sur les étagères, puis 45 + 10 = 55 livres."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Lis le problème puis réponds en mètres.",
+      "prompt": "Une course mesure 1 200 m. Nina a déjà couru 750 m. Combien de mètres lui reste-t-il à courir ?",
+      "unit": "m",
+      "answer": { "number": "450" },
+      "hint": "Combien faut-il ajouter à 750 pour arriver à 1 200 ?",
+      "explanation": "1 200 − 750 = 450. Il reste 450 m à Nina."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "MCQ", "difficulty": 3,
+      "instruction": "Problème en deux étapes. Choisis la bonne réponse.",
+      "prompt": "Un fermier a 36 œufs. Il les range dans des boîtes de 6, puis il vend 2 boîtes. Combien de boîtes lui reste-t-il ?",
+      "options": [ { "id": "a", "label": "4 boîtes" }, { "id": "b", "label": "6 boîtes" }, { "id": "c", "label": "30 boîtes" } ],
+      "answer": { "optionId": "a" },
+      "hint": "Cherche d'abord combien de boîtes il remplit avec 36 œufs.",
+      "explanation": "36 ÷ 6 = 6 boîtes. Il en vend 2 : 6 − 2 = 4 boîtes."
+    },
+    {
+      "skill": "MATH_PROBLEMS", "type": "NUMBER", "difficulty": 3,
+      "instruction": "Problème en deux étapes.",
+      "prompt": "Emma lit 12 pages par jour pendant 5 jours, puis 8 pages le sixième jour. Combien de pages a-t-elle lues en tout ?",
+      "unit": "pages",
+      "answer": { "number": "68" },
+      "hint": "Calcule d'abord les pages lues pendant les 5 premiers jours.",
+      "explanation": "12 × 5 = 60 pages, puis 60 + 8 = 68 pages."
+    }
+  ]
+}

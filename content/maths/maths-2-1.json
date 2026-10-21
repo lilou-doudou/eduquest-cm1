@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "code": "MATHS-2-1", "world": "iles-des-nombres", "level": 2, "ordinal": 1,
+  "title": "Le sentier des tables",
+  "exercises": [
+    {
+      "skill": "MATH_MULT", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Calcule.",
+      "prompt": "7 × 8",
+      "answer": { "number": "56" },
+      "hint": "Tu connais peut-être 7 × 7 = 49. Ajoute encore 7.",
+      "explanation": "7 × 8 = 56. Astuce : 5, 6, 7, 8 → 56 = 7 × 8."
+    },
+    {
+      "skill": "MATH_MULT", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Calcule.",
+      "prompt": "6 × 9",
+      "answer": { "number": "54" },
+      "hint": "6 × 10 = 60. Enlève une fois 6.",
+      "explanation": "6 × 9 = 6 × 10 − 6 = 60 − 6 = 54."
+    },
+    {
+      "skill": "MATH_MULT", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis le bon calcul.",
+      "prompt": "Quel calcul donne 36 ?",
+      "options": [ { "id": "a", "label": "4 × 8" }, { "id": "b", "label": "6 × 6" }, { "id": "c", "label": "5 × 7" } ],
+      "answer": { "optionId": "b" },
+      "hint": "Calcule chaque produit : 4 × 8, 6 × 6 et 5 × 7.",
+      "explanation": "6 × 6 = 36. Les autres donnent 4 × 8 = 32 et 5 × 7 = 35."
+    },
+    {
+      "skill": "MATH_MULT", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Calcule.",
+      "prompt": "25 × 4",
+      "answer": { "number": "100" },
+      "hint": "Pense aux pièces : 4 pièces de 25 centimes.",
+      "explanation": "25 × 4 = 100, car 25 + 25 + 25 + 25 = 100."
+    },
+    {
+      "skill": "MATH_MULT", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Calcule.",
+      "prompt": "23 × 10",
+      "answer": { "number": "230" },
+      "hint": "Multiplier par 10, c'est rendre chaque chiffre dix fois plus grand.",
+      "explanation": "23 × 10 = 230 : les 2 dizaines deviennent 2 centaines et les 3 unités deviennent 3 dizaines."
+    }
+  ]
+}

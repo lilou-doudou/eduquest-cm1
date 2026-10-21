@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "code": "ENGLISH-3-1", "world": "royaume-des-mots", "level": 3, "ordinal": 1,
+  "title": "La salle de classe",
+  "exercises": [
+    {
+      "skill": "EN_CLASSROOM", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Comment dit-on « un crayon » en anglais ?",
+      "options": [ { "id": "a", "label": "a pencil" }, { "id": "b", "label": "a ruler" }, { "id": "c", "label": "a schoolbag" } ],
+      "answer": { "optionId": "a" },
+      "hint": "On s'en sert pour dessiner et on peut le tailler.",
+      "explanation": "« A pencil » signifie « un crayon ». « A ruler » est une règle et « a schoolbag » un cartable."
+    },
+    {
+      "skill": "EN_CLASSROOM", "type": "TEXT", "difficulty": 1,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « livre » en anglais.",
+      "answer": { "accepted": [ "book", "a book" ] },
+      "hint": "Il a quatre lettres, dont deux « o ».",
+      "explanation": "« Livre » se dit « book »."
+    },
+    {
+      "skill": "EN_CLASSROOM", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Que veut dire « a ruler » ?",
+      "options": [ { "id": "a", "label": "une gomme" }, { "id": "b", "label": "une règle" }, { "id": "c", "label": "une trousse" } ],
+      "answer": { "optionId": "b" },
+      "hint": "On l'utilise pour tracer des traits bien droits.",
+      "explanation": "« A ruler » signifie « une règle »."
+    },
+    {
+      "skill": "EN_CLASSROOM", "type": "TEXT", "difficulty": 2,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « gomme » en anglais.",
+      "answer": { "accepted": [ "eraser", "an eraser", "rubber", "a rubber" ] },
+      "hint": "En anglais américain, il commence par « e » ; en anglais britannique, par « r ».",
+      "explanation": "« Gomme » se dit « eraser » (anglais américain) ou « rubber » (anglais britannique)."
+    },
+    {
+      "skill": "EN_CLASSROOM", "type": "MCQ", "difficulty": 2,
+      "instruction": "Lis la consigne et choisis ce que tu dois faire.",
+      "prompt": "La maîtresse dit : « Open your book. » Que dois-tu faire ?",
+      "options": [ { "id": "a", "label": "Fermer mon livre" }, { "id": "b", "label": "Ranger mon cartable" }, { "id": "c", "label": "Ouvrir mon livre" } ],
+      "answer": { "optionId": "c" },
+      "hint": "« Open » ressemble au mot français « ouvrir »… presque !",
+      "explanation": "« Open your book » signifie « Ouvre ton livre »."
+    }
+  ]
+}

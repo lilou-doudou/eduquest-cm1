@@ -1,0 +1,17 @@
+# Profil de développement local (HTTP) : cookie non Secure, Swagger local, comptes fictifs.
+spring:
+  datasource:
+    password: ${POSTGRES_PASSWORD:eduquest-dev-only}
+server:
+  servlet:
+    session:
+      cookie:
+        secure: false
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+eduquest:
+  dev-seed: true

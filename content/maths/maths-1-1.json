@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "code": "MATHS-1-1", "world": "iles-des-nombres", "level": 1, "ordinal": 1,
+  "title": "Les quais du port",
+  "exercises": [
+    {
+      "skill": "MATH_NUMERATION", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Écris ce nombre en chiffres.",
+      "prompt": "quatre mille deux cent cinq",
+      "answer": { "number": "4205" },
+      "hint": "Cherche les milliers, puis les centaines, les dizaines et les unités. Il n'y a pas de dizaine.",
+      "explanation": "Quatre mille = 4 000, deux cents = 200, cinq = 5. On écrit 4 205 : le 0 montre qu'il n'y a pas de dizaine."
+    },
+    {
+      "skill": "MATH_NUMERATION", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis le plus grand nombre.",
+      "prompt": "Lequel de ces nombres est le plus grand ?",
+      "options": [ { "id": "a", "label": "3 089" }, { "id": "b", "label": "3 908" }, { "id": "c", "label": "3 890" } ],
+      "answer": { "optionId": "b" },
+      "hint": "Les trois nombres ont 3 milliers. Compare ensuite le chiffre des centaines.",
+      "explanation": "3 908 a 9 centaines, plus que 3 890 (8 centaines) et 3 089 (0 centaine). C'est donc le plus grand."
+    },
+    {
+      "skill": "MATH_ADD_SUB", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Calcule.",
+      "prompt": "245 + 132",
+      "answer": { "number": "377" },
+      "hint": "Additionne d'abord les unités, puis les dizaines, puis les centaines.",
+      "explanation": "5 + 2 = 7 unités, 4 + 3 = 7 dizaines, 2 + 1 = 3 centaines : 245 + 132 = 377."
+    },
+    {
+      "skill": "MATH_NUMERATION", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Écris un seul chiffre.",
+      "prompt": "Dans le nombre 6 482, quel est le chiffre des centaines ?",
+      "answer": { "number": "4" },
+      "hint": "En partant de la droite : unités, dizaines, centaines.",
+      "explanation": "6 482 = 6 milliers, 4 centaines, 8 dizaines et 2 unités. Le chiffre des centaines est 4."
+    },
+    {
+      "skill": "MATH_ADD_SUB", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Calcule. Attention aux retenues.",
+      "prompt": "1 356 + 428",
+      "answer": { "number": "1784" },
+      "hint": "6 + 8 = 14 : écris 4 et retiens 1 dizaine.",
+      "explanation": "Unités : 6 + 8 = 14, on écrit 4 et on retient 1. Dizaines : 1 + 5 + 2 = 8. Centaines : 3 + 4 = 7. Milliers : 1. Résultat : 1 784."
+    }
+  ]
+}

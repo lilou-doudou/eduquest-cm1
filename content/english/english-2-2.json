@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "code": "ENGLISH-2-2", "world": "royaume-des-mots", "level": 2, "ordinal": 2,
+  "title": "Les animaux de la ferme",
+  "exercises": [
+    {
+      "skill": "EN_ANIMALS", "type": "TEXT", "difficulty": 1,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « chat » en anglais.",
+      "answer": { "accepted": [ "cat" ] },
+      "hint": "Il commence par « c » et a trois lettres.",
+      "explanation": "« Chat » se dit « cat »."
+    },
+    {
+      "skill": "EN_ANIMALS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Que veut dire « dog » ?",
+      "options": [ { "id": "a", "label": "canard" }, { "id": "b", "label": "cheval" }, { "id": "c", "label": "chien" } ],
+      "answer": { "optionId": "c" },
+      "hint": "Cet animal aboie : « woof ! ».",
+      "explanation": "« Dog » signifie « chien »."
+    },
+    {
+      "skill": "EN_ANIMALS", "type": "TEXT", "difficulty": 2,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « oiseau » en anglais.",
+      "answer": { "accepted": [ "bird" ] },
+      "hint": "Il commence par « b » et a quatre lettres.",
+      "explanation": "« Oiseau » se dit « bird »."
+    },
+    {
+      "skill": "EN_ANIMALS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Comment dit-on « vache » en anglais ?",
+      "options": [ { "id": "a", "label": "cow" }, { "id": "b", "label": "pig" }, { "id": "c", "label": "sheep" } ],
+      "answer": { "optionId": "a" },
+      "hint": "Elle fait « moo » en anglais.",
+      "explanation": "« Vache » se dit « cow ». « Pig » veut dire « cochon » et « sheep » veut dire « mouton »."
+    },
+    {
+      "skill": "EN_ANIMALS", "type": "MCQ", "difficulty": 2,
+      "instruction": "Lis la phrase et choisis la bonne réponse.",
+      "prompt": "« The fish is in the water. » Où est le poisson ?",
+      "options": [ { "id": "a", "label": "dans l'arbre" }, { "id": "b", "label": "dans l'eau" }, { "id": "c", "label": "sur la table" } ],
+      "answer": { "optionId": "b" },
+      "hint": "« Water » veut dire « eau ».",
+      "explanation": "La phrase signifie « Le poisson est dans l'eau »."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "code": "MATHS-2-2", "world": "iles-des-nombres", "level": 2, "ordinal": 2,
+  "title": "La clairière du partage",
+  "exercises": [
+    {
+      "skill": "MATH_DIV", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Partage en parts égales.",
+      "prompt": "On partage 24 billes en 4 parts égales. Combien de billes y a-t-il dans chaque part ?",
+      "unit": "billes",
+      "answer": { "number": "6" },
+      "hint": "Cherche le nombre qui, multiplié par 4, donne 24.",
+      "explanation": "4 × 6 = 24, donc chaque part contient 6 billes."
+    },
+    {
+      "skill": "MATH_DIV", "type": "NUMBER", "difficulty": 1,
+      "instruction": "Calcule.",
+      "prompt": "63 ÷ 7",
+      "answer": { "number": "9" },
+      "hint": "Dans la table de 7, quel produit donne 63 ?",
+      "explanation": "7 × 9 = 63, donc 63 ÷ 7 = 9."
+    },
+    {
+      "skill": "MATH_DIV", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis le nombre manquant.",
+      "prompt": "6 × ? = 42",
+      "options": [ { "id": "a", "label": "6" }, { "id": "b", "label": "7" }, { "id": "c", "label": "8" } ],
+      "answer": { "optionId": "b" },
+      "hint": "Récite la table de 6 jusqu'à trouver 42.",
+      "explanation": "6 × 7 = 42. Donc le nombre manquant est 7."
+    },
+    {
+      "skill": "MATH_MULT", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Calcule.",
+      "prompt": "12 × 5",
+      "answer": { "number": "60" },
+      "hint": "12 × 5, c'est 10 × 5 plus 2 × 5.",
+      "explanation": "10 × 5 = 50 et 2 × 5 = 10, donc 12 × 5 = 60."
+    },
+    {
+      "skill": "MATH_DIV", "type": "NUMBER", "difficulty": 2,
+      "instruction": "Partage en boîtes pleines.",
+      "prompt": "Une boîte contient 6 œufs. Combien de boîtes faut-il pour ranger 48 œufs ?",
+      "unit": "boîtes",
+      "answer": { "number": "8" },
+      "hint": "Combien de fois 6 dans 48 ?",
+      "explanation": "6 × 8 = 48, il faut donc 8 boîtes."
+    }
+  ]
+}

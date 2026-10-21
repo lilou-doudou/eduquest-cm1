@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "code": "ENGLISH-1-2", "world": "royaume-des-mots", "level": 1, "ordinal": 2,
+  "title": "L'arc-en-ciel",
+  "exercises": [
+    {
+      "skill": "EN_COLORS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Comment dit-on « bleu » en anglais ?",
+      "options": [ { "id": "a", "label": "blue" }, { "id": "b", "label": "red" }, { "id": "c", "label": "green" } ],
+      "answer": { "optionId": "a" },
+      "hint": "C'est la couleur du ciel et de la mer.",
+      "explanation": "« Blue » signifie « bleu »."
+    },
+    {
+      "skill": "EN_COLORS", "type": "TEXT", "difficulty": 1,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « rouge » en anglais.",
+      "answer": { "accepted": [ "red" ] },
+      "hint": "C'est un petit mot de trois lettres qui commence par « r ».",
+      "explanation": "« Rouge » se dit « red »."
+    },
+    {
+      "skill": "EN_COLORS", "type": "MCQ", "difficulty": 1,
+      "instruction": "Choisis la bonne traduction.",
+      "prompt": "Que veut dire « yellow » ?",
+      "options": [ { "id": "a", "label": "vert" }, { "id": "b", "label": "violet" }, { "id": "c", "label": "jaune" } ],
+      "answer": { "optionId": "c" },
+      "hint": "C'est la couleur d'une banane mûre.",
+      "explanation": "« Yellow » signifie « jaune »."
+    },
+    {
+      "skill": "EN_COLORS", "type": "TEXT", "difficulty": 2,
+      "instruction": "Écris le mot en anglais.",
+      "prompt": "Écris « vert » en anglais.",
+      "answer": { "accepted": [ "green" ] },
+      "hint": "Il commence par « gr » et contient deux « e ».",
+      "explanation": "« Vert » se dit « green »."
+    },
+    {
+      "skill": "EN_COLORS", "type": "MCQ", "difficulty": 2,
+      "instruction": "Choisis la bonne couleur.",
+      "prompt": "De quelle couleur est la neige ? Choisis le mot anglais.",
+      "options": [ { "id": "a", "label": "black" }, { "id": "b", "label": "white" }, { "id": "c", "label": "brown" } ],
+      "answer": { "optionId": "b" },
+      "hint": "La neige n'est ni noire ni marron.",
+      "explanation": "La neige est blanche : « white ». « Black » veut dire « noir » et « brown » veut dire « marron »."
+    }
+  ]
+}
