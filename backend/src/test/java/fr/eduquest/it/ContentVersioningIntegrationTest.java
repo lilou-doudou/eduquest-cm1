@@ -35,9 +35,9 @@ class ContentVersioningIntegrationTest extends IntegrationTest {
         assertThat(report.newVersions()).isZero();
         assertThat(jdbc.sql("SELECT count(*) FROM mission_version").query(Long.class).single()).isEqualTo(versions);
         assertThat(jdbc.sql("SELECT count(*) FROM world").query(Long.class).single()).isEqualTo(6);
-        assertThat(jdbc.sql("SELECT count(*) FROM mission").query(Long.class).single()).isEqualTo(12);
+        assertThat(jdbc.sql("SELECT count(*) FROM mission").query(Long.class).single()).isEqualTo(24);
         assertThat(jdbc.sql("SELECT count(*) FROM exercise e JOIN mission_version v ON v.id = e.mission_version_id WHERE v.status = 'PUBLISHED'")
-                .query(Long.class).single()).isEqualTo(60);
+                .query(Long.class).single()).isEqualTo(120);
     }
 
     @Test

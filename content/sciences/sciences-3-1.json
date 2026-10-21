@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "code": "SCIENCES-3-1",
+  "world": "foret-du-vivant",
+  "level": 3,
+  "ordinal": 1,
+  "title": "Le refuge de la santé",
+  "exercises": [
+    {
+      "skill": "SCI_BODY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel repas est le plus équilibré ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Frites, soda et bonbons"
+        },
+        {
+          "id": "b",
+          "label": "Pain, pâtes et gâteau"
+        },
+        {
+          "id": "c",
+          "label": "Poisson, riz, haricots verts, yaourt et une pomme"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Un repas équilibré mélange plusieurs familles d'aliments : légumes, féculents, protéines, laitage, fruit.",
+      "explanation": "Le repas avec du poisson, du riz, des haricots verts, un yaourt et une pomme contient plusieurs familles d'aliments. Les deux autres repas manquent de légumes et de fruits, et contiennent trop de sucre ou de gras."
+    },
+    {
+      "skill": "SCI_BODY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quelle boisson faut-il boire en priorité tout au long de la journée ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le soda"
+        },
+        {
+          "id": "b",
+          "label": "L'eau"
+        },
+        {
+          "id": "c",
+          "label": "Le sirop"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "C'est la seule boisson indispensable au corps.",
+      "explanation": "L'eau est la seule boisson indispensable. Le corps en perd quand on transpire, qu'on respire et qu'on va aux toilettes. Les sodas et sirops contiennent beaucoup de sucre."
+    },
+    {
+      "skill": "SCI_BODY",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un enfant de CM1 a besoin d'environ 10 heures de sommeil. S'il s'endort à 21 h, à quelle heure se réveille-t-il après 10 heures de sommeil ?",
+      "unit": "h",
+      "answer": {
+        "number": "7"
+      },
+      "hint": "Compte 3 heures pour aller de 21 h à minuit, puis ajoute les heures qui manquent.",
+      "explanation": "De 21 h à minuit, il y a 3 heures. Il manque 10 - 3 = 7 heures : il se réveille à 7 h. Bien dormir aide à grandir, à apprendre et à rester en bonne santé."
+    },
+    {
+      "skill": "SCI_BODY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Après avoir été mâchés dans la bouche, où vont les aliments ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Dans les poumons"
+        },
+        {
+          "id": "b",
+          "label": "Dans l'œsophage, puis dans l'estomac"
+        },
+        {
+          "id": "c",
+          "label": "Directement dans le cœur"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Les aliments descendent par un tuyau qui part du fond de la gorge.",
+      "explanation": "Les aliments mâchés descendent par l'œsophage jusqu'à l'estomac, puis passent dans l'intestin. Les poumons servent à respirer et le cœur fait circuler le sang."
+    },
+    {
+      "skill": "SCI_BODY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pourquoi faut-il se laver les mains avant de passer à table ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour avoir plus faim"
+        },
+        {
+          "id": "b",
+          "label": "Pour que le repas soit plus chaud"
+        },
+        {
+          "id": "c",
+          "label": "Pour enlever les microbes"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Sur nos mains se cachent des êtres vivants minuscules, invisibles à l'œil nu.",
+      "explanation": "Nos mains touchent beaucoup de choses et portent des microbes invisibles qui peuvent rendre malade. Se laver les mains avec du savon les enlève avant de manger."
+    }
+  ]
+}

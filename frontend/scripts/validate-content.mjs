@@ -1,5 +1,5 @@
 // Validation hors base du dossier content/ : schémas JSON puis cohérence croisée
-// (références monde/niveau/compétence/asset, 12 missions et 60 exercices, clés de réponse).
+// (références monde/niveau/compétence/asset, 6 missions de 5 exercices par monde jouable, clés de réponse).
 // Le backend refait ces contrôles à l'import (ContentImporter) ; ce script sert à la CI et aux auteurs.
 import Ajv2020 from 'ajv/dist/2020.js';
 import { readFileSync, readdirSync } from 'node:fs';
@@ -30,11 +30,10 @@ const dup = (list, label) => list.filter((x, i) => list.indexOf(x) !== i).forEac
 dup(worlds.worlds.map((w) => w.slug), 'monde');
 dup(worlds.skills.map((s) => s.code), 'compétence');
 dup(rewards.rewards.map((r) => r.code), 'récompense');
-if (playable.size !== 2) errors.push(`2 mondes jouables attendus, ${playable.size} trouvés`);
 
 const validateMission = schema('mission');
 const missions = [];
-for (const dir of ['maths', 'english']) {
+for (const dir of ['maths', 'english', 'sciences', 'physique']) {
   for (const name of readdirSync(join(root, dir)).filter((f) => f.endsWith('.json')).sort()) {
     const file = `${dir}/${name}`;
     const m = read(file);
@@ -61,8 +60,12 @@ for (const dir of ['maths', 'english']) {
 dup(missions.map(({ m }) => m.code), 'code de mission');
 dup(missions.map(({ m }) => `${m.world}/${m.level}/${m.ordinal}`), 'position de mission');
 const exerciseCount = missions.reduce((n, { m }) => n + (m.exercises?.length ?? 0), 0);
-if (missions.length !== 12) errors.push(`12 missions attendues, ${missions.length} trouvées`);
-if (exerciseCount !== 60) errors.push(`60 exercices attendus, ${exerciseCount} trouvés`);
+for (const slug of playable.keys()) {
+  const n = missions.filter(({ m }) => m.world === slug).length;
+  if (n !== 6) errors.push(`monde ${slug} : 6 missions attendues, ${n} trouvées`);
+}
+if (missions.length !== playable.size * 6) errors.push(`${playable.size * 6} missions attendues, ${missions.length} trouvées`);
+if (exerciseCount !== missions.length * 5) errors.push(`${missions.length * 5} exercices attendus, ${exerciseCount} trouvés`);
 
 if (errors.length) {
   console.error(`Contenus invalides (${errors.length}) :\n- ${errors.join('\n- ')}`);

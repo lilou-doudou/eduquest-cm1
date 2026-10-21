@@ -21,7 +21,7 @@ test('carte 2D de repli et verrouillage des mondes', async ({ page }) => {
   await expect(page.getByText(/^Carte 2D/)).toBeVisible();
   await expect(page.locator('canvas')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Afficher la carte 3D' })).toHaveCount(0);
-  await expect(page.locator('.world-list').getByText('Bientôt disponible', { exact: true })).toHaveCount(4);
+  await expect(page.locator('.world-list').getByText('Bientôt disponible', { exact: true })).toHaveCount(2);
 
   // Les îles de la carte 2D sont des liens : on y entre au clavier.
   const island = page.locator('.map-wrap').getByRole('link', { name: /Îles des Nombres/ });

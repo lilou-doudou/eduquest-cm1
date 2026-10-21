@@ -6,6 +6,8 @@ const COLORS: Record<string, string> = {
   PERFECT_MISSION: '#f2b632',
   NUMBERS_EXPLORER: '#2f7dd1',
   WORDS_FRIEND: '#c2569b',
+  FOREST_GUARDIAN: '#1f6b3a',
+  INVENTOR_GENIUS: '#c96b2a',
 };
 
 const SLOT_SHAPES: Record<string, ReactElement> = {

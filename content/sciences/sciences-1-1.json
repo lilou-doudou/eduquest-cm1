@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "code": "SCIENCES-1-1",
+  "world": "foret-du-vivant",
+  "level": 1,
+  "ordinal": 1,
+  "title": "Le jardin des graines",
+  "exercises": [
+    {
+      "skill": "SCI_NEEDS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "De quoi une plante verte a-t-elle besoin pour fabriquer sa propre nourriture ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "De sucre et de lait"
+        },
+        {
+          "id": "b",
+          "label": "De lumière, d'eau et d'air"
+        },
+        {
+          "id": "c",
+          "label": "D'obscurité et de sable"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Pense à ce qu'il faut à une plante sur le rebord d'une fenêtre pour bien pousser.",
+      "explanation": "Grâce à ses feuilles, la plante verte fabrique sa nourriture avec la lumière du soleil, l'eau puisée par ses racines et l'air. Sans lumière, elle ne peut pas le faire."
+    },
+    {
+      "skill": "SCI_NEEDS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel besoin est commun à tous les êtres vivants, plantes comme animaux ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Se déplacer"
+        },
+        {
+          "id": "b",
+          "label": "Manger de la viande"
+        },
+        {
+          "id": "c",
+          "label": "Respirer"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Un arbre ne marche pas et une vache ne mange pas de viande. Cherche ce que font les deux.",
+      "explanation": "Tous les êtres vivants respirent : les animaux avec des poumons, des branchies ou leur peau, les plantes par leurs feuilles. Les plantes ne se déplacent pas et beaucoup d'animaux ne mangent pas de viande."
+    },
+    {
+      "skill": "SCI_NEEDS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Léo arrose une plante mais la laisse dans un placard fermé, dans le noir, pendant deux semaines. Que va-t-il observer ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Elle jaunit et s'affaiblit"
+        },
+        {
+          "id": "b",
+          "label": "Elle devient plus verte"
+        },
+        {
+          "id": "c",
+          "label": "Elle donne des fruits"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "La plante a de l'eau, mais il lui manque quelque chose d'important dans le placard.",
+      "explanation": "Dans le noir, la plante ne reçoit pas de lumière : elle ne peut plus fabriquer sa nourriture. Ses feuilles jaunissent et elle s'affaiblit, même si elle est arrosée."
+    },
+    {
+      "skill": "SCI_NEEDS",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Une plante puise l'eau et les sels minéraux du sol grâce à ses …",
+      "answer": {
+        "accepted": [
+          "racines",
+          "ses racines",
+          "les racines",
+          "racine"
+        ]
+      },
+      "hint": "C'est la partie de la plante cachée sous la terre.",
+      "explanation": "Les racines sont dans le sol : elles fixent la plante et absorbent l'eau et les sels minéraux dont elle a besoin. L'eau monte ensuite par la tige jusqu'aux feuilles."
+    },
+    {
+      "skill": "SCI_NEEDS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne expérience.",
+      "prompt": "Tu veux savoir si une graine a besoin d'eau pour germer. Quelle expérience faut-il faire ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Un pot arrosé au soleil et un pot sec dans le noir"
+        },
+        {
+          "id": "b",
+          "label": "Un seul pot, bien arrosé"
+        },
+        {
+          "id": "c",
+          "label": "Deux pots identiques au même endroit : l'un arrosé, l'autre non"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Pour savoir si l'eau compte, il ne faut changer qu'une seule chose entre les deux pots.",
+      "explanation": "Dans une bonne expérience, on ne change qu'une seule chose à la fois. Avec deux pots identiques, l'un arrosé et l'autre non, une différence ne peut venir que de l'eau. Avec un pot arrosé au soleil et un pot sec dans le noir, on change à la fois l'eau et la lumière : on ne saurait pas laquelle compte."
+    }
+  ]
+}

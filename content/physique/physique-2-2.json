@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "code": "PHYSIQUE-2-2",
+  "world": "cite-des-inventeurs",
+  "level": 2,
+  "ordinal": 2,
+  "title": "Le circuit de la lampe",
+  "exercises": [
+    {
+      "skill": "TECH_ELECTRICITY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pour que la lampe s'allume dans un circuit avec une pile, le circuit doit être…",
+      "options": [
+        {
+          "id": "a",
+          "label": "ouvert"
+        },
+        {
+          "id": "b",
+          "label": "fermé"
+        },
+        {
+          "id": "c",
+          "label": "coupé en deux"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Le courant doit pouvoir faire tout le tour, d'une borne de la pile à l'autre.",
+      "explanation": "La lampe s'allume quand le circuit est fermé : le courant part d'une borne de la pile, traverse les fils et la lampe, et revient à l'autre borne. Si le circuit est ouvert, le courant ne passe pas."
+    },
+    {
+      "skill": "TECH_ELECTRICITY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Lequel de ces objets laisse passer le courant électrique ? On dit que c'est un conducteur.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une gomme"
+        },
+        {
+          "id": "b",
+          "label": "Un clou en fer"
+        },
+        {
+          "id": "c",
+          "label": "Une règle en plastique"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Les métaux laissent passer le courant.",
+      "explanation": "Le fer est un métal : il laisse passer le courant, c'est un conducteur. Le caoutchouc de la gomme et le plastique ne le laissent pas passer : ce sont des isolants."
+    },
+    {
+      "skill": "TECH_ELECTRICITY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Dans un circuit électrique, à quoi sert un interrupteur ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "À fabriquer de l'électricité"
+        },
+        {
+          "id": "b",
+          "label": "À rendre la lampe plus grosse"
+        },
+        {
+          "id": "c",
+          "label": "À ouvrir ou fermer le circuit"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Pense à ce qui se passe quand tu appuies sur l'interrupteur de ta chambre.",
+      "explanation": "L'interrupteur ouvre ou ferme le circuit. Fermé, il laisse passer le courant et la lampe s'allume ; ouvert, il coupe le circuit et la lampe s'éteint. C'est la pile qui fournit l'électricité."
+    },
+    {
+      "skill": "TECH_ELECTRICITY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pourquoi les fils électriques de la maison sont-ils entourés de plastique ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le plastique est isolant : il protège des décharges électriques"
+        },
+        {
+          "id": "b",
+          "label": "Pour que le courant aille plus vite"
+        },
+        {
+          "id": "c",
+          "label": "Seulement pour décorer"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Le plastique ne laisse pas passer le courant.",
+      "explanation": "Le plastique est un isolant : il empêche le courant de passer dans nos doigts quand on touche un fil. À l'intérieur, le fil est en cuivre, un métal conducteur."
+    },
+    {
+      "skill": "TECH_ELECTRICITY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis le geste dangereux.",
+      "prompt": "Lequel de ces gestes est dangereux ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Faire une expérience avec une pile de 4,5 V"
+        },
+        {
+          "id": "b",
+          "label": "Débrancher un appareil en tirant sur la prise, les mains sèches"
+        },
+        {
+          "id": "c",
+          "label": "Mettre un objet en métal dans une prise électrique"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Le courant des prises de la maison est beaucoup plus fort que celui d'une pile.",
+      "explanation": "Le courant des prises est très dangereux : il peut électrocuter. Il ne faut jamais y mettre un objet, surtout en métal. Les expériences se font avec des piles, sans danger."
+    }
+  ]
+}
