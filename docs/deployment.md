@@ -1,6 +1,6 @@
 # Déploiement et exploitation
 
-**Aucun déploiement public n'a été réalisé ni n'est autorisé sans décision explicite du porteur du projet.** Ce document décrit la cible et les procédures à préparer ; les choix d'hébergeur, de prestataire e-mail et de région restent à faire (UE recommandée).
+Ce document décrit la cible et les procédures d'exploitation. La mise en ligne recommandée (un VPS dans l'UE, Caddy pour le HTTPS, Brevo pour les e-mails) est prête dans `deploy/` et expliquée pas à pas dans [mise-en-ligne.md](mise-en-ligne.md).
 
 ## Cible
 
@@ -27,7 +27,7 @@ docker build -f infra/backend.Dockerfile -t eduquest-backend .
 docker build -f infra/frontend.Dockerfile -t eduquest-frontend .
 ```
 
-Un exemple d'assemblage est fourni dans `infra/compose.prod.example.yaml` (à placer derrière le reverse proxy TLS).
+L'assemblage complet, reverse proxy TLS compris, est `deploy/compose.yaml` ; `infra/compose.prod.example.yaml` reste un exemple minimal sans proxy.
 
 ## Configuration de production
 
