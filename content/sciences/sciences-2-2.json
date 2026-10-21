@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "code": "SCIENCES-2-2",
+  "world": "foret-du-vivant",
+  "level": 2,
+  "ordinal": 2,
+  "title": "Le cycle de la vie",
+  "exercises": [
+    {
+      "skill": "SCI_LIFE_CYCLE",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel est le bon ordre des étapes de la vie d'un papillon ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "chenille → œuf → papillon → chrysalide"
+        },
+        {
+          "id": "b",
+          "label": "papillon → chrysalide → œuf → chenille"
+        },
+        {
+          "id": "c",
+          "label": "œuf → chenille → chrysalide → papillon"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Tout commence par un œuf pondu sur une feuille.",
+      "explanation": "Le papillon pond un œuf. Il en sort une chenille qui mange et grandit, puis elle s'enferme dans une chrysalide. Elle en sort transformée en papillon, qui pondra à son tour."
+    },
+    {
+      "skill": "SCI_LIFE_CYCLE",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Le têtard se transforme peu à peu en grenouille. Comment appelle-t-on une transformation comme celle-ci ?",
+      "answer": {
+        "accepted": [
+          "métamorphose",
+          "la métamorphose",
+          "une métamorphose",
+          "metamorphose"
+        ]
+      },
+      "hint": "Le mot commence par « méta ». La chenille vit la même chose.",
+      "explanation": "On appelle métamorphose le grand changement de forme de certains animaux pendant leur vie : le têtard devient grenouille, la chenille devient papillon."
+    },
+    {
+      "skill": "SCI_LIFE_CYCLE",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Au printemps, le pommier est en fleurs. Que devient une fleur de pommier après avoir été pollinisée par une abeille ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Une feuille"
+        },
+        {
+          "id": "b",
+          "label": "Une pomme, le fruit"
+        },
+        {
+          "id": "c",
+          "label": "Une racine"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Que trouve-t-on sur le pommier à la fin de l'été, à la place des fleurs ?",
+      "explanation": "Après la pollinisation, la fleur se transforme peu à peu en fruit : la pomme. À l'intérieur du fruit se trouvent les pépins, les graines qui pourront donner de nouveaux pommiers."
+    },
+    {
+      "skill": "SCI_LIFE_CYCLE",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Où se trouvent les graines d'une plante à fleurs, comme le haricot ou la tomate ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Dans le fruit"
+        },
+        {
+          "id": "b",
+          "label": "Dans les racines"
+        },
+        {
+          "id": "c",
+          "label": "Dans la tige"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Coupe une tomate en deux dans ta tête : que vois-tu à l'intérieur ?",
+      "explanation": "Les graines se forment dans le fruit. Dans une tomate, ce sont les petits pépins ; le haricot est une graine rangée dans la gousse, qui est le fruit."
+    },
+    {
+      "skill": "SCI_LIFE_CYCLE",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Lequel de ces animaux ne sort pas d'un œuf pondu, mais naît directement du ventre de sa mère ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le chien"
+        },
+        {
+          "id": "b",
+          "label": "La tortue"
+        },
+        {
+          "id": "c",
+          "label": "Le crocodile"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Les mammifères grandissent dans le ventre de leur mère avant de naître.",
+      "explanation": "Le chien est un mammifère : le chiot grandit dans le ventre de sa mère puis naît vivant. La tortue et le crocodile pondent des œufs, d'où sortent les petits."
+    }
+  ]
+}

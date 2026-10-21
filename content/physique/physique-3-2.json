@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "code": "PHYSIQUE-3-2",
+  "world": "cite-des-inventeurs",
+  "level": 3,
+  "ordinal": 2,
+  "title": "L'atelier des inventions",
+  "exercises": [
+    {
+      "skill": "TECH_OBJECTS",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel matériau choisir pour fabriquer une fenêtre qui laisse passer la lumière ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le bois"
+        },
+        {
+          "id": "b",
+          "label": "Le carton"
+        },
+        {
+          "id": "c",
+          "label": "Le verre"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Il faut un matériau transparent.",
+      "explanation": "Le verre est transparent : il laisse passer la lumière tout en protégeant du vent et de la pluie. Le bois et le carton sont opaques : la lumière ne les traverse pas."
+    },
+    {
+      "skill": "TECH_OBJECTS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pour soulever une grosse pierre, Noé glisse une barre solide dessous, pose un caillou sous la barre et appuie sur l'autre bout. Il utilise…",
+      "options": [
+        {
+          "id": "a",
+          "label": "un aimant"
+        },
+        {
+          "id": "b",
+          "label": "un levier"
+        },
+        {
+          "id": "c",
+          "label": "une pile"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "La barre s'appuie sur le caillou et pivote, comme une balançoire à bascule.",
+      "explanation": "Noé utilise un levier : une barre qui pivote sur un point d'appui. En appuyant loin du point d'appui, on soulève une charge lourde avec moins d'effort."
+    },
+    {
+      "skill": "TECH_OBJECTS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sur un vélo, à quoi sert la chaîne ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "À freiner"
+        },
+        {
+          "id": "b",
+          "label": "À transmettre le mouvement des pédales à la roue arrière"
+        },
+        {
+          "id": "c",
+          "label": "À éclairer la route"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Quand tu pédales, quelle roue se met à tourner ?",
+      "explanation": "La chaîne relie le pédalier à la roue arrière : elle transmet le mouvement des pédales à la roue, et le vélo avance. Ce sont les freins qui arrêtent le vélo."
+    },
+    {
+      "skill": "TECH_OBJECTS",
+      "type": "NUMBER",
+      "difficulty": 3,
+      "instruction": "Écris un nombre.",
+      "prompt": "Une grande roue dentée de 40 dents entraîne une petite roue dentée de 10 dents. Quand la grande roue fait 1 tour, combien de tours fait la petite ?",
+      "unit": "tours",
+      "answer": {
+        "number": "4"
+      },
+      "hint": "Pendant 1 tour, la grande roue fait passer ses 40 dents. Combien de fois les 10 dents de la petite roue passent-elles ?",
+      "explanation": "Quand la grande roue fait un tour, 40 dents passent. La petite roue a 10 dents : elle fait 40 ÷ 10 = 4 tours. Un engrenage peut ainsi faire tourner une roue plus vite."
+    },
+    {
+      "skill": "TECH_OBJECTS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pourquoi fabrique-t-on les casseroles en métal ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le métal est aussi léger qu'une plume"
+        },
+        {
+          "id": "b",
+          "label": "Le métal empêche la chaleur de passer"
+        },
+        {
+          "id": "c",
+          "label": "Le métal laisse bien passer la chaleur"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "La casserole doit transmettre la chaleur de la plaque de cuisson aux aliments.",
+      "explanation": "Le métal conduit bien la chaleur : il la transmet de la plaque aux aliments. Le choix du matériau dépend de la fonction de l'objet ; c'est pour cela que la poignée est souvent en bois ou en plastique, qui conduisent mal la chaleur."
+    }
+  ]
+}

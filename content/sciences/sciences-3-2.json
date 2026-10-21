@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "code": "SCIENCES-3-2",
+  "world": "foret-du-vivant",
+  "level": 3,
+  "ordinal": 2,
+  "title": "Les gardiens de la forêt",
+  "exercises": [
+    {
+      "skill": "SCI_ENVIRONMENT",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Dans quel milieu vit la truite ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Dans une rivière"
+        },
+        {
+          "id": "b",
+          "label": "Dans le désert"
+        },
+        {
+          "id": "c",
+          "label": "Dans un arbre"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "La truite est un poisson.",
+      "explanation": "La truite est un poisson : elle vit dans l'eau douce des rivières, où elle trouve sa nourriture et l'oxygène dont elle a besoin. Chaque être vivant vit dans un milieu adapté à ses besoins."
+    },
+    {
+      "skill": "SCI_ENVIRONMENT",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pourquoi beaucoup d'arbres perdent-ils leurs feuilles en automne ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Parce qu'ils sont malades"
+        },
+        {
+          "id": "b",
+          "label": "Parce que les oiseaux mangent les feuilles"
+        },
+        {
+          "id": "c",
+          "label": "Pour passer l'hiver, quand il fait froid et qu'il y a moins de lumière"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Pense aux changements de saison : il fait plus froid et les jours raccourcissent.",
+      "explanation": "En hiver, il fait froid et les jours sont courts. Beaucoup d'arbres perdent leurs feuilles pour économiser l'eau et l'énergie, puis de nouvelles feuilles poussent au printemps. Ils ne sont pas malades."
+    },
+    {
+      "skill": "SCI_ENVIRONMENT",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Le hérisson et la marmotte dorment pendant tout l'hiver. Comment appelle-t-on ce long sommeil ?",
+      "answer": {
+        "accepted": [
+          "hibernation",
+          "l'hibernation",
+          "une hibernation"
+        ]
+      },
+      "hint": "Le mot ressemble à « hiver ».",
+      "explanation": "C'est l'hibernation : certains animaux dorment tout l'hiver, quand la nourriture manque. Leur cœur bat plus lentement et ils vivent sur les réserves accumulées pendant l'automne."
+    },
+    {
+      "skill": "SCI_ENVIRONMENT",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pendant une promenade, quel geste protège le mieux la forêt ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Cueillir toutes les fleurs"
+        },
+        {
+          "id": "b",
+          "label": "Rapporter ses déchets chez soi"
+        },
+        {
+          "id": "c",
+          "label": "Allumer un feu sous les arbres"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Cherche le geste qui ne laisse aucune trace dans la forêt.",
+      "explanation": "Rapporter ses déchets évite de polluer la forêt et de blesser les animaux. Cueillir toutes les fleurs empêche les graines de se former, et un feu peut provoquer un incendie."
+    },
+    {
+      "skill": "SCI_ENVIRONMENT",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Pourquoi trier ses déchets dans les bonnes poubelles ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Pour qu'ils soient recyclés et qu'on gaspille moins de matières"
+        },
+        {
+          "id": "b",
+          "label": "Pour que la poubelle soit plus lourde"
+        },
+        {
+          "id": "c",
+          "label": "Pour que les déchets disparaissent tout seuls"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Une bouteille en plastique triée peut devenir un nouvel objet.",
+      "explanation": "Les déchets triés sont envoyés dans des usines qui les recyclent : le papier redevient du papier, le plastique peut devenir un pull ou une nouvelle bouteille. On prend ainsi moins de matières à la nature."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "code": "PHYSIQUE-1-1",
+  "world": "cite-des-inventeurs",
+  "level": 1,
+  "ordinal": 1,
+  "title": "Les trois états de l'eau",
+  "exercises": [
+    {
+      "skill": "TECH_MATTER",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Dans quel état est l'eau d'un glaçon ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Solide"
+        },
+        {
+          "id": "b",
+          "label": "Liquide"
+        },
+        {
+          "id": "c",
+          "label": "Gazeux"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Un glaçon a une forme qui lui est propre : tu peux le prendre dans ta main.",
+      "explanation": "Un glaçon est de l'eau à l'état solide : il garde sa forme. L'eau du robinet est liquide et la vapeur d'eau est un gaz."
+    },
+    {
+      "skill": "TECH_MATTER",
+      "type": "NUMBER",
+      "difficulty": 1,
+      "instruction": "Écris un nombre.",
+      "prompt": "À quelle température l'eau pure se transforme-t-elle en glace ?",
+      "unit": "°C",
+      "answer": {
+        "number": "0"
+      },
+      "hint": "C'est la graduation « zéro » du thermomètre.",
+      "explanation": "L'eau pure gèle à 0 °C : en dessous de cette température, elle devient de la glace. C'est pour cela qu'il peut y avoir du verglas en hiver."
+    },
+    {
+      "skill": "TECH_MATTER",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Au soleil, un glaçon passe de l'état solide à l'état liquide. Comment s'appelle ce changement d'état ?",
+      "answer": {
+        "accepted": [
+          "fusion",
+          "la fusion",
+          "fonte",
+          "la fonte"
+        ]
+      },
+      "hint": "Le glaçon « fond ». Le nom savant de ce changement commence par « fu ».",
+      "explanation": "Le passage de l'état solide à l'état liquide s'appelle la fusion : le glaçon fond. L'inverse, du liquide au solide, s'appelle la solidification."
+    },
+    {
+      "skill": "TECH_MATTER",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le linge mouillé sèche sur le fil. Où est passée l'eau ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Elle a disparu pour toujours"
+        },
+        {
+          "id": "b",
+          "label": "Elle est entrée dans le fil à linge"
+        },
+        {
+          "id": "c",
+          "label": "Elle s'est évaporée : elle est dans l'air sous forme de vapeur d'eau"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "L'eau ne disparaît jamais : elle change d'état.",
+      "explanation": "L'eau du linge s'est évaporée : elle est passée de l'état liquide à l'état gazeux, la vapeur d'eau, qui est invisible et se mélange à l'air. Rien ne disparaît, la matière change seulement d'état."
+    },
+    {
+      "skill": "TECH_MATTER",
+      "type": "MCQ",
+      "difficulty": 3,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Tu verses 1 litre d'eau d'une bouteille dans un saladier. Que se passe-t-il ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L'eau garde la forme de la bouteille"
+        },
+        {
+          "id": "b",
+          "label": "L'eau prend la forme du saladier et il y a toujours 1 litre"
+        },
+        {
+          "id": "c",
+          "label": "Il y a moins d'eau qu'avant"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Un liquide n'a pas de forme propre, mais sa quantité ne change pas quand on le verse.",
+      "explanation": "Un liquide prend la forme du récipient qui le contient, mais son volume reste le même : il y a toujours 1 litre d'eau. Un solide, lui, garde sa forme."
+    }
+  ]
+}

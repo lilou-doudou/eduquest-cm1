@@ -36,6 +36,11 @@ public class ContentImporter {
     public static final Set<String> SUBJECTS = Set.of("MATHS", "ENGLISH", "GEOMETRY", "GEOGRAPHY", "SCIENCES", "PHYSICS");
     private static final Set<String> RULE_TYPES = Set.of("FIRST_STAR", "FIRST_THREE_STARS", "WORLD_COMPLETED", "LEVEL_COMPLETED", "RANK_REACHED");
     private static final Set<String> SLOTS = Set.of("HEAD", "BACK", "COMPANION");
+    /** Un dossier de missions par monde jouable. */
+    public static final List<String> MISSION_DIRS = List.of("maths", "english", "sciences", "physique");
+    /** Monde jouable : 3 niveaux × 2 missions × 5 exercices. */
+    static final int MISSIONS_PER_WORLD = 6;
+    static final int EXERCISES_PER_MISSION = 5;
 
     private final JdbcClient jdbc;
     private final JsonMapper json;
@@ -70,7 +75,7 @@ public class ContentImporter {
         JsonNode rewards = read(root.resolve("rewards/rewards.json"), errors);
         JsonNode manifest = read(root.resolve("assets-manifest.json"), errors);
         List<JsonNode> missions = new ArrayList<>();
-        for (String dir : List.of("maths", "english")) {
+        for (String dir : MISSION_DIRS) {
             try (Stream<Path> files = Files.list(root.resolve(dir))) {
                 files.filter(f -> f.toString().endsWith(".json")).sorted()
                         .forEach(f -> Optional.ofNullable(read(f, errors)).ifPresent(missions::add));
@@ -166,7 +171,7 @@ public class ContentImporter {
                 errors.add(where + " : emplacement niveau/ordre déjà occupé");
             }
             JsonNode exercises = m.path("exercises");
-            if (!exercises.isArray() || exercises.size() != 5) { errors.add(where + " : exactement 5 exercices attendus"); continue; }
+            if (!exercises.isArray() || exercises.size() != EXERCISES_PER_MISSION) { errors.add(where + " : exactement " + EXERCISES_PER_MISSION + " exercices attendus"); continue; }
             int i = 0;
             for (JsonNode e : exercises) {
                 i++;
@@ -174,14 +179,21 @@ public class ContentImporter {
                 validateExercise(e, where + " exercice " + i, text(world, "subjectCode"), skillSubject, errors);
             }
         }
+        int playable = 0;
         for (JsonNode w : worldBySlug.values()) {
             if ("PLAYABLE".equals(text(w, "availability"))) {
+                playable++;
                 Set<String> slots = slotsPerWorld.getOrDefault(text(w, "slug"), Set.of());
-                if (slots.size() != 6) errors.add("monde " + text(w, "slug") + " : 6 missions attendues (trouvées : " + slots.size() + ")");
+                if (slots.size() != MISSIONS_PER_WORLD) {
+                    errors.add("monde " + text(w, "slug") + " : " + MISSIONS_PER_WORLD + " missions attendues (trouvées : " + slots.size() + ")");
+                }
             }
         }
-        if (missions.size() != 12) errors.add("12 missions attendues (trouvées : " + missions.size() + ")");
-        if (exerciseCount != 60) errors.add("60 exercices attendus (trouvés : " + exerciseCount + ")");
+        int expectedMissions = playable * MISSIONS_PER_WORLD;
+        if (missions.size() != expectedMissions) errors.add(expectedMissions + " missions attendues (trouvées : " + missions.size() + ")");
+        if (exerciseCount != expectedMissions * EXERCISES_PER_MISSION) {
+            errors.add(expectedMissions * EXERCISES_PER_MISSION + " exercices attendus (trouvés : " + exerciseCount + ")");
+        }
 
         Set<String> rewardCodes = new HashSet<>();
         Set<String> ruleCodes = new HashSet<>();

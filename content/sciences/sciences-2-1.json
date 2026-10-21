@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "code": "SCIENCES-2-1",
+  "world": "foret-du-vivant",
+  "level": 2,
+  "ordinal": 1,
+  "title": "Le grand tri des animaux",
+  "exercises": [
+    {
+      "skill": "SCI_CLASSIFY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Lequel de ces animaux est un vertébré, c'est-à-dire qu'il a un squelette avec une colonne vertébrale ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L'escargot"
+        },
+        {
+          "id": "b",
+          "label": "Le chat"
+        },
+        {
+          "id": "c",
+          "label": "Le ver de terre"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Touche le milieu de ton dos : tu sens ta colonne vertébrale. Quel animal en a une aussi ?",
+      "explanation": "Le chat a un squelette à l'intérieur de son corps, avec une colonne vertébrale : c'est un vertébré, comme toi. L'escargot et le ver de terre n'ont pas de squelette : ce sont des invertébrés."
+    },
+    {
+      "skill": "SCI_CLASSIFY",
+      "type": "NUMBER",
+      "difficulty": 1,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien de pattes a un insecte adulte, comme la fourmi ou l'abeille ?",
+      "unit": "pattes",
+      "answer": {
+        "number": "6"
+      },
+      "hint": "Compte les pattes d'une fourmi : il y en a trois de chaque côté.",
+      "explanation": "Tous les insectes adultes ont 6 pattes, 3 de chaque côté, et un corps en trois parties : la tête, le thorax et l'abdomen."
+    },
+    {
+      "skill": "SCI_CLASSIFY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "L'araignée a 8 pattes. Est-ce un insecte ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Oui, comme la fourmi"
+        },
+        {
+          "id": "b",
+          "label": "Non, car un insecte a 6 pattes"
+        },
+        {
+          "id": "c",
+          "label": "Oui, car elle est petite"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Souviens-toi du nombre de pattes d'un insecte.",
+      "explanation": "Un insecte a 6 pattes. L'araignée en a 8 : ce n'est donc pas un insecte, elle fait partie d'un autre groupe, les arachnides. La taille ne compte pas pour classer les animaux."
+    },
+    {
+      "skill": "SCI_CLASSIFY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel point commun ont le merle, l'aigle et la poule ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Ils volent tous très haut"
+        },
+        {
+          "id": "b",
+          "label": "Ils mangent tous des graines"
+        },
+        {
+          "id": "c",
+          "label": "Ils ont tous des plumes"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "La poule vole très peu et l'aigle mange de la viande. Cherche ce qui se voit sur leur corps.",
+      "explanation": "Le merle, l'aigle et la poule sont des oiseaux : ils ont tous des plumes, un bec et deux ailes. Pour classer les animaux, on cherche ce qu'ils ont en commun, pas ce qu'ils font."
+    },
+    {
+      "skill": "SCI_CLASSIFY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "La baleine vit dans la mer, mais elle respire avec des poumons et allaite ses petits. C'est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "un mammifère"
+        },
+        {
+          "id": "b",
+          "label": "un poisson"
+        },
+        {
+          "id": "c",
+          "label": "un insecte"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Les petits de la baleine boivent le lait de leur mère, comme les chatons.",
+      "explanation": "La baleine allaite ses petits et respire de l'air avec des poumons : c'est un mammifère, comme le chat ou l'être humain. Les poissons, eux, respirent dans l'eau avec des branchies."
+    }
+  ]
+}

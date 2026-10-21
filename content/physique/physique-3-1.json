@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "code": "PHYSIQUE-3-1",
+  "world": "cite-des-inventeurs",
+  "level": 3,
+  "ordinal": 1,
+  "title": "La piste des mouvements",
+  "exercises": [
+    {
+      "skill": "TECH_MOTION",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Une balle lâchée du haut d'un balcon tombe tout droit vers le sol. Sa trajectoire est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "un cercle"
+        },
+        {
+          "id": "b",
+          "label": "une ligne droite, on dit rectiligne"
+        },
+        {
+          "id": "c",
+          "label": "un zigzag"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "La trajectoire, c'est le chemin suivi par la balle.",
+      "explanation": "La balle suit un chemin tout droit : sa trajectoire est rectiligne. La trajectoire est le chemin parcouru par un objet qui bouge."
+    },
+    {
+      "skill": "TECH_MOTION",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Les nacelles d'une grande roue de fête foraine tournent autour de l'axe. Leur trajectoire est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "circulaire"
+        },
+        {
+          "id": "b",
+          "label": "rectiligne"
+        },
+        {
+          "id": "c",
+          "label": "en zigzag"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Quelle forme dessine une nacelle quand la roue fait un tour complet ?",
+      "explanation": "Les nacelles tournent autour du centre de la roue et dessinent un cercle : leur trajectoire est circulaire."
+    },
+    {
+      "skill": "TECH_MOTION",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un cycliste roule toujours à la même vitesse : il parcourt 15 km en 1 heure. Quelle distance parcourt-il en 2 heures ?",
+      "unit": "km",
+      "answer": {
+        "number": "30"
+      },
+      "hint": "En 2 heures, il roule deux fois plus longtemps.",
+      "explanation": "À vitesse constante, en 2 heures il parcourt deux fois 15 km : 15 + 15 = 30 km."
+    },
+    {
+      "skill": "TECH_MOTION",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sami et Jade courent tous les deux 100 m. Sami met 18 secondes, Jade met 20 secondes. Qui est le plus rapide ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sami"
+        },
+        {
+          "id": "b",
+          "label": "Jade"
+        },
+        {
+          "id": "c",
+          "label": "Ils vont aussi vite"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Ils parcourent la même distance. Le plus rapide est celui qui met le moins de temps.",
+      "explanation": "Pour la même distance, le plus rapide est celui qui met le moins de temps. Sami met 18 secondes, moins que Jade : il est le plus rapide."
+    },
+    {
+      "skill": "TECH_MOTION",
+      "type": "NUMBER",
+      "difficulty": 3,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un escargot avance toujours à la même vitesse : 5 m en 1 heure. Combien d'heures lui faut-il pour parcourir 20 m ?",
+      "unit": "h",
+      "answer": {
+        "number": "4"
+      },
+      "hint": "Combien de fois 5 m faut-il pour faire 20 m ?",
+      "explanation": "En 1 heure il fait 5 m. Pour 20 m, il faut 4 fois 5 m (5 × 4 = 20) : il lui faut 4 heures."
+    }
+  ]
+}

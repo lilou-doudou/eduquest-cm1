@@ -33,13 +33,23 @@
     },
     {
       "slug": "foret-du-vivant", "title": "La Forêt du Vivant", "subjectCode": "SCIENCES", "displayOrder": 5,
-      "availability": "COMING_SOON", "assetKey": "world-life",
-      "description": "Le vivant, l'environnement et les besoins des êtres vivants. Bientôt disponible.", "levels": []
+      "availability": "PLAYABLE", "assetKey": "world-life",
+      "description": "Explore la forêt : besoins des êtres vivants, chaînes alimentaires, classement des animaux, cycles de vie, santé et environnement.",
+      "levels": [
+        { "ordinal": 1, "title": "La lisière des besoins" },
+        { "ordinal": 2, "title": "Le cœur de la forêt" },
+        { "ordinal": 3, "title": "La clairière des gardiens" }
+      ]
     },
     {
       "slug": "cite-des-inventeurs", "title": "La Cité des Inventeurs", "subjectCode": "PHYSICS", "displayOrder": 6,
-      "availability": "COMING_SOON", "assetKey": "world-inventors",
-      "description": "Matière, mouvement, énergie et objets techniques. Bientôt disponible.", "levels": []
+      "availability": "PLAYABLE", "assetKey": "world-inventors",
+      "description": "Deviens inventeur : états de l'eau, mélanges, énergie, électricité, mouvements et objets techniques.",
+      "levels": [
+        { "ordinal": 1, "title": "L'atelier de la matière" },
+        { "ordinal": 2, "title": "La centrale des énergies" },
+        { "ordinal": 3, "title": "Le hangar des machines" }
+      ]
     }
   ],
   "skills": [
@@ -53,6 +63,19 @@
     { "code": "EN_NUMBERS", "subjectCode": "ENGLISH", "label": "Nombres", "description": "Les nombres de 1 à 20 en anglais." },
     { "code": "EN_ANIMALS", "subjectCode": "ENGLISH", "label": "Animaux", "description": "Nommer des animaux familiers." },
     { "code": "EN_CLASSROOM", "subjectCode": "ENGLISH", "label": "La classe", "description": "Objets et consignes de la classe." },
-    { "code": "EN_SENTENCES", "subjectCode": "ENGLISH", "label": "Phrases simples", "description": "Comprendre et compléter des phrases très simples." }
+    { "code": "EN_SENTENCES", "subjectCode": "ENGLISH", "label": "Phrases simples", "description": "Comprendre et compléter des phrases très simples." },
+    { "code": "SCI_NEEDS", "subjectCode": "SCIENCES", "label": "Besoins du vivant", "description": "Besoins des végétaux et des animaux, démarche d'expérience." },
+    { "code": "SCI_DIET", "subjectCode": "SCIENCES", "label": "Régimes alimentaires", "description": "Herbivores, carnivores et omnivores." },
+    { "code": "SCI_FOOD_CHAINS", "subjectCode": "SCIENCES", "label": "Chaînes alimentaires", "description": "Lire une chaîne alimentaire et comprendre les liens entre êtres vivants." },
+    { "code": "SCI_CLASSIFY", "subjectCode": "SCIENCES", "label": "Classer le vivant", "description": "Classer les animaux selon ce qu'ils ont en commun." },
+    { "code": "SCI_LIFE_CYCLE", "subjectCode": "SCIENCES", "label": "Cycles de vie", "description": "Naissance, croissance, reproduction et métamorphose." },
+    { "code": "SCI_BODY", "subjectCode": "SCIENCES", "label": "Corps et santé", "description": "Alimentation équilibrée, digestion, sommeil et hygiène." },
+    { "code": "SCI_ENVIRONMENT", "subjectCode": "SCIENCES", "label": "Milieux et environnement", "description": "Milieux de vie, saisons et gestes pour protéger la nature." },
+    { "code": "TECH_MATTER", "subjectCode": "PHYSICS", "label": "États de la matière", "description": "Solide, liquide, gaz et changements d'état de l'eau." },
+    { "code": "TECH_MIXTURES", "subjectCode": "PHYSICS", "label": "Mélanges", "description": "Dissoudre, séparer un mélange, conservation de la masse." },
+    { "code": "TECH_ENERGY", "subjectCode": "PHYSICS", "label": "Énergie", "description": "Sources d'énergie renouvelables ou non, économies d'énergie." },
+    { "code": "TECH_ELECTRICITY", "subjectCode": "PHYSICS", "label": "Électricité", "description": "Circuit simple, conducteurs, isolants et sécurité." },
+    { "code": "TECH_MOTION", "subjectCode": "PHYSICS", "label": "Mouvements", "description": "Trajectoires, comparaison de vitesses, distance et durée." },
+    { "code": "TECH_OBJECTS", "subjectCode": "PHYSICS", "label": "Objets techniques", "description": "Fonction, matériaux et transmission du mouvement." }
   ]
 }

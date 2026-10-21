@@ -133,12 +133,14 @@
         "properties": {
           "code": {
             "type": "string",
-            "pattern": "^(MATH|EN)_[A-Z_]+$"
+            "pattern": "^(MATH|EN|SCI|TECH)_[A-Z_]+$"
           },
           "subjectCode": {
             "enum": [
               "MATHS",
-              "ENGLISH"
+              "ENGLISH",
+              "SCIENCES",
+              "PHYSICS"
             ]
           },
           "label": {

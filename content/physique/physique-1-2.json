@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "code": "PHYSIQUE-1-2",
+  "world": "cite-des-inventeurs",
+  "level": 1,
+  "ordinal": 2,
+  "title": "Le laboratoire des mélanges",
+  "exercises": [
+    {
+      "skill": "TECH_MIXTURES",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Tu mets une cuillère de sucre dans un verre d'eau et tu remues longtemps. Que devient le sucre ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Il disparaît complètement"
+        },
+        {
+          "id": "b",
+          "label": "Il se dissout : on ne le voit plus, mais il est toujours là"
+        },
+        {
+          "id": "c",
+          "label": "Il flotte à la surface"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Goûte l'eau dans ta tête : est-elle sucrée ?",
+      "explanation": "Le sucre se dissout dans l'eau : il se répartit en morceaux si petits qu'on ne les voit plus. Il est toujours là, car l'eau a un goût sucré."
+    },
+    {
+      "skill": "TECH_MIXTURES",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Lequel de ces produits ne se dissout pas dans l'eau ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le sel"
+        },
+        {
+          "id": "b",
+          "label": "Le sucre"
+        },
+        {
+          "id": "c",
+          "label": "Le sable"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "À la plage, l'eau de mer et le sable restent bien séparés.",
+      "explanation": "Le sable ne se dissout pas : même après avoir remué, il retombe au fond du verre. Le sel et le sucre, eux, se dissolvent dans l'eau."
+    },
+    {
+      "skill": "TECH_MIXTURES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Comment séparer le sable de l'eau d'un mélange ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "En le versant dans un filtre à café"
+        },
+        {
+          "id": "b",
+          "label": "En remuant très fort"
+        },
+        {
+          "id": "c",
+          "label": "En ajoutant du sucre"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Il faut un objet qui laisse passer l'eau mais retient les grains.",
+      "explanation": "Le filtre laisse passer l'eau et retient les grains de sable : c'est la filtration. On peut aussi laisser reposer le mélange pour que le sable tombe au fond : c'est la décantation."
+    },
+    {
+      "skill": "TECH_MIXTURES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Tu mélanges de l'huile et de l'eau dans un bocal, puis tu attends quelques minutes. Que se passe-t-il ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "L'huile et l'eau restent mélangées pour toujours"
+        },
+        {
+          "id": "b",
+          "label": "L'huile tombe au fond du bocal"
+        },
+        {
+          "id": "c",
+          "label": "L'huile remonte au-dessus de l'eau"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Pense aux gouttes d'huile dans un bouillon ou une vinaigrette qui repose.",
+      "explanation": "L'huile ne se mélange pas à l'eau. Elle est plus légère que l'eau à volume égal, alors elle remonte et forme une couche au-dessus."
+    },
+    {
+      "skill": "TECH_MIXTURES",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Un verre d'eau pèse 200 g. Lina y fait dissoudre 20 g de sel. Combien pèse maintenant le verre d'eau salée ?",
+      "unit": "g",
+      "answer": {
+        "number": "220"
+      },
+      "hint": "Le sel ne se voit plus, mais a-t-il vraiment disparu ?",
+      "explanation": "Le sel dissous est toujours dans l'eau : sa masse s'ajoute. 200 g + 20 g = 220 g. Quand on dissout une matière, sa masse se conserve."
+    }
+  ]
+}

@@ -132,8 +132,8 @@ class MissionFlowIntegrationTest extends IntegrationTest {
         assertThat(worlds.size()).isEqualTo(6);
         long playable = 0;
         for (JsonNode w : worlds) if ("PLAYABLE".equals(w.path("availability").asString())) playable++;
-        assertThat(playable).isEqualTo(2);
-        for (String slug : List.of("vallee-des-formes", "archipel-des-explorateurs", "foret-du-vivant", "cite-des-inventeurs")) {
+        assertThat(playable).isEqualTo(4);
+        for (String slug : List.of("vallee-des-formes", "archipel-des-explorateurs")) {
             JsonNode detail = c.get("/worlds/" + slug).body();
             assertThat(detail.path("world").path("availability").asString()).isEqualTo("COMING_SOON");
             assertThat(detail.path("levels").size()).isZero();
@@ -214,5 +214,32 @@ class MissionFlowIntegrationTest extends IntegrationTest {
         assertThat(c.put("/me/equipment/HEAD", Map.of("rewardCode", "CAPTAIN_CAP")).body().path("equipment").path("HEAD").asString()).isEqualTo("CAPTAIN_CAP");
         assertThat(c.put("/me/equipment/HEAD", Map.of("rewardCode", "SPACE_HELMET")).status()).as("non possédé").isEqualTo(422);
         assertThat(c.put("/me/equipment/BACK", Map.of("rewardCode", "CAPTAIN_CAP")).status()).as("mauvais emplacement").isEqualTo(422);
+    }
+
+    @Test
+    void forestAndInventorsWorldsArePlayableAndGrantTheirRewards() {
+        Family f = newFamily("sciences");
+        ApiClient c = f.client();
+        // Chaque monde commence par sa mission 1 ; la suivante reste verrouillée.
+        assertThat(c.post("/missions/" + missionId("SCIENCES-1-2") + "/attempts", Map.of()).code()).isEqualTo("MISSION_LOCKED");
+        for (String world : List.of("SCIENCES", "PHYSIQUE")) {
+            for (String position : List.of("1-1", "1-2", "2-1", "2-2", "3-1", "3-2")) {
+                assertThat(playMission(c, world + "-" + position, 5).path("stars").asInt()).isEqualTo(3);
+            }
+        }
+        JsonNode rewards = c.get("/me/rewards").body();
+        List<String> owned = new java.util.ArrayList<>();
+        rewards.path("rewards").forEach(r -> { if (r.path("owned").asBoolean()) owned.add(r.path("code").asString()); });
+        assertThat(owned).contains("FOREST_GUARDIAN", "MUSHROOM_HAT", "NATURALIST_BAG", "SQUIRREL_FRIEND",
+                "INVENTOR_GENIUS", "INVENTOR_GOGGLES", "PROPELLER_PACK", "ROBOT_FRIEND", "STAR_RABBIT");
+        assertThat(owned).doesNotContain("NUMBERS_EXPLORER", "WORDS_FRIEND");
+        JsonNode progress = c.get("/me/progress").body();
+        assertThat(progress.path("xpTotal").asInt()).isEqualTo(840);
+        assertThat(progress.path("adventurerLevel").asInt()).isEqualTo(9);
+        for (String slug : List.of("foret-du-vivant", "cite-des-inventeurs")) {
+            JsonNode detail = c.get("/worlds/" + slug).body();
+            assertThat(detail.path("world").path("availability").asString()).isEqualTo("PLAYABLE");
+            assertThat(detail.path("levels").size()).isEqualTo(3);
+        }
     }
 }

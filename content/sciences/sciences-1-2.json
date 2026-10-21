@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "code": "SCIENCES-1-2",
+  "world": "foret-du-vivant",
+  "level": 1,
+  "ordinal": 2,
+  "title": "Qui mange quoi ?",
+  "exercises": [
+    {
+      "skill": "SCI_DIET",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le lapin mange de l'herbe, des feuilles et des carottes. C'est un animal…",
+      "options": [
+        {
+          "id": "a",
+          "label": "carnivore"
+        },
+        {
+          "id": "b",
+          "label": "herbivore"
+        },
+        {
+          "id": "c",
+          "label": "omnivore"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Le lapin ne mange que des végétaux.",
+      "explanation": "Un animal qui ne mange que des végétaux (herbe, feuilles, racines, fruits) est herbivore. Le lapin est donc herbivore."
+    },
+    {
+      "skill": "SCI_DIET",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Lequel de ces animaux est carnivore ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le loup"
+        },
+        {
+          "id": "b",
+          "label": "La vache"
+        },
+        {
+          "id": "c",
+          "label": "La chèvre"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Un carnivore mange d'autres animaux.",
+      "explanation": "Le loup chasse et mange d'autres animaux : il est carnivore. La vache et la chèvre broutent de l'herbe : elles sont herbivores."
+    },
+    {
+      "skill": "SCI_DIET",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Un animal qui mange à la fois des végétaux et des animaux, comme le sanglier ou l'être humain, est …",
+      "answer": {
+        "accepted": [
+          "omnivore",
+          "un omnivore"
+        ]
+      },
+      "hint": "Le mot commence par « omni », qui veut dire « tout ».",
+      "explanation": "« Omni » veut dire « tout » : un omnivore mange de tout, des végétaux et des animaux. Le sanglier mange des glands, des racines, mais aussi des vers et des insectes."
+    },
+    {
+      "skill": "SCI_FOOD_CHAINS",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Lis la chaîne alimentaire. La flèche veut dire « est mangé par ».",
+      "prompt": "herbe → sauterelle → grenouille → héron. Qui mange la sauterelle ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La grenouille"
+        },
+        {
+          "id": "b",
+          "label": "L'herbe"
+        },
+        {
+          "id": "c",
+          "label": "Le héron"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Suis la flèche qui part de la sauterelle.",
+      "explanation": "La flèche part de la sauterelle et va vers la grenouille : la sauterelle est mangée par la grenouille. La grenouille, elle, est mangée par le héron."
+    },
+    {
+      "skill": "SCI_FOOD_CHAINS",
+      "type": "MCQ",
+      "difficulty": 3,
+      "instruction": "Lis la chaîne alimentaire. La flèche veut dire « est mangé par ».",
+      "prompt": "gland → mulot → renard. Que se passe-t-il pour les mulots si tous les renards disparaissent de la forêt ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Les mulots disparaissent aussitôt"
+        },
+        {
+          "id": "b",
+          "label": "Rien ne change pour les mulots"
+        },
+        {
+          "id": "c",
+          "label": "Les mulots deviennent plus nombreux"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Le renard mange le mulot. Que se passe-t-il si plus personne ne mange les mulots ?",
+      "explanation": "Sans renards, plus personne ne chasse les mulots : ils deviennent plus nombreux et mangent davantage de glands. Dans une chaîne alimentaire, chaque être vivant dépend des autres."
+    }
+  ]
+}

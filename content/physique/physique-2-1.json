@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "code": "PHYSIQUE-2-1",
+  "world": "cite-des-inventeurs",
+  "level": 2,
+  "ordinal": 1,
+  "title": "Les sources d'énergie",
+  "exercises": [
+    {
+      "skill": "TECH_ENERGY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Qu'est-ce qui fait tourner les pales d'une éolienne ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "La pluie"
+        },
+        {
+          "id": "b",
+          "label": "Le vent"
+        },
+        {
+          "id": "c",
+          "label": "Le charbon"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Une éolienne ressemble à un grand moulin.",
+      "explanation": "Le vent pousse les pales de l'éolienne et les fait tourner. Ce mouvement est transformé en électricité."
+    },
+    {
+      "skill": "TECH_ENERGY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Laquelle de ces sources d'énergie est renouvelable, c'est-à-dire qu'elle ne s'épuise pas ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Le soleil"
+        },
+        {
+          "id": "b",
+          "label": "Le pétrole"
+        },
+        {
+          "id": "c",
+          "label": "Le charbon"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Une énergie renouvelable revient chaque jour, sans qu'on la creuse dans le sol.",
+      "explanation": "Le soleil brille chaque jour : son énergie est renouvelable. Le pétrole et le charbon sont tirés du sol et il y en a une quantité limitée : un jour, il n'y en aura plus."
+    },
+    {
+      "skill": "TECH_ENERGY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "D'où vient l'énergie qui permet à ton corps de bouger, de courir et de grandir ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Des aliments que tu manges"
+        },
+        {
+          "id": "b",
+          "label": "De l'électricité de la maison"
+        },
+        {
+          "id": "c",
+          "label": "De tes vêtements"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Que fais-tu quand tu as faim après avoir beaucoup couru ?",
+      "explanation": "Ton corps tire son énergie des aliments. C'est pour cela qu'on a faim après un effort : il faut refaire le plein d'énergie en mangeant."
+    },
+    {
+      "skill": "TECH_ENERGY",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel geste permet d'économiser l'énergie à la maison ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Laisser la télévision en veille toute la nuit"
+        },
+        {
+          "id": "b",
+          "label": "Ouvrir la fenêtre avec le chauffage allumé"
+        },
+        {
+          "id": "c",
+          "label": "Éteindre la lumière en quittant une pièce"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Cherche le geste qui évite de consommer pour rien.",
+      "explanation": "Éteindre la lumière quand on part évite de consommer de l'électricité inutilement. Un appareil en veille consomme encore, et ouvrir la fenêtre fait perdre la chaleur du chauffage."
+    },
+    {
+      "skill": "TECH_ENERGY",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque.",
+      "prompt": "Le pétrole, le charbon et le gaz naturel se sont formés il y a des millions d'années et finiront par s'épuiser. Ce sont des énergies non …",
+      "answer": {
+        "accepted": [
+          "renouvelables",
+          "renouvelable",
+          "non renouvelables",
+          "non renouvelable",
+          "non-renouvelables",
+          "non-renouvelable"
+        ]
+      },
+      "hint": "C'est le contraire de l'énergie du soleil ou du vent, qui revient toujours.",
+      "explanation": "Ce sont des énergies non renouvelables : elles mettent des millions d'années à se former et nous les utilisons beaucoup plus vite. Le soleil, le vent et l'eau sont des énergies renouvelables."
+    }
+  ]
+}
