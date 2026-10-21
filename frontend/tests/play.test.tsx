@@ -80,6 +80,39 @@ describe('écran de mission', () => {
     expect(screen.getByRole('button', { name: 'Question suivante' })).toHaveFocus();
   });
 
+  it('conserve la correction après un échec de chargement et permet de reprendre', async () => {
+    let offline = false;
+    let answered = 0;
+    mockApi({
+      'POST /api/v1/missions/m1/attempts': () => ({ status: 201, body: view(0) }),
+      'GET /api/v1/attempts/att1': () => offline
+        ? { status: 400, body: { code: 'UNAVAILABLE', detail: 'Chargement impossible.' } }
+        : { status: 200, body: view(answered) },
+      'PUT /api/v1/attempts/att1/answers/ex1': () => {
+        answered = 1;
+        return { status: 200, body: {
+        exerciseId: 'ex1', correct: true, hintUsed: false, expectedAnswer: { optionId: 'a' },
+        explanation: 'Bonne réponse enregistrée.', answeredCount: 1, readyToComplete: false,
+        } };
+      },
+    });
+    const user = userEvent.setup();
+    renderPlay();
+    await user.click(await screen.findByLabelText('red'));
+    await user.click(screen.getByRole('button', { name: 'Valider' }));
+    await screen.findByText('Bonne réponse enregistrée.');
+    offline = true;
+    await user.click(screen.getByRole('button', { name: 'Question suivante' }));
+    expect(await screen.findByText('Chargement impossible.')).toBeInTheDocument();
+    expect(screen.getByText('Bonne réponse enregistrée.')).toBeInTheDocument();
+    expect(screen.getByLabelText('red')).toBeDisabled();
+    expect(screen.queryByRole('button', { name: 'Valider' })).not.toBeInTheDocument();
+    offline = false;
+    await user.click(screen.getByRole('button', { name: 'Réessayer' }));
+    expect(await screen.findByText('Question 2 sur 5')).toBeInTheDocument();
+    expect(screen.queryByText('Bonne réponse enregistrée.')).not.toBeInTheDocument();
+  });
+
   it('reprend une partie interrompue à la question suivante non terminée', async () => {
     mockApi({
       'POST /api/v1/missions/m1/attempts': () => ({ status: 200, body: view(2) }),
