@@ -10,3 +10,13 @@ eduquest:
     hsts: true
   auth:
     require-verified-email: true
+spring:
+  mail:
+    properties:
+      # Prestataires SMTP réels (Brevo, OVH, Scaleway…) : authentification et chiffrement STARTTLS sur le port 587.
+      mail.smtp.auth: ${SMTP_AUTH:true}
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.connectiontimeout: 10000
+      mail.smtp.timeout: 10000
+      mail.smtp.writetimeout: 10000

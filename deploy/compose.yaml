@@ -1,0 +1,83 @@
+# Production sur un serveur (VPS) : Caddy (HTTPS automatique) ─► web (nginx) ─► backend ─► PostgreSQL.
+# Ne pas lancer à la main : utiliser ./deploy/demarrer.sh, qui lit deploy/prod.env.
+# Seul Caddy est joignable depuis Internet (ports 80 et 443). PostgreSQL reste sur le réseau privé Docker.
+name: eduquest-prod
+
+x-logging: &logging
+  driver: json-file
+  options: { max-size: "10m", max-file: "5" }
+
+x-backend-env: &backend-env
+  SPRING_PROFILES_ACTIVE: prod
+  DATABASE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-eduquest}
+  POSTGRES_USER: ${POSTGRES_USER:-eduquest}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Définir POSTGRES_PASSWORD dans deploy/prod.env}
+  APP_BASE_URL: https://${DOMAIN:?Définir DOMAIN dans deploy/prod.env}
+  SMTP_HOST: ${SMTP_HOST:?Définir SMTP_HOST dans deploy/prod.env}
+  SMTP_PORT: ${SMTP_PORT:-587}
+  SMTP_USERNAME: ${SMTP_USERNAME:-}
+  SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+  MAIL_FROM: ${MAIL_FROM:?Définir MAIL_FROM dans deploy/prod.env}
+  JAVA_OPTS: -XX:MaxRAMPercentage=60
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-eduquest}
+      POSTGRES_USER: ${POSTGRES_USER:-eduquest}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+    logging: *logging
+
+  # Import idempotent des contenus pédagogiques à chaque démarrage, puis s'arrête.
+  content-import:
+    build: { context: .., dockerfile: infra/backend.Dockerfile }
+    image: eduquest-backend:prod
+    environment: *backend-env
+    command: ["--spring.main.web-application-type=none", "--eduquest.content.import=true"]
+    depends_on: { postgres: { condition: service_healthy } }
+    restart: "no"
+    logging: *logging
+
+  backend:
+    image: eduquest-backend:prod
+    environment: *backend-env
+    # Tient sur un serveur de 2 Go (Droplet DigitalOcean Basic) avec PostgreSQL, nginx et Caddy.
+    mem_limit: 1g
+    depends_on: { content-import: { condition: service_completed_successfully } }
+    restart: unless-stopped
+    logging: *logging
+
+  web:
+    build: { context: .., dockerfile: infra/frontend.Dockerfile }
+    image: eduquest-frontend:prod
+    depends_on: { backend: { condition: service_healthy } }
+    restart: unless-stopped
+    logging: *logging
+
+  caddy:
+    image: caddy:2.10-alpine
+    environment:
+      DOMAIN: ${DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [web]
+    restart: unless-stopped
+    logging: *logging
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:
