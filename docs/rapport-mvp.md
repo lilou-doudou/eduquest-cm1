@@ -10,7 +10,7 @@ Environnement : conteneur Linux 4 vCPU Xeon 2,8 GHz, 15,7 Go, Java 21 (OpenJDK),
 
 | Commande | Résultat |
 |---|---|
-| `make test` | ✅ Contenus valides (2 mondes jouables sur 6, 12 missions, 60 exercices, 11 compétences, 18 récompenses) ; backend `./mvnw -B verify` : **103 tests, 0 échec** (64 unitaires, 39 d'intégration sur PostgreSQL 16 via Testcontainers) ; frontend : typecheck OK, **Vitest 15/15** |
+| `make test` | ✅ Contenus valides (2 mondes jouables sur 6, 12 missions, 60 exercices, 11 compétences, 18 récompenses) ; backend `./mvnw -B verify` : **103 tests, 0 échec** (64 unitaires, 39 d'intégration sur PostgreSQL 16 via Testcontainers) ; frontend : typecheck OK, **Vitest 16/16** |
 | `make lint` | ✅ ESLint, typecheck frontend et E2E, compilation Java |
 | `make build` | ✅ jar backend et bundle Vite |
 | `make test-e2e` | ✅ **8 scénarios Playwright passés** (Chromium 1194, bundle de production via `vite preview`, API sur base jetable) : parcours famille complet, mission mobile (Pixel 7), sans WebGL, carte 3D, 3 tests d'accessibilité (axe-core WCAG 2.1 AA, clavier seul, animations réduites) + 1 test d'écrans publics. 3 tests de captures ignorés hors `CAPTURE=1`. |
@@ -24,7 +24,7 @@ Environnement : conteneur Linux 4 vCPU Xeon 2,8 GHz, 15,7 Go, Java 21 (OpenJDK),
 Précisions honnêtes :
 
 - Les images Docker ont été construites ici avec une copie temporaire des Dockerfiles ajoutant le certificat du proxy réseau du bac à sable ; les Dockerfiles livrés n'en contiennent pas et n'ont pas été construits tels quels.
-- La CI (`.github/workflows/ci.yml`) n'a **jamais été exécutée sur GitHub** : aucun dépôt distant n'existe encore. Son YAML est valide et ses étapes reprennent les commandes ci-dessus.
+- La CI tourne sur GitHub (`lilou-doudou/eduquest-cm1`). Le premier passage a révélé un bug réel (page d’inscription bloquée sur « Chargement… » quand le 401 initial de `/auth/me` arrivait avant la notice), corrigé avec un test de non-régression, et un scan de secrets incompatible avec un dépôt neuf, remplacé par la CLI gitleaks (aucune fuite sur les 11 premiers commits).
 - Le job CI « clone neuf » a été simulé partiellement (import double et requêtes SQL sur la base de dev existante), pas sur un clone vierge.
 
 ## Correspondance critères d'acceptation → preuves

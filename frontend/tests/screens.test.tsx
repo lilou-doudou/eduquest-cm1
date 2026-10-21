@@ -58,6 +58,17 @@ describe('gardes et session', () => {
 });
 
 describe('formulaires adultes', () => {
+  it("ouvre l'inscription directement même si /auth/me répond 401 avant la notice", async () => {
+    // Régression : le 401 initial (aucune session) vidait le cache et laissait la notice en chargement.
+    mockApi({
+      'GET /api/v1/auth/me': () => ({ status: 401, body: { code: 'SESSION_REQUIRED' } }),
+      'GET /api/v1/privacy/notice': () =>
+        new Promise((resolve) => setTimeout(() => resolve({ status: 200, body: { noticeVersion: '2026-10-adulte-v1' } }), 50)),
+    });
+    renderAt(<AppRoutes />, '/inscription');
+    expect(await screen.findByLabelText('Adresse e-mail')).toBeInTheDocument();
+  });
+
   it("l'inscription exige 12 caractères et la lecture de la notice avant tout envoi", async () => {
     const calls = mockApi({
       'GET /api/v1/auth/me': () => ({ status: 401, body: { code: 'SESSION_REQUIRED' } }),
