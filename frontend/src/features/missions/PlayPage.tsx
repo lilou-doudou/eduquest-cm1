@@ -103,7 +103,7 @@ function Attempt({ attemptId, onFinished }: { attemptId: string; onFinished: (id
   };
 
   if (attempt.isPending) return <Loading />;
-  if (attempt.error) return <ErrorMessage error={attempt.error} onRetry={() => attempt.refetch()} />;
+  if (!attempt.data) return <ErrorMessage error={attempt.error} onRetry={() => attempt.refetch()} />;
   const view = attempt.data;
   if (view.status === 'ABANDONED') {
     return (

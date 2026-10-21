@@ -31,3 +31,16 @@ export function useSessionChanged() {
     await qc.refetchQueries({ queryKey: ME_KEY });
   };
 }
+
+let expired = false;
+
+/** Mémorise qu'une session vient d'expirer, pour que les gardes affichent le bon message. */
+export function markSessionExpired() {
+  expired = true;
+}
+
+export function consumeSessionExpired(): boolean {
+  const value = expired;
+  expired = false;
+  return value;
+}

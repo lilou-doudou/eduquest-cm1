@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Navigate, useLocation } from 'react-router';
 import type { Role } from '../api/types';
-import { useMe } from '../app/session';
+import { consumeSessionExpired, useMe } from '../app/session';
 import { ErrorMessage, Loading } from './States';
 
 /**
@@ -13,7 +13,7 @@ export function RequireRole({ role, children }: { role: Role; children: ReactNod
   const location = useLocation();
   if (isPending) return <Loading />;
   if (error) return <ErrorMessage error={error} onRetry={() => refetch()} />;
-  if (!me) return <Navigate to="/connexion" replace state={{ from: location.pathname }} />;
+  if (!me) return <Navigate to={consumeSessionExpired() ? '/connexion?expiree=1' : '/connexion'} replace state={{ from: location.pathname }} />;
   if (me.role !== role) {
     return <Navigate to={me.role === 'CHILD' ? '/aventure' : '/profils'} replace />;
   }

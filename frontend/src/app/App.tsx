@@ -19,7 +19,7 @@ import { AdventurerPage } from '../features/rewards/AdventurerPage';
 import { SettingsPage } from '../features/settings/SettingsPage';
 import { AdventurePage } from '../features/worlds/AdventurePage';
 import { WorldPage } from '../features/worlds/WorldPage';
-import { ME_KEY } from './session';
+import { ME_KEY, markSessionExpired } from './session';
 
 export function createQueryClient() {
   return new QueryClient({
@@ -40,9 +40,12 @@ function SessionWatcher() {
     () =>
       onSessionExpired(() => {
         const hadSession = Boolean(qc.getQueryData(ME_KEY));
-        qc.setQueryData(ME_KEY, null);
         qc.removeQueries({ predicate: (q) => q.queryKey[0] !== 'me' });
-        if (hadSession) navigate('/connexion?expiree=1', { replace: true });
+        if (hadSession) {
+          markSessionExpired();
+          navigate('/connexion?expiree=1', { replace: true });
+        }
+        qc.setQueryData(ME_KEY, null);
       }),
     [qc, navigate],
   );
