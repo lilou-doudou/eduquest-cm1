@@ -151,7 +151,7 @@ public class ProgressService {
             if ("TO_REVIEW".equals(s.status())) {
                 suggestions.add(new RevisionSuggestion("SKILL", s.label(),
                         s.successRate() + " % de réussite sur " + s.evaluatedCount() + " réponses récentes ("
-                                + s.attemptCount() + " parties). Rejouer les missions concernées peut aider."));
+                                + s.attemptCount() + (s.attemptCount() > 1 ? " parties" : " partie") + "). Rejouer les missions concernées peut aider."));
             }
         }
         Map<UUID, MissionProgress> pm = progressMap(childId);

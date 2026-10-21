@@ -1,5 +1,6 @@
 package fr.eduquest.shared;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,21 @@ import java.time.ZoneOffset;
 public class RateLimiter {
     private final JdbcClient jdbc;
     private final Clock clock;
+    private final int ipFactor;
 
-    public RateLimiter(JdbcClient jdbc, Clock clock) {
+    public RateLimiter(JdbcClient jdbc, Clock clock, @Value("${eduquest.rate-limit.ip-factor:1}") int ipFactor) {
         this.jdbc = jdbc;
         this.clock = clock;
+        this.ipFactor = ipFactor;
+    }
+
+    /**
+     * Limite par adresse IP. Le facteur permet d'assouplir ces seuils derrière un NAT partagé
+     * (ou en test, où toutes les requêtes viennent de 127.0.0.1) sans toucher aux limites par compte.
+     */
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void consumePerIp(String key, String ip, int limit, Duration window) {
+        consume(key + ":ip:" + ip, limit * ipFactor, window);
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)

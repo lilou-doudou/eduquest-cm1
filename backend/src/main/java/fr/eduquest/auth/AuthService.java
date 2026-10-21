@@ -70,7 +70,7 @@ public class AuthService {
 
     @Transactional
     public void register(String email, String password, String noticeVersion, String ip) {
-        rateLimiter.consume("register:ip:" + ip, 10, Duration.ofHours(1));
+        rateLimiter.consumePerIp("register", ip, 10, Duration.ofHours(1));
         if (!PrivacyNotice.VERSION.equals(noticeVersion)) {
             throw ApiException.badRequest("NOTICE_VERSION_MISMATCH", "Merci de lire la version actuelle de la notice d'information.");
         }
@@ -86,7 +86,7 @@ public class AuthService {
             return;
         }
         Instant now = clock.instant();
-        ParentAccount account = accounts.save(new ParentAccount(normalized, encoder.encode(password), now));
+        ParentAccount account = accounts.saveAndFlush(new ParentAccount(normalized, encoder.encode(password), now));
         privacy.recordAccountNotice(account.getId(), noticeVersion);
         issueVerification(account);
         audit.record("ACCOUNT_REGISTERED", account.getId(), "SUCCESS");
@@ -116,7 +116,7 @@ public class AuthService {
     public void login(String email, String password, HttpServletRequest request, HttpServletResponse response) {
         String normalized = normalizeEmail(email);
         String ip = request.getRemoteAddr();
-        rateLimiter.consume("login:ip:" + ip, 30, Duration.ofMinutes(15));
+        rateLimiter.consumePerIp("login", ip, 30, Duration.ofMinutes(15));
         rateLimiter.consume("login:account:" + normalized, 10, Duration.ofMinutes(15));
         ParentAccount account = checkCredentials(normalized, password);
         if (requireVerifiedEmail && account.getEmailVerifiedAt() == null) {
@@ -154,7 +154,7 @@ public class AuthService {
     @Transactional
     public void forgotPassword(String email, String ip) {
         String normalized = normalizeEmail(email);
-        rateLimiter.consume("forgot:ip:" + ip, 10, Duration.ofHours(1));
+        rateLimiter.consumePerIp("forgot", ip, 10, Duration.ofHours(1));
         rateLimiter.consume("forgot:account:" + normalized, 3, Duration.ofHours(1));
         accounts.findByEmailNormalized(normalized)
                 .filter(a -> a.getStatus() != ParentAccount.Status.DELETING)
@@ -169,7 +169,7 @@ public class AuthService {
 
     @Transactional
     public void resetPassword(String rawToken, String newPassword, String ip) {
-        rateLimiter.consume("reset:ip:" + ip, 20, Duration.ofHours(1));
+        rateLimiter.consumePerIp("reset", ip, 20, Duration.ofHours(1));
         Instant now = clock.instant();
         AccountToken token = tokens.findByTokenHash(Hashing.sha256Hex(rawToken))
                 .filter(t -> t.getType() == AccountToken.Type.RESET_PASSWORD && t.isUsable(now))
@@ -209,7 +209,7 @@ public class AuthService {
     @Transactional(noRollbackFor = ApiException.class)
     public void returnToParent(SessionPrincipal current, String email, String password,
                                HttpServletRequest request, HttpServletResponse response) {
-        rateLimiter.consume("parent-session:ip:" + request.getRemoteAddr(), 10, Duration.ofMinutes(15));
+        rateLimiter.consumePerIp("parent-session", request.getRemoteAddr(), 10, Duration.ofMinutes(15));
         rateLimiter.consume("parent-session:account:" + current.parentId(), 5, Duration.ofMinutes(15));
         ParentAccount account = accounts.findById(current.parentId()).orElseThrow(ApiException::notFound);
         boolean emailMatches = account.getEmailNormalized().equals(normalizeEmail(email));

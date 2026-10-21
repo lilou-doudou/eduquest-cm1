@@ -50,7 +50,7 @@ public class RetentionJob {
 
         record Candidate(UUID id, String email) {}
         List<Candidate> toNotify = jdbc.sql("""
-                SELECT id, email_normalized FROM parent_account
+                SELECT id, email_normalized AS email FROM parent_account
                 WHERE last_activity_at < :limit AND inactivity_notified_at IS NULL AND status <> 'DELETING'""")
                 .param("limit", now.minusMonths(12)).query(Candidate.class).list();
         for (Candidate c : toNotify) {
