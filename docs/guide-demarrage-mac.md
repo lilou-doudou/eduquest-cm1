@@ -83,7 +83,8 @@ Tu peux aussi créer ton propre compte avec « Créer un compte » : le lien de 
 | Message | Que faire |
 |---|---|
 | `Cannot connect to the Docker daemon` | Docker Desktop n'est pas démarré : étape 1, puis relance la commande. |
-| `port is already allocated` (3000, 5432, 1025 ou 8025) | Un autre programme utilise ce port. Arrête-le, ou arrête une ancienne exécution avec `docker compose --profile app down`. |
+| `port is already allocated` ou `address already in use` sur **5432** | Un PostgreSQL tourne déjà sur ton Mac. Ouvre le fichier `.env` dans VS Code et ajoute (ou modifie) la ligne `POSTGRES_HOST_PORT=55432`, enregistre (`Cmd + S`), puis relance `docker compose --profile app down` et `docker compose --profile app up --build`. Le jeu n'en est pas affecté. |
+| Même message sur 3000, 8025 ou 1025 | Même principe dans `.env` : `APP_PORT=3001` (le jeu sera alors sur http://localhost:3001), `MAILPIT_UI_PORT=8026` ou `SMTP_HOST_PORT=1026`. Une ancienne exécution peut aussi occuper le port : `docker compose --profile app down`. |
 | `POSTGRES_PASSWORD` manquant | Le fichier `.env` n'existe pas : étape 4. |
 | La page reste blanche ou « Chargement… » longtemps | Attends la fin du démarrage, puis recharge la page (`Cmd + R`). |
 | La construction échoue faute de mémoire | Docker Desktop → **Settings → Resources** : mets au moins 4 Go de mémoire. |
