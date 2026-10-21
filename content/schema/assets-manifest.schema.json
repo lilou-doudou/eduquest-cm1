@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eduquest.local/schema/assets-manifest.schema.json",
+  "title": "Inventaire des ressources visuelles et licences",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "assets"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "note": { "type": "string" },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["key", "kind", "license"],
+        "properties": {
+          "key": { "type": "string" },
+          "kind": { "enum": ["world", "badge", "cosmetic", "avatar"] },
+          "license": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    }
+  }
+}
