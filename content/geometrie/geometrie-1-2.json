@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOMETRIE-1-2",
+  "world": "vallee-des-formes",
+  "level": 1,
+  "ordinal": 2,
+  "title": "Le chemin des angles droits",
+  "exercises": [
+    {
+      "skill": "GEOM_ANGLES",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel outil utilise-t-on pour vérifier qu'un angle est droit ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "le compas"
+        },
+        {
+          "id": "b",
+          "label": "l'équerre"
+        },
+        {
+          "id": "c",
+          "label": "la gomme"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Cet outil a lui-même la forme d'un triangle avec un angle droit.",
+      "explanation": "On vérifie un angle droit avec l'équerre : on place son angle droit sur l'angle à tester. Le compas sert à tracer des cercles."
+    },
+    {
+      "skill": "GEOM_ANGLES",
+      "type": "NUMBER",
+      "difficulty": 1,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien d'angles droits a un rectangle ?",
+      "answer": {
+        "number": "4"
+      },
+      "hint": "Compte les coins d'une feuille de papier.",
+      "explanation": "Un rectangle a 4 angles, et ils sont tous droits."
+    },
+    {
+      "skill": "GEOM_ANGLES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Deux droites se coupent en formant un angle droit. On dit qu'elles sont…",
+      "options": [
+        {
+          "id": "a",
+          "label": "parallèles"
+        },
+        {
+          "id": "b",
+          "label": "courbes"
+        },
+        {
+          "id": "c",
+          "label": "perpendiculaires"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Pense au « + » : les deux traits se croisent bien droit.",
+      "explanation": "Deux droites qui se coupent en formant un angle droit sont perpendiculaires."
+    },
+    {
+      "skill": "GEOM_ANGLES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Les deux rails d'une voie ferrée ne se croisent jamais et restent toujours à la même distance. Ils sont…",
+      "options": [
+        {
+          "id": "a",
+          "label": "parallèles"
+        },
+        {
+          "id": "b",
+          "label": "perpendiculaires"
+        },
+        {
+          "id": "c",
+          "label": "sécants"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Si les rails se croisaient, le train ne pourrait plus avancer !",
+      "explanation": "Deux droites qui ne se coupent jamais et gardent le même écart sont parallèles, comme les rails d'un train."
+    },
+    {
+      "skill": "GEOM_ANGLES",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Un angle plus petit qu'un angle droit est un angle…",
+      "answer": {
+        "accepted": [
+          "aigu",
+          "angle aigu",
+          "un angle aigu"
+        ]
+      },
+      "hint": "Le mot rime avec « pointu ». L'angle plus grand qu'un angle droit, lui, est obtus.",
+      "explanation": "Un angle plus petit qu'un angle droit est aigu. Un angle plus grand qu'un angle droit est obtus."
+    }
+  ]
+}

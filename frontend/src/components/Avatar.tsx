@@ -49,6 +49,19 @@ const HEAD_ITEMS: Record<string, ReactElement> = {
       <circle cx="60" cy="45" r="8" fill="#bfe3ff" fillOpacity="0.6" stroke="#c99a2e" strokeWidth="3" />
     </g>
   ),
+  TRIANGLE_HAT: (
+    <g>
+      <path d="M32 30 L50 0 L68 30 Z" fill="#5a7fa8" />
+      <path d="M41 30 L50 15 L59 30 Z" fill="#f2b632" />
+    </g>
+  ),
+  EXPLORER_HAT: (
+    <g>
+      <ellipse cx="50" cy="28" rx="32" ry="5" fill="#a8844a" />
+      <path d="M32 28 Q50 2 68 28 Z" fill="#d9c08a" />
+      <rect x="33" y="22" width="34" height="4" fill="#7a5a2b" />
+    </g>
+  ),
 };
 
 const BACK_ITEMS: Record<string, string> = {
@@ -58,6 +71,8 @@ const BACK_ITEMS: Record<string, string> = {
   BUTTERFLY_WINGS: '#f29fd0',
   NATURALIST_BAG: '#6f8f3a',
   PROPELLER_PACK: '#c96b2a',
+  PRISM_CAPE: '#7fb2e5',
+  SAIL_CAPE: '#f4efe1',
 };
 
 const COMPANIONS: Record<string, string> = {
@@ -68,6 +83,8 @@ const COMPANIONS: Record<string, string> = {
   STAR_RABBIT: '#c9b8f5',
   SQUIRREL_FRIEND: '#b8662f',
   ROBOT_FRIEND: '#9aa4b2',
+  ORIGAMI_CRANE: '#f27aa8',
+  PARROT_FRIEND: '#3fa65b',
 };
 
 interface Props {

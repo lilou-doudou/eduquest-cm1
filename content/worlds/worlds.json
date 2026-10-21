@@ -23,13 +23,23 @@
     },
     {
       "slug": "vallee-des-formes", "title": "La Vallée des Formes", "subjectCode": "GEOMETRY", "displayOrder": 3,
-      "availability": "COMING_SOON", "assetKey": "world-shapes",
-      "description": "Figures, angles droits, symétrie et repérage. Bientôt disponible.", "levels": []
+      "availability": "PLAYABLE", "assetKey": "world-shapes",
+      "description": "Parcours la vallée : figures planes, angles droits, symétrie, solides, périmètre et repérage sur quadrillage.",
+      "levels": [
+        { "ordinal": 1, "title": "Le sentier des figures" },
+        { "ordinal": 2, "title": "Le pont des miroirs" },
+        { "ordinal": 3, "title": "Le belvédère des mesures" }
+      ]
     },
     {
       "slug": "archipel-des-explorateurs", "title": "L'Archipel des Explorateurs", "subjectCode": "GEOGRAPHY", "displayOrder": 4,
-      "availability": "COMING_SOON", "assetKey": "world-geography",
-      "description": "Cartes, paysages et territoires. Bientôt disponible.", "levels": []
+      "availability": "PLAYABLE", "assetKey": "world-geography",
+      "description": "Embarque pour l'archipel : lire une carte, continents et océans, paysages et carte de France, habiter et consommer.",
+      "levels": [
+        { "ordinal": 1, "title": "La crique des cartes" },
+        { "ordinal": 2, "title": "Le phare des paysages" },
+        { "ordinal": 3, "title": "Le port des habitants" }
+      ]
     },
     {
       "slug": "foret-du-vivant", "title": "La Forêt du Vivant", "subjectCode": "SCIENCES", "displayOrder": 5,
@@ -76,6 +86,18 @@
     { "code": "TECH_ENERGY", "subjectCode": "PHYSICS", "label": "Énergie", "description": "Sources d'énergie renouvelables ou non, économies d'énergie." },
     { "code": "TECH_ELECTRICITY", "subjectCode": "PHYSICS", "label": "Électricité", "description": "Circuit simple, conducteurs, isolants et sécurité." },
     { "code": "TECH_MOTION", "subjectCode": "PHYSICS", "label": "Mouvements", "description": "Trajectoires, comparaison de vitesses, distance et durée." },
-    { "code": "TECH_OBJECTS", "subjectCode": "PHYSICS", "label": "Objets techniques", "description": "Fonction, matériaux et transmission du mouvement." }
+    { "code": "TECH_OBJECTS", "subjectCode": "PHYSICS", "label": "Objets techniques", "description": "Fonction, matériaux et transmission du mouvement." },
+    { "code": "GEOM_FIGURES", "subjectCode": "GEOMETRY", "label": "Figures planes", "description": "Reconnaître carré, rectangle, triangle et cercle ; rayon et diamètre." },
+    { "code": "GEOM_ANGLES", "subjectCode": "GEOMETRY", "label": "Angles et droites", "description": "Angle droit, aigu ou obtus ; droites perpendiculaires et parallèles." },
+    { "code": "GEOM_SYMMETRY", "subjectCode": "GEOMETRY", "label": "Symétrie", "description": "Axes de symétrie et symétrique d'un point sur quadrillage." },
+    { "code": "GEOM_SOLIDS", "subjectCode": "GEOMETRY", "label": "Solides", "description": "Cube, pavé droit, cylindre : faces et sommets." },
+    { "code": "GEOM_PERIMETER", "subjectCode": "GEOMETRY", "label": "Périmètre", "description": "Calculer le périmètre d'un carré, d'un rectangle ou d'un triangle." },
+    { "code": "GEOM_GRID", "subjectCode": "GEOMETRY", "label": "Repérage", "description": "Se repérer et se déplacer sur un quadrillage." },
+    { "code": "GEO_MAPS", "subjectCode": "GEOGRAPHY", "label": "Lire une carte", "description": "Points cardinaux, légende et échelle simple." },
+    { "code": "GEO_WORLD", "subjectCode": "GEOGRAPHY", "label": "Le monde", "description": "Continents, océans et équateur." },
+    { "code": "GEO_LANDSCAPES", "subjectCode": "GEOGRAPHY", "label": "Paysages", "description": "Paysages urbains, ruraux, littoraux et de montagne." },
+    { "code": "GEO_FRANCE", "subjectCode": "GEOGRAPHY", "label": "La France", "description": "Capitale, grands fleuves, montagnes et mers de France." },
+    { "code": "GEO_LIVING", "subjectCode": "GEOGRAPHY", "label": "Habiter", "description": "La commune, ses services et les déplacements." },
+    { "code": "GEO_CONSUME", "subjectCode": "GEOGRAPHY", "label": "Consommer", "description": "Eau, électricité, alimentation et recyclage." }
   ]
 }

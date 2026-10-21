@@ -8,6 +8,8 @@ content/
   worlds/worlds.json      6 mondes, niveaux des mondes jouables, compétences
   maths/maths-N-M.json    mission M du niveau N des Îles des Nombres
   english/english-N-M.json
+  geometrie/geometrie-N-M.json Vallée des Formes
+  geographie/geographie-N-M.json Archipel des Explorateurs
   sciences/sciences-N-M.json   Forêt du Vivant
   physique/physique-N-M.json   Cité des Inventeurs
   rewards/rewards.json    badges et accessoires
@@ -49,7 +51,7 @@ content/
 
 ## Contrôles
 
-`make content-validate` (script `frontend/scripts/validate-content.mjs`) vérifie les schémas puis : références monde/niveau/compétence, compétence de la bonne matière, bonne réponse parmi les options, doublons (codes, positions, options, variantes), assets présents dans le manifeste, et 6 missions de 5 exercices par monde jouable (24 missions / 120 exercices aujourd'hui). L'importeur backend (`ContentImporter`) refait ces contrôles et refuse tout le lot avant la moindre écriture en cas d'erreur (`invalidContentIsRejectedBeforeAnyWrite`).
+`make content-validate` (script `frontend/scripts/validate-content.mjs`) vérifie les schémas puis : références monde/niveau/compétence, compétence de la bonne matière, bonne réponse parmi les options, doublons (codes, positions, options, variantes), assets présents dans le manifeste, et 6 missions de 5 exercices par monde jouable (36 missions / 180 exercices aujourd'hui). L'importeur backend (`ContentImporter`) refait ces contrôles et refuse tout le lot avant la moindre écriture en cas d'erreur (`invalidContentIsRejectedBeforeAnyWrite`).
 
 ## Versionnement
 

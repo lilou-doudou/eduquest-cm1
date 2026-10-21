@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOGRAPHIE-1-2",
+  "world": "archipel-des-explorateurs",
+  "level": 1,
+  "ordinal": 2,
+  "title": "Le tour du monde",
+  "exercises": [
+    {
+      "skill": "GEO_WORLD",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sur quel continent se trouve la France métropolitaine ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "l'Afrique"
+        },
+        {
+          "id": "b",
+          "label": "l'Europe"
+        },
+        {
+          "id": "c",
+          "label": "l'Asie"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "C'est le continent de l'Allemagne, de l'Espagne et de l'Italie.",
+      "explanation": "La France métropolitaine est en Europe. La France a aussi des territoires d'outre-mer sur d'autres continents et océans."
+    },
+    {
+      "skill": "GEO_WORLD",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel océan borde la côte ouest de la France ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "l'océan Atlantique"
+        },
+        {
+          "id": "b",
+          "label": "l'océan Pacifique"
+        },
+        {
+          "id": "c",
+          "label": "l'océan Indien"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "C'est l'océan que l'on voit en Bretagne.",
+      "explanation": "L'océan Atlantique borde l'ouest de la France, de la Bretagne au Pays basque."
+    },
+    {
+      "skill": "GEO_WORLD",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Quel est le plus grand océan du monde ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "l'océan Indien"
+        },
+        {
+          "id": "b",
+          "label": "l'océan Atlantique"
+        },
+        {
+          "id": "c",
+          "label": "l'océan Pacifique"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Son nom veut dire « calme » ou « paisible ».",
+      "explanation": "L'océan Pacifique est le plus grand océan du monde. Il est plus grand que tous les continents réunis."
+    },
+    {
+      "skill": "GEO_WORLD",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Comment s'appelle la ligne imaginaire qui partage la Terre en deux moitiés : l'hémisphère Nord et l'hémisphère Sud ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "l'équateur"
+        },
+        {
+          "id": "b",
+          "label": "une frontière"
+        },
+        {
+          "id": "c",
+          "label": "le pôle"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Son nom ressemble au mot « égal », car elle fait deux parts égales.",
+      "explanation": "L'équateur est une ligne imaginaire qui fait le tour de la Terre et la partage en hémisphère Nord et hémisphère Sud."
+    },
+    {
+      "skill": "GEO_WORLD",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le nom du continent, en un seul mot.",
+      "prompt": "L'Australie, où vivent les kangourous, fait partie d'un continent qui commence par « O ». Lequel ?",
+      "answer": {
+        "accepted": [
+          "océanie",
+          "oceanie",
+          "l'océanie",
+          "l'oceanie"
+        ]
+      },
+      "hint": "Le mot ressemble à « océan », car ce continent est fait de nombreuses îles.",
+      "explanation": "L'Australie fait partie de l'Océanie, un continent formé de l'Australie et de très nombreuses îles de l'océan Pacifique."
+    }
+  ]
+}

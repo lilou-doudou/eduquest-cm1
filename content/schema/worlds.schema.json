@@ -46,7 +46,9 @@
               "GEOMETRY",
               "GEOGRAPHY",
               "SCIENCES",
-              "PHYSICS"
+              "PHYSICS",
+              "GEOMETRY",
+              "GEOGRAPHY"
             ]
           },
           "displayOrder": {
@@ -133,14 +135,16 @@
         "properties": {
           "code": {
             "type": "string",
-            "pattern": "^(MATH|EN|SCI|TECH)_[A-Z_]+$"
+            "pattern": "^(MATH|EN|SCI|TECH|GEOM|GEO)_[A-Z_]+$"
           },
           "subjectCode": {
             "enum": [
               "MATHS",
               "ENGLISH",
               "SCIENCES",
-              "PHYSICS"
+              "PHYSICS",
+              "GEOMETRY",
+              "GEOGRAPHY"
             ]
           },
           "label": {

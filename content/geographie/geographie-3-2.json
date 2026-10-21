@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOGRAPHIE-3-2",
+  "world": "archipel-des-explorateurs",
+  "level": 3,
+  "ordinal": 2,
+  "title": "Consommer en France",
+  "exercises": [
+    {
+      "skill": "GEO_CONSUME",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "D'où vient l'eau du robinet ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "d'une rivière ou du sol, puis elle est rendue potable"
+        },
+        {
+          "id": "b",
+          "label": "directement des nuages, par les tuyaux"
+        },
+        {
+          "id": "c",
+          "label": "d'une usine qui la fabrique à partir de rien"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "L'eau est d'abord prise dans la nature, puis nettoyée.",
+      "explanation": "L'eau est pompée dans une rivière ou une nappe souterraine. Elle est traitée pour devenir potable, puis arrive au robinet par des tuyaux."
+    },
+    {
+      "skill": "GEO_CONSUME",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Après usage, l'eau sale de la maison part dans les égouts jusqu'à…",
+      "options": [
+        {
+          "id": "a",
+          "label": "la station de ski"
+        },
+        {
+          "id": "b",
+          "label": "le château d'eau"
+        },
+        {
+          "id": "c",
+          "label": "la station d'épuration"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Il faut la nettoyer avant de la rendre à la nature.",
+      "explanation": "Les eaux usées vont à la station d'épuration. Elles y sont nettoyées avant d'être rejetées dans une rivière."
+    },
+    {
+      "skill": "GEO_CONSUME",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Acheter des fraises cultivées près de chez soi et en saison permet…",
+      "options": [
+        {
+          "id": "a",
+          "label": "de limiter les transports et la pollution"
+        },
+        {
+          "id": "b",
+          "label": "d'avoir des fraises en plein hiver"
+        },
+        {
+          "id": "c",
+          "label": "de produire plus de déchets"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Pense au trajet des fraises entre le champ et ton assiette.",
+      "explanation": "Des fruits produits près de chez soi et en saison voyagent peu : il faut moins de camions et d'avions, donc moins de pollution."
+    },
+    {
+      "skill": "GEO_CONSUME",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "En France, la plus grande partie de l'électricité est produite par…",
+      "options": [
+        {
+          "id": "a",
+          "label": "les moulins à vent"
+        },
+        {
+          "id": "b",
+          "label": "les centrales nucléaires"
+        },
+        {
+          "id": "c",
+          "label": "les feux de bois"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Ces grandes usines ont souvent de hautes tours d'où sort de la vapeur d'eau.",
+      "explanation": "En France, la majorité de l'électricité vient des centrales nucléaires. Le reste vient surtout des barrages, des éoliennes et des panneaux solaires."
+    },
+    {
+      "skill": "GEO_CONSUME",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "Trier ses emballages permet de les transformer en nouveaux objets. Comment s'appelle cette transformation ?",
+      "answer": {
+        "accepted": [
+          "recyclage",
+          "le recyclage"
+        ]
+      },
+      "hint": "Le mot commence par « recy… ».",
+      "explanation": "C'est le recyclage : les bouteilles, cartons et canettes triés deviennent de nouveaux objets. Cela économise les matières premières."
+    }
+  ]
+}

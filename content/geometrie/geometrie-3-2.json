@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOMETRIE-3-2",
+  "world": "vallee-des-formes",
+  "level": 3,
+  "ordinal": 2,
+  "title": "La carte au trésor",
+  "exercises": [
+    {
+      "skill": "GEOM_GRID",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sur un quadrillage, les colonnes portent des lettres (A, B, C…) et les lignes des nombres (1, 2, 3…). Le trésor est dans la colonne C et la ligne 4. Sa case est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "(A ; 4)"
+        },
+        {
+          "id": "b",
+          "label": "(C ; 4)"
+        },
+        {
+          "id": "c",
+          "label": "(D ; 3)"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "On écrit d'abord la lettre de la colonne, puis le nombre de la ligne.",
+      "explanation": "La case est repérée par sa colonne puis sa ligne : (C ; 4)."
+    },
+    {
+      "skill": "GEOM_GRID",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sur le quadrillage, les lettres avancent vers la droite (A, B, C…). Le pirate est en (B ; 2). Il avance d'une case vers la droite. Où arrive-t-il ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "(C ; 2)"
+        },
+        {
+          "id": "b",
+          "label": "(B ; 3)"
+        },
+        {
+          "id": "c",
+          "label": "(A ; 2)"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Vers la droite, la lettre change mais pas le nombre.",
+      "explanation": "En allant d'une case vers la droite, on passe de la colonne B à la colonne C. La ligne reste 2 : (C ; 2)."
+    },
+    {
+      "skill": "GEOM_GRID",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le pirate est en (D ; 5). Il recule de 2 cases vers la gauche. Où arrive-t-il ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "(F ; 5)"
+        },
+        {
+          "id": "b",
+          "label": "(D ; 3)"
+        },
+        {
+          "id": "c",
+          "label": "(B ; 5)"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Vers la gauche, on remonte l'alphabet : D, puis C, puis…",
+      "explanation": "Deux cases vers la gauche : de D à C, puis de C à B. La ligne reste 5 : (B ; 5)."
+    },
+    {
+      "skill": "GEOM_GRID",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Le perroquet monte tout droit de la case (A ; 1) à la case (A ; 6). De combien de cases s'est-il déplacé ?",
+      "answer": {
+        "number": "5"
+      },
+      "hint": "Compte les sauts : de 1 à 2, de 2 à 3… jusqu'à 6.",
+      "explanation": "Il passe de la ligne 1 à la ligne 6 : 6 − 1 = 5 cases de déplacement."
+    },
+    {
+      "skill": "GEOM_GRID",
+      "type": "MCQ",
+      "difficulty": 3,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le trésor est en (E ; 3). Le pirate est en (B ; 3). Que doit-il faire pour l'atteindre ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Monter de 3 cases"
+        },
+        {
+          "id": "b",
+          "label": "Avancer de 3 cases vers la droite"
+        },
+        {
+          "id": "c",
+          "label": "Avancer de 2 cases vers la droite"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Ils sont sur la même ligne. Compte les colonnes de B à E.",
+      "explanation": "Même ligne 3 : il suffit d'aller vers la droite. De B à E, il y a 3 cases (B → C → D → E)."
+    }
+  ]
+}

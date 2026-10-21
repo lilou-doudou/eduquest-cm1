@@ -125,18 +125,14 @@ class MissionFlowIntegrationTest extends IntegrationTest {
     }
 
     @Test
-    void comingSoonWorldsAreVisibleButNotPlayable() {
+    void allSixWorldsArePlayable() {
         Family f = newFamily("recette8");
         ApiClient c = f.client();
         JsonNode worlds = c.get("/worlds").body();
         assertThat(worlds.size()).isEqualTo(6);
-        long playable = 0;
-        for (JsonNode w : worlds) if ("PLAYABLE".equals(w.path("availability").asString())) playable++;
-        assertThat(playable).isEqualTo(4);
-        for (String slug : List.of("vallee-des-formes", "archipel-des-explorateurs")) {
-            JsonNode detail = c.get("/worlds/" + slug).body();
-            assertThat(detail.path("world").path("availability").asString()).isEqualTo("COMING_SOON");
-            assertThat(detail.path("levels").size()).isZero();
+        for (JsonNode w : worlds) {
+            assertThat(w.path("availability").asString()).as(w.path("slug").asString()).isEqualTo("PLAYABLE");
+            assertThat(c.get("/worlds/" + w.path("slug").asString()).body().path("levels").size()).isEqualTo(3);
         }
         assertThat(c.post("/missions/" + java.util.UUID.randomUUID() + "/attempts", Map.of()).status()).isEqualTo(404);
     }
@@ -241,5 +237,26 @@ class MissionFlowIntegrationTest extends IntegrationTest {
             assertThat(detail.path("world").path("availability").asString()).isEqualTo("PLAYABLE");
             assertThat(detail.path("levels").size()).isEqualTo(3);
         }
+    }
+
+    @Test
+    void shapesAndExplorersWorldsArePlayableAndGrantTheirRewards() {
+        Family f = newFamily("formes");
+        ApiClient c = f.client();
+        assertThat(c.post("/missions/" + missionId("GEOMETRIE-1-2") + "/attempts", Map.of()).code()).isEqualTo("MISSION_LOCKED");
+        for (String world : List.of("GEOMETRIE", "GEOGRAPHIE")) {
+            for (String position : List.of("1-1", "1-2", "2-1", "2-2", "3-1", "3-2")) {
+                assertThat(playMission(c, world + "-" + position, 5).path("stars").asInt()).isEqualTo(3);
+            }
+        }
+        JsonNode rewards = c.get("/me/rewards").body();
+        List<String> owned = new java.util.ArrayList<>();
+        rewards.path("rewards").forEach(r -> { if (r.path("owned").asBoolean()) owned.add(r.path("code").asString()); });
+        assertThat(owned).contains("SHAPES_MASTER", "TRIANGLE_HAT", "PRISM_CAPE", "ORIGAMI_CRANE",
+                "GREAT_EXPLORER", "EXPLORER_HAT", "SAIL_CAPE", "PARROT_FRIEND", "STAR_RABBIT");
+        assertThat(owned).doesNotContain("NUMBERS_EXPLORER", "FOREST_GUARDIAN");
+        JsonNode progress = c.get("/me/progress").body();
+        assertThat(progress.path("xpTotal").asInt()).isEqualTo(840);
+        assertThat(progress.path("adventurerLevel").asInt()).isEqualTo(9);
     }
 }

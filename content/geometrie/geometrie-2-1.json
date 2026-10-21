@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOMETRIE-2-1",
+  "world": "vallee-des-formes",
+  "level": 2,
+  "ordinal": 1,
+  "title": "Le miroir des symétries",
+  "exercises": [
+    {
+      "skill": "GEOM_SYMMETRY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "On plie une figure le long de son axe de symétrie. Que font les deux moitiés ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "elles se superposent exactement"
+        },
+        {
+          "id": "b",
+          "label": "elles changent de couleur"
+        },
+        {
+          "id": "c",
+          "label": "elles disparaissent"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "Pense à un papillon qui replie ses ailes.",
+      "explanation": "Quand on plie le long de l'axe de symétrie, les deux moitiés se superposent exactement : elles sont identiques, comme dans un miroir."
+    },
+    {
+      "skill": "GEOM_SYMMETRY",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Laquelle de ces lettres majuscules a un axe de symétrie vertical ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "F"
+        },
+        {
+          "id": "b",
+          "label": "G"
+        },
+        {
+          "id": "c",
+          "label": "A"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "Imagine un trait vertical au milieu de chaque lettre. De quel côté as-tu la même chose à gauche et à droite ?",
+      "explanation": "La lettre A a un axe de symétrie vertical : sa moitié gauche et sa moitié droite sont pareilles. Ce n'est pas le cas de F ni de G."
+    },
+    {
+      "skill": "GEOM_SYMMETRY",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien d'axes de symétrie a un carré ?",
+      "answer": {
+        "number": "4"
+      },
+      "hint": "Il y a les deux médianes (verticale et horizontale)… et les deux diagonales !",
+      "explanation": "Un carré a 4 axes de symétrie : un vertical, un horizontal et ses deux diagonales."
+    },
+    {
+      "skill": "GEOM_SYMMETRY",
+      "type": "NUMBER",
+      "difficulty": 2,
+      "instruction": "Écris un nombre.",
+      "prompt": "Combien d'axes de symétrie a un rectangle qui n'est pas un carré ?",
+      "answer": {
+        "number": "2"
+      },
+      "hint": "Plie une feuille en deux dans la longueur, puis dans la largeur. Et en diagonale, ça marche ?",
+      "explanation": "Un rectangle a 2 axes de symétrie : le vertical et l'horizontal. Ses diagonales ne sont pas des axes de symétrie."
+    },
+    {
+      "skill": "GEOM_SYMMETRY",
+      "type": "MCQ",
+      "difficulty": 3,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Sur un quadrillage, le point A est à 3 carreaux à gauche d'un axe vertical. Où se trouve son symétrique ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "sur l'axe"
+        },
+        {
+          "id": "b",
+          "label": "à 3 carreaux à droite de l'axe"
+        },
+        {
+          "id": "c",
+          "label": "à 6 carreaux à droite de l'axe"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Le symétrique est à la même distance de l'axe, mais de l'autre côté.",
+      "explanation": "Le symétrique d'un point est de l'autre côté de l'axe, à la même distance : 3 carreaux à droite."
+    }
+  ]
+}

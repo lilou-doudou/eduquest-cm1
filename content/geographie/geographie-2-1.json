@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "code": "GEOGRAPHIE-2-1",
+  "world": "archipel-des-explorateurs",
+  "level": 2,
+  "ordinal": 1,
+  "title": "Les paysages de France",
+  "exercises": [
+    {
+      "skill": "GEO_LANDSCAPES",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Un paysage avec des champs, des fermes et de petits villages est un paysage…",
+      "options": [
+        {
+          "id": "a",
+          "label": "urbain"
+        },
+        {
+          "id": "b",
+          "label": "rural"
+        },
+        {
+          "id": "c",
+          "label": "de haute montagne"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "« Rural » vient d'un mot latin qui veut dire « campagne ».",
+      "explanation": "Un paysage de campagne, avec des champs et des fermes, est un paysage rural."
+    },
+    {
+      "skill": "GEO_LANDSCAPES",
+      "type": "MCQ",
+      "difficulty": 1,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Un paysage avec beaucoup d'immeubles, de rues et de magasins est un paysage…",
+      "options": [
+        {
+          "id": "a",
+          "label": "urbain"
+        },
+        {
+          "id": "b",
+          "label": "rural"
+        },
+        {
+          "id": "c",
+          "label": "littoral"
+        }
+      ],
+      "answer": {
+        "optionId": "a"
+      },
+      "hint": "« Urbain » vient du mot latin qui veut dire « ville ».",
+      "explanation": "Un paysage de ville, avec des immeubles et des rues, est un paysage urbain."
+    },
+    {
+      "skill": "GEO_LANDSCAPES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Le littoral, c'est…",
+      "options": [
+        {
+          "id": "a",
+          "label": "le sommet d'une montagne"
+        },
+        {
+          "id": "b",
+          "label": "le centre d'une ville"
+        },
+        {
+          "id": "c",
+          "label": "le bord de la mer"
+        }
+      ],
+      "answer": {
+        "optionId": "c"
+      },
+      "hint": "On y trouve des plages, des falaises et des ports.",
+      "explanation": "Le littoral est la zone de contact entre la terre et la mer : plages, falaises, ports et stations balnéaires."
+    },
+    {
+      "skill": "GEO_LANDSCAPES",
+      "type": "MCQ",
+      "difficulty": 2,
+      "instruction": "Choisis la bonne réponse.",
+      "prompt": "Dans quel paysage trouve-t-on des sommets, des vallées et des stations de ski ?",
+      "options": [
+        {
+          "id": "a",
+          "label": "la plaine"
+        },
+        {
+          "id": "b",
+          "label": "la montagne"
+        },
+        {
+          "id": "c",
+          "label": "le littoral"
+        }
+      ],
+      "answer": {
+        "optionId": "b"
+      },
+      "hint": "Il faut de la neige et des pentes pour skier.",
+      "explanation": "La montagne a des sommets et des vallées. En hiver, la neige permet d'y faire du ski."
+    },
+    {
+      "skill": "GEO_LANDSCAPES",
+      "type": "TEXT",
+      "difficulty": 2,
+      "instruction": "Écris le mot qui manque, en un seul mot.",
+      "prompt": "La personne qui cultive les champs et élève des animaux dans une ferme est un…",
+      "answer": {
+        "accepted": [
+          "agriculteur",
+          "agricultrice",
+          "un agriculteur",
+          "une agricultrice",
+          "fermier",
+          "fermière"
+        ]
+      },
+      "hint": "Le mot contient « agri », qui veut dire « champ ».",
+      "explanation": "L'agriculteur ou l'agricultrice cultive la terre et élève des animaux. Son travail façonne les paysages ruraux."
+    }
+  ]
+}

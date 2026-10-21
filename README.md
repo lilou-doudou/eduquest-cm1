@@ -1,6 +1,6 @@
 # EduQuest CM1
 
-Jeu éducatif familial pour élèves de CM1 : six mondes visibles sur une carte 3D (avec une carte 2D équivalente), dont quatre jouables : **Les Îles des Nombres** (mathématiques), **Le Royaume des Mots** (anglais), **La Forêt du Vivant** (sciences du vivant) et **La Cité des Inventeurs** (matière, énergie, électricité, mouvements et objets techniques). Chaque monde jouable propose 3 niveaux × 2 missions × 5 questions, soit 120 exercices corrigés côté serveur, avec étoiles, XP, rangs d'aventurier, badges et accessoires d'avatar. Un adulte crée le compte familial, gère jusqu'à cinq profils enfants et suit la progression.
+Jeu éducatif familial pour élèves de CM1 : six mondes visibles sur une carte 3D (avec une carte 2D équivalente), tous jouables : **Les Îles des Nombres** (mathématiques), **Le Royaume des Mots** (anglais), **La Vallée des Formes** (géométrie), **L'Archipel des Explorateurs** (géographie), **La Forêt du Vivant** (sciences du vivant) et **La Cité des Inventeurs** (matière, énergie, électricité, mouvements et objets techniques). Chaque monde jouable propose 3 niveaux × 2 missions × 5 questions, soit 180 exercices corrigés côté serveur, avec étoiles, XP, rangs d'aventurier, badges et accessoires d'avatar. Un adulte crée le compte familial, gère jusqu'à cinq profils enfants et suit la progression.
 
 Le cahier des charges est dans [`EDUQUEST_CM1_SPECIFICATIONS.md`](EDUQUEST_CM1_SPECIFICATIONS.md). L'état réel de la livraison, les commandes exécutées et les écarts sont dans [`docs/rapport-mvp.md`](docs/rapport-mvp.md).
 
@@ -104,7 +104,7 @@ make reset-dev-db      # DESTRUCTIF : supprime la base de dev (confirmation « S
 ```text
 frontend/   React (src/{app,api,components,features,scene,styles}, tests Vitest)
 backend/    Spring Boot (fr.eduquest.{auth,family,catalog,learning,rewards,privacy,shared}), migrations Flyway
-content/    mondes, compétences, 24 missions, récompenses, inventaire des assets, schémas JSON
+content/    mondes, compétences, 36 missions, récompenses, inventaire des assets, schémas JSON
 e2e/        Playwright (parcours complet, mobile, sans WebGL, 3D, accessibilité)
 infra/      Dockerfiles, nginx, exemple de déploiement
 docs/       architecture, OpenAPI, pédagogie, sécurité, contenus, licences, déploiement, revue, rapport
