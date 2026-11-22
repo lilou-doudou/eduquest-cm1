@@ -17,7 +17,7 @@
     <name>EduQuest CM1 backend</name>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <bouncycastle.version>1.86</bouncycastle.version>
         <springdoc.version>3.1.1</springdoc.version>
     </properties>

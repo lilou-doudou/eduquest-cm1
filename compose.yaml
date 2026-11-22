@@ -38,7 +38,7 @@ services:
       POSTGRES_USER: eduquest
       POSTGRES_PASSWORD: e2e-only
     ports:
-      - "127.0.0.1:5433:5432"
+      - "127.0.0.1:${E2E_POSTGRES_PORT:-5433}:5432"
     tmpfs:
       - /var/lib/postgresql/data
     healthcheck:

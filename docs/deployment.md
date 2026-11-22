@@ -19,7 +19,7 @@ Internet ─► reverse proxy TLS (Caddy/Traefik/nginx, HSTS) ─► web (nginx 
 
 | Image | Fichier | Détails |
 |---|---|---|
-| `eduquest-backend` | `infra/backend.Dockerfile` | Multi-étapes (JDK 21 → JRE 21 Alpine), utilisateur `eduquest` non root, profil `prod`, healthcheck sur `/actuator/health/readiness`, contenus copiés dans `/app/content` pour l'import |
+| `eduquest-backend` | `infra/backend.Dockerfile` | Multi-étapes (JDK 25 → JRE 25 Alpine), utilisateur `eduquest` non root, profil `prod`, healthcheck sur `/actuator/health/readiness`, contenus copiés dans `/app/content` pour l'import |
 | `eduquest-frontend` | `infra/frontend.Dockerfile` + `infra/nginx.conf` | Multi-étapes (Node 22 → nginx-unprivileged), UID 101, en-têtes de sécurité, cache immuable des assets fingerprintés |
 
 ```sh

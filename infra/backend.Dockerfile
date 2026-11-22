@@ -1,6 +1,6 @@
 # Image backend multi-étapes. Construire depuis la racine du dépôt :
 #   docker build -f infra/backend.Dockerfile -t eduquest-backend .
-FROM eclipse-temurin:21-jdk-alpine AS build
+FROM eclipse-temurin:25-jdk-alpine AS build
 WORKDIR /src
 COPY backend/mvnw backend/pom.xml ./
 COPY backend/.mvn .mvn
@@ -8,7 +8,7 @@ RUN ./mvnw -B -q dependency:go-offline
 COPY backend/src src
 RUN ./mvnw -B -q -DskipTests package && cp target/eduquest-backend-*.jar /app.jar
 
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 RUN addgroup -S eduquest && adduser -S -G eduquest -H eduquest
 WORKDIR /app
 COPY --from=build /app.jar app.jar

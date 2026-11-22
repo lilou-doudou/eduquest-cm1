@@ -7,13 +7,13 @@ Le cahier des charges est dans [`EDUQUEST_CM1_SPECIFICATIONS.md`](EDUQUEST_CM1_S
 | | |
 |---|---|
 | Frontend | React 19, TypeScript 6, Vite 8, React Router 7, TanStack Query 5, Three.js 0.186 via @react-three/fiber 9 |
-| Backend | Java 21, Spring Boot 4.1.1 (Web MVC, Security 7, Data JPA / Hibernate 7, Session JDBC, Validation, Mail), Flyway, Argon2id |
+| Backend | Java 25, Spring Boot 4.1.1 (Web MVC, Security 7, Data JPA / Hibernate 7, Session JDBC, Validation, Mail), Flyway, Argon2id |
 | Base | PostgreSQL 16 |
 | Tests | JUnit 5 + Testcontainers PostgreSQL, Vitest + Testing Library, Playwright + axe-core |
 
 ## Prérequis
 
-- Java 21 (le wrapper `backend/mvnw` télécharge Maven 3.9.11)
+- Java 25 LTS (le wrapper `backend/mvnw` télécharge Maven 3.9.11)
 - Node.js 22 LTS (version figée dans `.nvmrc`) et npm (lockfiles fournis)
 - Docker avec Docker Compose v2
 - GNU Make et curl
@@ -110,6 +110,12 @@ infra/      Dockerfiles, nginx, exemple de déploiement
 docs/       architecture, OpenAPI, pédagogie, sécurité, contenus, licences, déploiement, revue, rapport
 scripts/    démarrage, import, E2E, mesure de charge
 ```
+
+## Travail avec les agents
+
+Trois rôles Codex sont définis pour ce projet : `qa`, `developpeur` et
+`reviewer_integrateur`. Voir [le guide de coordination](docs/agents.md) et
+[les règles communes](AGENTS.md).
 
 ## Documentation
 

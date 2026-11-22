@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-test('carte 2D de repli et verrouillage des mondes', async ({ page }) => {
+test('carte 2D de repli, six mondes accessibles et progression des missions', async ({ page }) => {
   await createVerifiedFamily(page, 'nowebgl', ['Nova']);
   await chooseChild(page, 'Nova');
 
@@ -22,6 +22,21 @@ test('carte 2D de repli et verrouillage des mondes', async ({ page }) => {
   await expect(page.locator('canvas')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Afficher la carte 3D' })).toHaveCount(0);
   await expect(page.locator('.world-list').getByText('Bientôt disponible', { exact: true })).toHaveCount(0);
+  await expect(page.locator('.world-list .is-locked')).toHaveCount(0);
+  const worldTitles = [
+    'Les Îles des Nombres', 'Le Royaume des Mots', 'La Vallée des Formes',
+    "L'Archipel des Explorateurs", 'La Forêt du Vivant', 'La Cité des Inventeurs',
+  ];
+  await expect(page.locator('.world-list').getByRole('link')).toHaveCount(6);
+  await expect(page.locator('.map-wrap').getByRole('link')).toHaveCount(6);
+  for (const title of worldTitles) {
+    const listLink = page.locator('.world-list').getByRole('link', { name: title, exact: true });
+    await expect(listLink).toBeVisible();
+    // Les îles affichent un nom court et le nombre d’étoiles dans leur nom accessible.
+    const href = await listLink.getAttribute('href');
+    expect(href).toBeTruthy();
+    await expect(page.locator(`.map-wrap a[href="${href}"]`)).toBeVisible();
+  }
 
   // Les îles de la carte 2D sont des liens : on y entre au clavier.
   const island = page.locator('.map-wrap').getByRole('link', { name: /Îles des Nombres/ });
@@ -31,8 +46,13 @@ test('carte 2D de repli et verrouillage des mondes', async ({ page }) => {
   await expect(page.getByText('Verrouillée : obtiens au moins une étoile à la mission précédente.').first()).toBeVisible();
   await expect(page.getByRole('link', { name: 'Jouer' })).toHaveCount(1);
 
-  // Un monde non jouable reste consultable mais n'offre aucune mission.
+  // La géométrie est désormais jouable, y compris sans WebGL ; sa progression reste verrouillée.
   await page.getByRole('link', { name: '← Retour à la carte' }).click();
-  await page.locator('.world-list .is-locked').first().getByRole('link').click();
-  await expect(page.getByText('Ce monde est en préparation.', { exact: false })).toBeVisible();
+  await page.locator('.world-list').getByRole('link', { name: 'La Vallée des Formes', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'La Vallée des Formes', level: 1 })).toBeVisible();
+  await expect(page.getByText('Ce monde est en préparation.', { exact: false })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Jouer', exact: true })).toHaveCount(1);
+  await expect(page.getByText('Verrouillée : obtiens au moins une étoile à la mission précédente.').first()).toBeVisible();
+  await page.getByRole('link', { name: 'Jouer', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Question 1 sur 5' })).toBeVisible();
 });
