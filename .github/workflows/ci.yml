@@ -55,7 +55,7 @@ jobs:
 
   e2e:
     name: E2E Playwright (pile isolée)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Playwright 1.56 ne gère pas encore ubuntu-latest (26.04)
     needs: [backend, frontend]
     steps:
       - uses: actions/checkout@v4
