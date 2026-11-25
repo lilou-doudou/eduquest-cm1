@@ -13,7 +13,7 @@ En développement, Vite (`:5173`) sert le frontend et relaie `/api` vers Spring 
 
 | Partie | Choix | Verrouillage |
 |---|---|---|
-| Backend | Java 21, Spring Boot 4.1.1, Hibernate 7, Spring Security 7, Spring Session JDBC, Flyway, springdoc 3.1.1, BouncyCastle 1.86 (Argon2id) | `pom.xml` + wrapper Maven 3.9.11 |
+| Backend | Java 25, Spring Boot 4.1.1, Hibernate 7, Spring Security 7, Spring Session JDBC, Flyway, springdoc 3.1.1, BouncyCastle 1.86 (Argon2id) | `pom.xml` + wrapper Maven 3.9.11 |
 | Frontend | React 19, TypeScript 6, Vite 8, React Router 7, TanStack Query 5, three 0.186, @react-three/fiber 9 | `package-lock.json`, Node 22 (`.nvmrc`) |
 | E2E | @playwright/test 1.56.1, @axe-core/playwright 4 | `e2e/package-lock.json` |
 | Base | PostgreSQL 16 (image `postgres:16-alpine`) | `compose.yaml` |

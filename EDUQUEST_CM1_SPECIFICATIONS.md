@@ -3,7 +3,7 @@
 **Version :** 1.0 — 21 octobre 2026  
 **Statut :** spécification de développement ; aucun code, test exécuté ou déploiement existant n'est attesté par ce document.  
 **Destinataires :** porteur du projet, Claude Code pour la réalisation, Codex pour la revue.  
-**Stack imposée :** React + TypeScript, Spring Boot + Java 21, PostgreSQL.
+**Stack imposée :** React + TypeScript, Spring Boot + Java 25 LTS, PostgreSQL.
 
 ## 1. Origine, portée et conventions
 
@@ -180,7 +180,7 @@ Attributions, progression, solde XP et clôture de partie doivent être atomique
 
 Monorepo, application React TypeScript construite avec Vite, routage, client HTTP typé, gestion du cache serveur (par exemple TanStack Query), composants accessibles et tests Vitest/Testing Library. Scène 3D chargée à la demande. Les préférences non sensibles peuvent être conservées localement ; les réponses et droits sont gérés par le serveur.
 
-Backend : Java 21, Spring Boot dans une version stable compatible choisie et figée à l'initialisation, Spring Web, Validation, Security, Data JPA, Flyway, PostgreSQL. Monolithe modulaire : `auth`, `family`, `catalog`, `learning`, `rewards`, `privacy`. Controllers → services transactionnels → repositories. DTO séparés des entités JPA, pas de sérialisation directe des entités.
+Backend : Java 25 LTS, Spring Boot dans une version stable compatible choisie et figée à l'initialisation, Spring Web, Validation, Security, Data JPA, Flyway, PostgreSQL. Monolithe modulaire : `auth`, `family`, `catalog`, `learning`, `rewards`, `privacy`. Controllers → services transactionnels → repositories. DTO séparés des entités JPA, pas de sérialisation directe des entités.
 
 API `/api/v1`, documentation OpenAPI versionnée. Session opaque serveur via cookie HttpOnly ; pas de JWT en localStorage. PostgreSQL persiste les sessions via Spring Session JDBC. En production, servir frontend et API sous la même origine via reverse proxy HTTPS. En développement, proxy Vite `/api` vers le backend ; pas de CORS permissif.
 
@@ -411,13 +411,13 @@ Frontend Vitest + Testing Library : formulaires, correction, reprise, états cha
 
 E2E Playwright : inscription via boîte mail locale, création de profil, choix du monde, mission, bilan, reprise, passage parent, export/suppression ; au moins un parcours mobile et un parcours sans WebGL. Tests d'accessibilité automatisés complétés par clavier, zoom 200 %, lecteur d'écran sur carte/mission/bilan et réduction des animations.
 
-CI : compilation Java 21, tests unitaires/intégration, typecheck et build TypeScript, lint, E2E essentiels, validation contenu, contrôle de secrets et dépendances. Les résultats doivent être rapportés avec commandes réellement exécutées ; un test non exécuté reste explicitement signalé.
+CI : compilation Java 25, tests unitaires/intégration, typecheck et build TypeScript, lint, E2E essentiels, validation contenu, contrôle de secrets et dépendances. Les résultats doivent être rapportés avec commandes réellement exécutées ; un test non exécuté reste explicitement signalé.
 
 Objectifs performance à mesurer sur un environnement documenté : interactions et soumission sans attente artificielle ; API p95 inférieur à 500 ms hors e-mail pour 20 enfants actifs simultanés ; écran principal utilisable en moins de 3 secondes sur connexion de test définie, carte 3D asynchrone ; minimum 30 images/s sur matériel cible sinon repli 2D. Fournir protocole, matériel et résultats, pas une garantie non mesurée.
 
 ## 17. Configuration et commandes de démarrage à fournir
 
-**Contrat à implémenter : les commandes suivantes sont attendues dans le futur dépôt ; elles ne sont pas attestées comme fonctionnelles aujourd'hui.** Pré-requis : Java 21, Docker/Compose, version Node LTS compatible à figer dans `.nvmrc`, npm avec lockfile. Aucun outil cloud payant obligatoire pour exécuter le MVP local.
+**Contrat à implémenter : les commandes suivantes sont attendues dans le futur dépôt ; elles ne sont pas attestées comme fonctionnelles aujourd'hui.** Pré-requis : Java 25 LTS, Docker/Compose, version Node LTS compatible à figer dans `.nvmrc`, npm avec lockfile. Aucun outil cloud payant obligatoire pour exécuter le MVP local.
 
 `.env.example` documente au minimum `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `DATABASE_URL`, `APP_BASE_URL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `MAIL_FROM`, `SPRING_PROFILES_ACTIVE`. Le README explique le chargement explicite de ces variables et leur correspondance Spring. Les variables frontend `VITE_*` ne contiennent jamais de secrets.
 
@@ -481,7 +481,7 @@ Copier le texte suivant dans Claude Code avec ce fichier à la racine du dépôt
 
 > Développe le MVP EduQuest CM1 décrit dans `EDUQUEST_CM1_SPECIFICATIONS.md`. Considère ce fichier comme le contrat fonctionnel et technique. Le projet n'est pas supposé déjà développé : inspecte d'abord le dépôt et indique ce qui existe réellement.
 >
-> Utilise React TypeScript, Spring Boot Java 21 et PostgreSQL. Réalise un monolithe modulaire et un monorepo. Livre deux mondes jouables, 12 missions et 60 exercices, une carte 3D légère avec alternative HTML/2D, un espace parent, les sessions enfant limitées, la correction serveur, la progression, les récompenses et la gestion des données personnelles.
+> Utilise React TypeScript, Spring Boot Java 25 LTS et PostgreSQL. Réalise un monolithe modulaire et un monorepo. Livre deux mondes jouables, 12 missions et 60 exercices, une carte 3D légère avec alternative HTML/2D, un espace parent, les sessions enfant limitées, la correction serveur, la progression, les récompenses et la gestion des données personnelles.
 >
 > Commence par un plan court, les versions choisies et les décisions d'architecture. Implémente ensuite des tranches verticales testables : infrastructure et migrations ; authentification/famille ; catalogue/import ; une mission complète persistée ; progression et concurrence ; corpus complet ; interfaces et 3D ; suivi/confidentialité ; tests et documentation. Poursuis jusqu'aux critères MVP, sans remplacer le backend ou les contenus par des simulations définitives.
 >

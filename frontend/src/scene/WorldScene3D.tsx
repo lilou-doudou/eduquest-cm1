@@ -103,8 +103,8 @@ export default function WorldScene3D({ worlds, reducedMotion, onSelect, onSlow }
         frameloop={reducedMotion ? 'demand' : 'always'}
         dpr={[1, 2]}
       >
-        <color attach="background" args={['#bfe6ff']} />
-        <fog attach="fog" args={['#bfe6ff', 18, 32]} />
+        <color attach="background" args={['#141a3c']} />
+        <fog attach="fog" args={['#141a3c', 18, 32]} />
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 10, 5]} intensity={1.1} />
         {worlds.map((w, i) => (
@@ -112,7 +112,7 @@ export default function WorldScene3D({ worlds, reducedMotion, onSelect, onSlow }
         ))}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.6, 0]}>
           <circleGeometry args={[30, 48]} />
-          <meshStandardMaterial color="#7cc6f0" />
+          <meshStandardMaterial color="#2a3a7a" />
         </mesh>
         {!reducedMotion && <FpsWatch onSlow={onSlow} />}
       </Canvas>

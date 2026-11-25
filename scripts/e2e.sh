@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-export DATABASE_URL="jdbc:postgresql://localhost:5433/eduquest_e2e"
+export DATABASE_URL="jdbc:postgresql://localhost:${E2E_POSTGRES_PORT:-5433}/eduquest_e2e"
 export POSTGRES_USER=eduquest
 export POSTGRES_PASSWORD=e2e-only
 export APP_BASE_URL="http://127.0.0.1:5174"

@@ -89,4 +89,4 @@ Tu peux aussi créer ton propre compte avec « Créer un compte » : le lien de 
 | La page reste blanche ou « Chargement… » longtemps | Attends la fin du démarrage, puis recharge la page (`Cmd + R`). |
 | La construction échoue faute de mémoire | Docker Desktop → **Settings → Resources** : mets au moins 4 Go de mémoire. |
 
-Pour développer (modifier le code avec rechargement automatique), il faut en plus Java 21 et Node 22 : voir le [README](../README.md).
+Pour développer (modifier le code avec rechargement automatique), il faut en plus Java 25 et Node 22 : voir le [README](../README.md).

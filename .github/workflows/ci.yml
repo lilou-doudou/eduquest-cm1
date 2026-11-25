@@ -25,12 +25,12 @@ jobs:
       - run: make content-validate
 
   backend:
-    name: Backend (Java 21, unitaires + intégration PostgreSQL)
+    name: Backend (Java 25, unitaires + intégration PostgreSQL)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: '21', cache: maven }
+        with: { distribution: temurin, java-version: '25', cache: maven }
       - name: Tests (Testcontainers utilise le Docker du runner)
         run: ./mvnw -B verify
         working-directory: backend
@@ -55,12 +55,12 @@ jobs:
 
   e2e:
     name: E2E Playwright (pile isolée)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Playwright 1.56 ne gère pas encore ubuntu-latest (26.04)
     needs: [backend, frontend]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: '21', cache: maven }
+        with: { distribution: temurin, java-version: '25', cache: maven }
       - uses: actions/setup-node@v4
         with: { node-version-file: .nvmrc, cache: npm, cache-dependency-path: '**/package-lock.json' }
       - run: cp .env.example .env
@@ -84,7 +84,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: '21', cache: maven }
+        with: { distribution: temurin, java-version: '25', cache: maven }
       - name: Suivre le mode manuel du README sur une base vierge
         run: |
           cp .env.example .env

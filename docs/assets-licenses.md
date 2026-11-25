@@ -9,7 +9,8 @@ Toutes les ressources visuelles du MVP sont **originales au projet** et produite
 | Avatars (renard, hibou, tortue, chat, panda, lapin) et accessoires | SVG inline, `frontend/src/components/Avatar.tsx` | Celle du dépôt |
 | Icônes de badges et d'accessoires | SVG inline, `frontend/src/components/RewardIcon.tsx` | Celle du dépôt |
 | Favicon | `frontend/public/assets/favicon.svg` | Celle du dépôt |
-| Police | Aucune police téléchargée : « Atkinson Hyperlegible » est utilisée seulement si elle est déjà installée sur l'appareil, sinon la pile système (`Segoe UI`, `system-ui`…) | — |
+| Police des titres et boutons | « Baloo 2 » (graisses 600, 700, 800, sous-ensemble latin), auto-hébergée via le paquet npm `@fontsource/baloo-2` : aucune requête vers un service tiers, compatible avec la CSP `default-src 'self'` | SIL Open Font License 1.1 |
+| Police du texte | Aucune police téléchargée : « Atkinson Hyperlegible » est utilisée seulement si elle est déjà installée sur l'appareil, sinon la pile système (`Segoe UI`, `system-ui`…) | — |
 | Sons de correction | Synthétisés par Web Audio (`frontend/src/app/preferences.ts`), désactivés par défaut | Celle du dépôt |
 
 L'inventaire machine est `content/assets-manifest.json` (clé, type, licence) ; le validateur de contenus vérifie que chaque `assetKey` des mondes et récompenses y figure.
