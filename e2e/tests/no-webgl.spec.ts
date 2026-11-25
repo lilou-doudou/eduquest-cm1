@@ -46,23 +46,11 @@ test('carte 2D de repli, six mondes accessibles et progression des missions', as
   await expect(page.getByText('Verrouillée : obtiens au moins une étoile à la mission précédente.').first()).toBeVisible();
   await expect(page.getByRole('link', { name: 'Jouer' })).toHaveCount(1);
 
-<<<<<<< HEAD
   // Les six mondes sont jouables : aucun n'est verrouillé et chacun s'ouvre sur sa première mission.
   await page.getByRole('link', { name: '← Retour à la carte' }).click();
   await expect(page.locator('.world-list > li')).toHaveCount(6);
   await expect(page.locator('.world-list .is-locked')).toHaveCount(0);
-  await page.locator('.world-list').getByRole('link', { name: 'La Forêt du Vivant' }).click();
+  await page.locator('.world-list').getByRole('link', { name: 'La Forêt du Vivant', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'La Forêt du Vivant', level: 1 })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Jouer' })).toHaveCount(1);
-=======
-  // La géométrie est désormais jouable, y compris sans WebGL ; sa progression reste verrouillée.
-  await page.getByRole('link', { name: '← Retour à la carte' }).click();
-  await page.locator('.world-list').getByRole('link', { name: 'La Vallée des Formes', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'La Vallée des Formes', level: 1 })).toBeVisible();
-  await expect(page.getByText('Ce monde est en préparation.', { exact: false })).toHaveCount(0);
-  await expect(page.getByRole('link', { name: 'Jouer', exact: true })).toHaveCount(1);
-  await expect(page.getByText('Verrouillée : obtiens au moins une étoile à la mission précédente.').first()).toBeVisible();
-  await page.getByRole('link', { name: 'Jouer', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Question 1 sur 5' })).toBeVisible();
->>>>>>> origin/main
 });
